@@ -1,637 +1,339 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main">
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/03/30/js_prototype/" title="Javascript 之 prototype" itemprop="url">
+  
+    <h1 itemprop="name">Javascript 之 prototype</h1>
+    
+     
+           <p itemprop="description" >Javascript是一种 prototype based programming 语言，而与我们经常接触的calss based programming有很大区别。&amp;nbsp;函数是 first class object,即函数与对象具有相同的语言地位。&amp;nbsp;没有类，只有</p>
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-js_prototype" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_prototype/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.729Z" itemprop="datePublished">2017-03-30</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/30/js_prototype/">Javascript 之 prototype</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><ul></ul></p>
-<li><strong>Javascript是一种 prototype based programming 语言，而与我们经常接触的calss based programming有很大区别。</strong></li><br><br><ol><br><li>&nbsp;函数是 first class object,即函数与对象具有相同的语言地位。</li><br><li>&nbsp;没有类，只有对象</li><br><li>函数也是一种对象，没有所谓的函数对象</li><br><li>对象是按引用来传递的 <br><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> Person(name,sex){<br>  </span><span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> name;<br>  </span><span style="color: #0000ff;">this</span>.sex =<span style="color: #000000;"> sex;<br>  </span><span style="color: #0000ff;">this</span>.say = <span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br>      </span><span style="color: #0000ff;">var</span> words = “i am “ + <span style="color: #0000ff;">this</span><span style="color: #000000;">.name;<br>      </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> words;<br>      };<br>   }<br><br>  Person.prototype.age </span>= 24<span style="color: #000000;">;<br>  Person.prototype.getAge </span>= <span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">this</span><span style="color: #000000;">.age;<br>   }<br><br>  </span><span style="color: #0000ff;">var</span> James = <span style="color: #0000ff;">new</span> Person(“James”,”Male”<span style="color: #000000;">);<br>  console.log(James.name);  </span><span style="color: #008000;">//</span><span style="color: #008000;">“James”</span><br>  <span style="color: #008000;">//</span><span style="color: #008000;">若在Person中没有找到的属性，会继续沿着原型链向上查找</span><br>  console.log(James.age);   <span style="color: #008000;">//</span><span style="color: #008000;">24</span><br>  console.log(James.getAge()); <span style="color: #008000;">//</span><span style="color: #008000;">24</span></pre><br></div><br></li><br></ol><br><p>　<strong>　每一个<span style="color: #ff0000;">对象的实例</span>都有一个constructor属性，用于指向创建其的函数对象。</strong></p><br><p><strong>　　<img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018104027810-1471757135.png" alt=""></strong></p><br><p><strong>　　（例子中的James.constructor指向的是Peson方法）</strong></p><br><ul><br><li><strong>　函数中自身声明的方法与属性，与在prototype中声明的有何不同？</strong></li><br></ul><br><ol><br><li>自身声明的方法与属性是<strong><span style="color: #ff0000;">静态的</span></strong><span style="color: #ff0000;"><span style="color: #000000;">，也就是使用该对象创建一个实例，再去修改对象中的属性和方法，实例中的属性与方法不会随之改变</span></span></li><br><li><span style="color: #ff0000;"><span style="color: #ff0000;"><span style="color: #000000;">而prototype可以动态地更新自己所拥有的修改的方法，从而使动态地，一旦函数对象声明了了相关的prototype的属性，由其创建的对象也会自动地继承这些对象。</span></span></span><br><div class="cnblogs_code"><br><pre>　　<span style="color: #008000;">//</span><span style="color: #008000;">（接着前面的例子）</span><br>　　console.log(James.testPro);  <span style="color: #008000;">//</span><span style="color: #008000;">undefined, 因为根本就不存在这个属性</span><br>　　console.log(James.name);     <span style="color: #008000;">//</span><span style="color: #008000;">James</span><br>　　Person.name = “Jenny”;       <span style="color: #008000;">//</span><span style="color: #008000;">改变对象的name属性</span><br>　　Person.testPro = “123”<span style="color: #000000;">;<br>　　console.log(James.testPro);  </span><span style="color: #008000;">//</span><span style="color: #008000;">Person的prototype中属性的变化，所以实例中属性也跟着变</span><br>　　console.log(James.name);     <span style="color: #008000;">//</span><span style="color: #008000;">James声明并且实例化后对象变化，实例中的属性并不会跟着改变</span></pre><br></div><br></li><br></ol><br><ul><br><li><strong>属性搜索的过程</strong></li><br></ul><br><ol><br><li>先搜索自身的，若有则立即访问执行</li><br><li>若自身未找到，则去搜索上一层，直至prototype chain的结尾，结尾一般是object对象</li><br><li>若实例中定义了和prototype同名的属性或者函数，则会覆盖prototype中的属性或函数</li><br></ol><br><p>&nbsp;</p><br><ul><br><li><strong><span style="color: #ff0000;"><span style="color: #ff0000;"><span style="color: #000000;">一个例子（不带继承）</span></span></span></strong><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span> Person(name){  <span style="color: #0000ff;">this</span>.name =<span style="color: #000000;">name;<br> }<br>Person.prototype.printName </span>= <span style="color: #0000ff;">function</span><span style="color: #000000;"> (){<br>        console.log(</span><span style="color: #0000ff;">this</span><span style="color: #000000;">.name);<br>   }<br></span><span style="color: #0000ff;">var</span> person1 = <span style="color: #0000ff;">new</span> Person(‘Byron’<span style="color: #000000;">);<br></span><span style="color: #0000ff;">var</span> person2 = <span style="color: #0000ff;">new</span> Person(‘Frank’);</pre><br></div><br></li><br></ul><br><ol><br><li>Person声明之后，会自动获得一个prototype属性，而prototype也是一个对象，prototype内部会有一个constructor属性，该属性正是指向Person对象</li><br><li>当调用构造函数创建一个实例的时候，实例的内部将会包含一个内部指针(即<strong>proto</strong>)指向构造函数的prototype，这个链接存在于实例和构造它的函数的prototype之间，而不是在实例和它创建出来的实例之间。（貌似有点绕哈:-D</li><br><li>对于Person的一个实例person1来说<br><ol><ol><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018105909185-594910523.png" alt="">实例的constructor属性指向创造它的函数</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018110143670-1884048004.png" alt="">实例的<strong>proto</strong>属性，指向他的构造器的prototype，在这里就是指向Person的prototype</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018113742842-1779298202.png" alt="">对象的实例是没有prototype属性的</li>
-
-<p></p></ol></ol></li><p></p>
-<li>对与Person对象本身来说<ol><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018114340138-427419279.png" alt="">Person的prototype属性，指向一个对象（初始时为空对象），这个对象上有一个printName方法，是我们手动添加的</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018115023357-1576473683.png" alt="">Person作为一个函数对象，他的constructor指向Function()构造器</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018115435607-266511541.png" alt="">Person的<strong>proto</strong>属性，同样是指向的是其构造器的prototype，也就是Function()构造器的prototype</li>
-
-<p></p></ol></li><p></p>
-<li>对于Person.prototype来说<ol><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018115920998-544906901.png" alt="">Person.prototype的constructor属性，指向函数对象本身</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018120102810-1677855518.png" alt="">Person.prototype的<strong>proto</strong>属性指向的是原型链的末端Object对象</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018120340357-1550010276.png" alt="">函数本身才会有prototype属性，所以这里返回undefined</li><br><li>总结如下图</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161006160103551-695459870.png" alt="" width="769" height="394"></li><br><li><span style="color: #ff0000;">图中Person的实例Person1与Person2包含了name属性，同时生成了<strong>proto</strong>属性，该属性指向Person的prototype，可以访问到prototype内定义的方法printName</span></li>
-
-<p></p></ol></li><p></p>
-<p></p></ol><p></p>
-<p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_prototype/" data-id="cj0wb4swg00116kf0ih7q5gn2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js_object" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_object/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.728Z" itemprop="datePublished">2017-03-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/30/js_object/">Javascript 之 对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><span style="font-size: 16px;"><strong><span style="font-size: 14pt;">Javascript原始对象类型（6种）</span>：</strong></span></p><br><ul><br><li><span style="font-size: 16px;"><strong><span style="color: #ff0000;"><span style="color: #999999;">（数据类型）</span>number</span>、<span style="color: #ff0000;">string</span>、<span style="color: #ff0000;">boolean</span>、<span style="font-size: 16px; color: #ff0000;"><strong>function</strong></span>、<span style="color: #ff0000;">undefined</span></strong></span></li><br><li><span style="font-size: 16px;"><strong><span style="color: #ff0000;"><span style="color: #999999;">（对象类型）</span>object<span style="color: #00ff00;">（null、{}、Array、Date、RegExp…）</span><br></span></strong></span></li><br><br><br><br><br><br><br><br><br><br><br><br><br></ul><br><p>&nbsp;</p><br><hr><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong><span style="color: #ff0000;"><span style="color: #000000;">关于NaN</span></span></strong></span></p><br><ul><br><li style="font-size: 16px;"><span style="font-size: 16px;"><span style="color: #ff0000;"><span style="color: #000000;">NaN是一个特殊的number类型,它与任何数值都不相等，也包括他自己</span></span></span></li><br><li style="font-size: 16px;"><span style="font-size: 16px;"><span style="color: #ff0000;"><span style="color: #000000;">typeof(NaN)的值为number</span></span></span></li><br><li style="font-size: 16px;"><span style="font-size: 16px;"><span style="color: #ff0000;"><span style="color: #000000;">唯一能够判断NaN的方法时通过 isNaN()函数</span></span></span></li><br><br><br><br><br><br><br><br><br><br><br><br><br></ul><br><hr><br><p><span style="font-size: 14pt;"><strong>&nbsp;关于null与undefined</strong></span></p><br><ul><br><li>null表示的是一个空值，它与 0 以及空字符串不同，&ldquo;&rdquo;表示长度为0的字符串，而null表示空。</li><br><li>JS的设计者想用undefined 表示未定义，单null 与 undefined 的区分意义并不大，后者仅在判断参数是否传递时候有用</li><br><li>例如访问一个下标越界的数组元素，返回的就是 <strong>undefined</strong></li><br><br><br><br><br><br></ul><br><p>&nbsp;</p><br><hr><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong><span style="color: #ff0000;"><span style="color: #000000;">隐式转换</span></span></strong></span></p><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">var</span> x = “66H34TYY” + 42<span style="color: #000000;"> ;<br></span><span style="color: #008080;">2</span> <span style="color: #0000ff;">var</span> y = 42 + “hahaha”<span style="color: #000000;">;<br></span><span style="color: #008080;">3</span> “37” + 37 </pre><br></div><br><p>　　以上三种 &ldquo;+&rdquo; 号都理解为字符串拼接，返回的都是一个string类型数据</p><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span>  <span style="color: #0000ff;">var</span> result = “37” - 7 </pre><br></div><br><p>　　这里的 &ldquo;-&rdquo; 号却理解为 减法</p><br><div class="cnblogs_code"><br><pre><span style="color: #008000;">//</span><span style="color: #008000;">设car为null</span><br>1 car - 0    　　　　<span style="color: #008000;">//</span><span style="color: #008000;">car 减去 0 </span><br>2 car + &ldquo;&rdquo; 　　    <span style="color: #008000;">//</span><span style="color: #008000;">car加上空字符串</span></pre><br></div><br><p>　　可利用这两种办法，巧妙地把car(<strong><span style="color: #ff0000;">做减法</span></strong>)变为<strong><span style="color: #ff0000;">number</span></strong>或者（<span style="color: #ff0000;"><strong>做加法</strong></span>）变为<strong><span style="color: #ff0000;">string</span></strong></p><br><p>&nbsp;</p><br><hr><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>&nbsp;显式转换</strong></span></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> num=Number(<span style="color: #800000;">‘</span><span style="color: #800000;">123</span><span style="color: #800000;">‘</span>); 　　　　　　　　　　　　<span style="color: #008000;">//</span><span style="color: #008000;">将字符串&lsquo;123&rsquo;转换为number</span><br>console.log(num+<span style="color: #800000;">“</span><span style="color: #800000;">是</span><span style="color: #800000;">“</span>+<span style="color: #0000ff;">typeof</span>(num)+<span style="color: #800000;">“</span><span style="color: #800000;">类型</span><span style="color: #800000;">“</span>);　　<span style="color: #008000;">//</span><span style="color: #008000;">123是number类型</span><br><br><br><span style="color: #0000ff;">var</span> boo=Boolean(<span style="color: #800000;">‘</span><span style="color: #800000;">false</span><span style="color: #800000;">‘</span>);　　　　　　　　　　   <span style="color: #008000;">//</span><span style="color: #008000;">将字符串&lsquo;false&rsquo;转换为boolean</span><br>console.log(boo+<span style="color: #800000;">“</span><span style="color: #800000;">是</span><span style="color: #800000;">“</span>+<span style="color: #0000ff;">typeof</span>(boo)+<span style="color: #800000;">“</span><span style="color: #800000;">类型</span><span style="color: #800000;">“</span>);　　 <span style="color: #008000;">//</span><span style="color: #008000;">true是boolean类型<br>　　　　　　　　　　　　　　　　　　　　　　　　　　</span><span style="color: #008000;">//</span><span style="color: #008000;">注意此处只要Boolean（）转换的内容不为null或者&ldquo;&rdquo;，则肯定返回true</span><br><br><span style="color: #0000ff;">var</span> str=String(<span style="color: #800080;">123.56</span>); 　　　　　　　　　　　　<span style="color: #008000;">//</span><span style="color: #008000;">将字符串&lsquo;123&rsquo;转换为string</span><br>console.log(str+<span style="color: #800000;">“</span><span style="color: #800000;">是</span><span style="color: #800000;">“</span>+<span style="color: #0000ff;">typeof</span>(str)+<span style="color: #800000;">“</span><span style="color: #800000;">类型</span><span style="color: #800000;">“</span>);　　 <span style="color: #008000;">//</span><span style="color: #008000;">123.56是string类型</span></pre><br></div><br><ul><br><li>&nbsp;<span style="color: #ff0000;"><strong><span style="color: #000000;">注意转换后的结果数据的类型是相应的</span>number<span style="color: #000000;">、</span>string<span style="color: #000000;">、</span>boolean</strong></span></li><br></ul><br><hr><br><p>&nbsp;</p><br><p><strong><span style="font-size: 14pt;">一些特殊的值</span><br></strong></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">null</span>　　==　　undefined;  <span style="color: #008000;">//</span><span style="color: #008000;">返回true</span><br><br><span style="color: #0000ff;">null</span>　　===　　undefined;  <span style="color: #008000;">//</span><span style="color: #008000;">返回false</span></pre><br></div><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">typeof</span>(<span style="color: #0000ff;">null</span>) === “object” ; <span style="color: #008000;">//</span><span style="color: #008000;">返回true,因为历史原因</span></pre><br></div><br><p><strong>&nbsp;</strong></p><br><hr><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>包装对象</strong></span></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> num = <span style="color: #0000ff;">new</span> Number(123<span style="color: #000000;">);<br><br></span><span style="color: #0000ff;">typeof</span>(num);　　　　　　　　<span style="color: #008000;">//</span><span style="color: #008000;">返回”object”</span><br><br><span style="color: #0000ff;">var</span> boo = <span style="color: #0000ff;">new</span> Boolean(<span style="color: #0000ff;">true</span><span style="color: #000000;">);<br><br></span><span style="color: #0000ff;">typeof</span>(boo);　　　　　　　　<span style="color: #008000;">//</span><span style="color: #008000;">返回”object”</span><br><br><span style="color: #0000ff;">var</span> str = <span style="color: #0000ff;">new</span> String(‘str’<span style="color: #000000;">);　　<br><br></span><span style="color: #0000ff;">typeof</span>(str);　　　　　　　　<span style="color: #008000;">//</span><span style="color: #008000;">返回”object”</span></pre><br></div><br><ul><br><li>生成的包装类的值与不使用包装类创建的值相等</li><br><li>但使用包装类创建的类型皆为&ldquo;object&rdquo;</li><br></ul><br><hr><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>只有对象类型才能够有属性</strong></span></p><br><ol><br><li><strong>是object类型的数据</strong></li><br><li><strong>使用包装类创建的对象</strong></li><br></ol><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> arr=[];         <span style="color: #008000;">//</span><span style="color: #008000;">[]属于object类型</span><br>arr.t=<span style="color: #800080;">3</span><span style="color: #000000;">;<br>console.log(arr.t); </span><span style="color: #008000;">//</span><span style="color: #008000;">绑定的属性t能够正常访问</span><br><br><span style="color: #0000ff;">var</span> obj={};         <span style="color: #008000;">//</span><span style="color: #008000;">｛｝属于object类型</span><br>obj.t=<span style="color: #800080;">3</span><span style="color: #000000;">;<br>console.log(obj.t); </span><span style="color: #008000;">//</span><span style="color: #008000;">绑定的属性t能够正常访问</span><br><br><span style="color: #0000ff;">var</span> str_obj=<span style="color: #0000ff;">new</span> String(<span style="color: #800000;">“</span><span style="color: #800000;">aaaaaa</span><span style="color: #800000;">“</span>);<span style="color: #008000;">//</span><span style="color: #008000;">str_obj是使用包装类创建的string，属于object类型</span><br>str_obj.t=<span style="color: #800000;">“</span><span style="color: #800000;">obj_prop</span><span style="color: #800000;">“</span><span style="color: #000000;">;<br>console.log(str_obj.t);        </span><span style="color: #008000;">//</span><span style="color: #008000;">绑定的属性也能够正常的输出</span><br><br><br><span style="color: #0000ff;">var</span> str=<span style="color: #800000;">“</span><span style="color: #800000;">aaaaa</span><span style="color: #800000;">“</span>;    <span style="color: #008000;">//</span><span style="color: #008000;">str属于string类型（注意这里没有使用包装类创建）</span><br>str.t=<span style="color: #800080;">3</span>;            <span style="color: #008000;">//</span><span style="color: #008000;">这里给str帮顶一个临时属性</span><br>console.log(str.t);    <span style="color: #008000;">//</span><span style="color: #008000;">在后面这里就访问不到，返回undefined</span><br>console.log(str.length) <span style="color: #008000;">//</span><span style="color: #008000;">string类型的一个特殊属性是length，可以访问</span><br><br><span style="color: #0000ff;">var</span> num=<span style="color: #800080;">123</span>;    <span style="color: #008000;">//</span><span style="color: #008000;">num属于number类型（注意这里没有使用包装类创建）</span><br>num.t=<span style="color: #800080;">3</span>;            <span style="color: #008000;">//</span><span style="color: #008000;">这里给num帮顶一个临时属性</span><br>console.log(num.t);    <span style="color: #008000;">//</span><span style="color: #008000;">在后面这里就访问不到，返回undefined</span></pre><br></div><br><hr><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>类型检测</strong></span></p><br><ul><br><li><span style="color: #ff0000; font-size: 14pt;"><code><strong>instanceof</strong></code></span>运算符用来测试一个对象在其原型链构造函数上是否具有<span style="color: #ff0000;">prototype</span>属性。<br><ul><br><li><code><span style="color: #ff0000;"><strong>instanceof</strong></span>&nbsp;</code>运算符用来检测&nbsp;<code><span style="color: #ff0000;"><strong>constructor.prototype</strong></span>&nbsp;</code>是否存在于参数&nbsp;<code><strong><span style="color: #ff0000;">object</span></strong>&nbsp;</code>的原型链上。</li><br></ul><br></li><br></ul><br><p>　　　　　　语法：<span style="color: #ff0000;"><code><em>object</em> instanceof <em>constructor</em></code></span></p><br><p><span style="color: #ff0000;"><em>　　　　　　<img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019235009388-894727157.png" alt=""></em></span></p><br><p><span style="color: #ff0000;"><em>　　　　　　<img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019235019467-1629600225.png" alt=""></em></span></p><br><p>&nbsp;　　（注意：instanceof 在跨 iframe 的时候不可以使用 ，相当于两个窗口下的对象）</p><br><ul><br><li><code><span style="color: #ff0000; font-size: 14pt;"><strong>typeof</strong></span>操作符返回一个<strong>字符串</strong>,</code>指示未<code>经</code>计算的操作数的类型<code></code></li><br></ul><br><ol><br><li>typeof可以一次准确判断出&ldquo;number&rdquo;、”boolean”、&ldquo;string&rdquo;、&ldquo;undefined&rdquo;、&ldquo;function&rdquo;</li><br><li>Array需要使用 isArray()方法去判断</li><br></ol><br><ul><br><li><span style="font-size: 18px;"><span style="font-size: 18px;"><span style="font-size: 14pt; color: #ff0000;"><strong>Object.prototype.toString</strong></span>用来准确判断具体的Object类型</span></span><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var obj =<span style="color: #000000;"> {};<br><span style="color: #0000ff;">var arr =<span style="color: #000000;"> [];<br><span style="color: #0000ff;">var da=<span style="color: #0000ff;">new<span style="color: #000000;"> Date();<br><span style="color: #0000ff;">var re=<span style="color: #0000ff;">new RegExp(<span style="color: #800000;">“”<span style="color: #000000;">);<br><br><br>console.log(Object.prototype.toString.call(obj)); <span style="color: #008000;">//<span style="color: #008000;">[object Object]<br>console.log(Object.prototype.toString.call(arr)); <span style="color: #008000;">//<span style="color: #008000;">[object Array]<br>console.log(Object.prototype.toString.call(<span style="color: #0000ff;">null)); <span style="color: #008000;">//<span style="color: #008000;">[object Null]<br>console.log(Object.prototype.toString.call(da)); <span style="color: #008000;">//<span style="color: #008000;">[object Date]<br>console.log(Object.prototype.toString.call(re)); <span style="color: #008000;">//<span style="color: #008000;">[object RegExp]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br></div><br>　</li><br><li><strong>其他情况的一些检测</strong></li><br></ul><br><ol><br><li>在if()判断语句中不需要将对象转换为boolean</li><br><li>除了<span style="color: #ff0000;">null</span>与<span style="color: #ff0000;">undefined</span>，其他的对象都有toString()方法，将该对象转化为string</li><br><li>number类型对象调用<span style="color: #ff0000;">toString()</span>方法时，需要用（）将自己括起来活着使用双点号</li><br><li><br><div class="cnblogs_code"><br><pre>console.log((123).toString()); <span style="color: #008000;">//</span><span style="color: #008000;">‘123’</span><br>console.log(123..toString());   <span style="color: #008000;">//</span><span style="color: #008000;">‘123’</span></pre><br></div><br></li><br><li>判断对象&ldquo;<span style="color: #ff0000;">null</span>&rdquo;,需要使用 <span style="color: #ff0000;">obj === null</span> ,”全等号”的形式</li><br></ol><br><p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_object/" data-id="cj0wb4swa000y6kf0d5ccjsoa" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js_common" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_common/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.726Z" itemprop="datePublished">2017-03-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/30/js_common/">Javascript 之 常见问题收集</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>1、<span style="font-size: 14pt;">写一个按照下面方式调用都能正常工作的 sum 方法</span></strong></p><br><div class="cnblogs_code"><br><pre>console.log(sum(2,3)); <span style="color: #008000;">//</span><span style="color: #008000;"> Outputs 5</span><br>console.log(sum(2)(3)); <span style="color: #008000;">//</span><span style="color: #008000;"> Outputs 5</span></pre><br></div><br><p>解决方案</p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> sum() {<br>  </span><span style="color: #0000ff;">var</span> fir = arguments[0<span style="color: #000000;">];<br>  </span><span style="color: #0000ff;">if</span> (arguments.length === 2<span style="color: #000000;">) {<br>    </span><span style="color: #0000ff;">return</span> arguments[0] + arguments[1<span style="color: #000000;">]<br>  } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> (sec) {<br>      </span><span style="color: #0000ff;">return</span> fir +<span style="color: #000000;"> sec;<br>    }<br>  }<br>}<br>sum(</span>2)(5)</pre><br></div><br><p><strong>2、<span style="font-size: 14pt;">下面的代码会输出什么？为什么？</span></strong></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> arr1 = “john”.split(‘’<span style="color: #000000;">); j o h n<br></span><span style="color: #0000ff;">var</span> arr2 =<span style="color: #000000;"> arr1.reverse(); n h o j<br></span><span style="color: #0000ff;">var</span> arr3 = “jones”.split(‘’<span style="color: #000000;">); j o n e s<br>arr2.push(arr3);<br>console.log(</span>“array 1: length=” + arr1.length + “ last=” + arr1.slice(-1<span style="color: #000000;">));<br>console.log(</span>“array 2: length=” + arr2.length + “ last=” + arr2.slice(-1));</pre><br></div><br><ul><br><li>reverse() 会改变数组本身，并返回原数组的引用。</li><br><li>slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。<br><div class="cnblogs_code"><br><pre><span style="color: #000000;">stringObject.slice(start,end);<br>arrayObject.slice(start,end);</span></pre><br></div><br><ul><br><li>start和end如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符，-2 指倒数第二个字符，以此类推。　</li><br></ul><br></li><br></ul><br><p>3、<span style="font-size: 14pt;"><strong>下面的代码会输出什么？为什么？</strong></span></p><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> console.log(1 + “2” + “2”<span style="color: #000000;">);<br></span><span style="color: #008080;">2</span> console.log(1 + +”2” + “2”<span style="color: #000000;">);<br></span><span style="color: #008080;">3</span> console.log(1 + -“1” + “2”<span style="color: #000000;">);<br></span><span style="color: #008080;">4</span> console.log(+”1” + “1” + “2”<span style="color: #000000;">);<br></span><span style="color: #008080;">5</span> console.log( “A” - “B” + “2”<span style="color: #000000;">);<br></span><span style="color: #008080;">6</span> console.log( “A” - “B” + 2);</pre><br></div><br><p>　　我们先来看几条规则：</p><br><ul><br><li>数字字符串之前存在数字中的正负号(+/-)时，会被转换成数字<br><div class="cnblogs_code"><br><pre>console.log(“类型：”+(<span style="color: #0000ff;">typeof</span> ‘3’)+” 内容为：”+’3’)      <span style="color: #008000;">//</span><span style="color: #008000;">类型：string 内容为：3</span><br>console.log(“类型：”+(<span style="color: #0000ff;">typeof</span> +’3’)+” 值为：”+(+’3’))    <span style="color: #008000;">//</span><span style="color: #008000;">类型：number 值为：3</span><br>console.log(“类型：”+(<span style="color: #0000ff;">typeof</span> -‘3’)+” 值为：”+(-‘3’)); 　<span style="color: #008000;">//</span><span style="color: #008000;">类型：number 值为：-3</span></pre><br></div><br></li><br><li>(字符串 + 数字) 或者 (数字+字符串) ，都得到一个字符<br><div class="cnblogs_code"><br><pre>console.log(5 + ‘A’);    <span style="color: #008000;">//</span><span style="color: #008000;">5A </span><br>console.log(‘A’ + 5);    <span style="color: #008000;">//</span><span style="color: #008000;">A5</span><br>console.log(NaN + ‘A’); <span style="color: #008000;">//</span><span style="color: #008000;">NaNA</span><br>console.log(‘A’ + NaN); <span style="color: #008000;">//</span><span style="color: #008000;">ANaN</span></pre><br></div><br></li><br><li>对于运算结果不能转换成数字的，将返回 NaN<br><div class="cnblogs_code"><br><pre>console.log(‘a’ * ‘sd’); <span style="color: #008000;">//</span><span style="color: #008000;">NaN</span><br>console.log(‘A’ - ‘B’); <span style="color: #008000;">//</span><span style="color: #008000;"> NaN</span></pre><br></div><br></li><br><li>其他的一些例子<br><div class="cnblogs_code"><br><pre>console.log(‘-3’ - 2 + 1);    <span style="color: #008000;">//</span><span style="color: #008000;">-4   number类型</span><br>console.log( 3 + ‘-2’ + 1);   <span style="color: #008000;">//</span><span style="color: #008000;">3-21 string类型</span><br>console.log( 3 - ‘-2’ + 1);   <span style="color: #008000;">//</span><span style="color: #008000;">6    number类型</span></pre><br></div><br></li><br><li><span style="color: #ff6600;"><strong>也许我们已经有答案了</strong></span><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> console.log(1 + “2” + “2”);      <span style="color: #008000;">//</span><span style="color: #008000;"> “122”</span><br><span style="color: #008080;">2</span> console.log(1 + +”2” + “2”);     <span style="color: #008000;">//</span><span style="color: #008000;"> “32”</span><br><span style="color: #008080;">3</span> console.log(1 + -“1” + “2”);     <span style="color: #008000;">//</span><span style="color: #008000;"> “02”</span><br><span style="color: #008080;">4</span> console.log(+”1” + “1” + “2”);   <span style="color: #008000;">//</span><span style="color: #008000;">“122”</span><br><span style="color: #008080;">5</span> console.log( “A” - “B” + “2”);  <span style="color: #008000;">//</span><span style="color: #008000;"> “NaN2”</span><br><span style="color: #008080;">6</span> console.log( “A” - “B” + 2);    <span style="color: #008000;">//</span><span style="color: #008000;">NaN</span></pre><br></div><br><p>&nbsp;（未完待续）</p><br></li><br></ul><br><p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_common/" data-id="cj0wb4sw5000s6kf0udwefn9q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js_cal" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_cal/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.725Z" itemprop="datePublished">2017-03-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/30/js_cal/">Javascript 之 运算符</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><p><span style="font-size: 14px;"><strong>1、<span style="font-size: 14pt;">关于Javascript中的&ldquo;===&rdquo;与&ldquo;==&rdquo;的比较</span></strong></span></p><p></p>
-<p></p><p><span style="font-size: 14px;"><strong>　　简而言之：&ldquo;===&rdquo;要求类型与数值都相等。<br></strong></span></p><p></p>
-<p></p><p><span style="font-size: 14px;"><strong>　　　　　　　　&ldquo;==&rdquo;只要求数值相等</strong></span></p><p></p>
-<p><div class="cnblogs_code"></div></p>
-<p><pre><span style="color: #0000ff;">var</span> num_str=&ldquo;1&rdquo;;  <span style="color: #008000;">//</span><span style="color: #008000;"> num_str为字符型变量</span><br><span style="color: #000000;"><br>num_str  </span>==  1;<span style="color: #008000;">//</span><span style="color: #008000;">结果为true</span><br><span style="color: #000000;"><br>num_str </span>=== 1;<span style="color: #008000;">//</span><span style="color: #008000;">值相同，但是类型不相同。结果为false</span></pre></p>
-<p>1===1 ;<span style="color: #008000;">//</span><span style="color: #008000;">值与类型都相同，返回true</span></p>
-<p>1===2 ；<span style="color: #008000;">//</span><span style="color: #008000;">类型同，值不同，返回false</span><br></p>
-<p></p><p>&nbsp;</p><p></p>
-<p></p><p><span style="font-size: 14px;"><strong>2、<span style="font-size: 14pt;">关于&ldquo;<strong>||</strong>&rdquo;与&ldquo;&amp;&amp;&rdquo;逻辑符</span><br></strong></span></p><p></p>
-<p></p><p><span style="font-size: 14px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 设有 A||B&nbsp;&nbsp; 与 C&amp;&amp;D</strong></span></p><p></p>
-<p></p><p><span style="font-size: 14px;"><strong>　　A与B只需要有一个为真，整体则都为真<br></strong></span></p><p></p>
-<p></p><p><span style="font-size: 14px;"><strong>　　C与D只需要有一个为假，则整体值为假<br></strong></span></p><p></p>
-<p></p><p><span style="font-size: 14px;">　　注意：<span style="color: #ff0000;">若A为真，则B部分就不需要被执行了</span>。<strong><br></strong></span></p><p></p>
-<p></p><p><span style="font-size: 14px;"><strong>　　　　</strong>　<span style="color: #ff0000;">若C为假，则D部分就不需要被执行了</span>。</span></p><p></p>
-<p></p><p><span style="font-size: 14px;"><strong>　　　　　　</strong>（Javascript默认不执行）</span></p><p></p>
-<p></p><p><span style="font-size: 14px;"><span style="font-size: 14px;"><strong>3、<span style="font-size: 14pt;">操作符之间的优先级　</span></strong><span style="font-size: 14px;">　　</span></span></span></p><p></p>
-<p></p><p><span style="font-size: 14px;"><span style="font-size: 14px;"><span style="font-size: 14px;">　　<strong>算术操作符</strong> &gt; <strong>比较操作符</strong> &gt; <strong>逻辑操作符</strong> &gt;<strong>&nbsp; 赋值等号”=”</strong></span></span></span></p><p></p>
-<p></p><p><strong><span style="font-size: 16px;"><span style="color: #ff0000;"><span style="color: #000000;">4、<span style="font-size: 14pt;">运算符的特殊用法（<strong><span style="color: #ff0000;"><span style="color: #000000;">隐式转换</span></span></strong>）</span></span></span></span></strong></p><p></p>
-<p><div class="cnblogs_code"></div></p>
-<p><pre><span style="color: #008080;">1 <span style="color: #0000ff;">var x = “66H34TYY” + 42<span style="color: #000000;"> ;<br><span style="color: #008080;">2 <span style="color: #0000ff;">var y = 42 + “hahaha”<span style="color: #000000;">;<br><span style="color: #008080;">3 “37” + 37 </span></span></span></span></span></span></span></pre><br></p>
-<p></p><p>　　以上三种 &ldquo;+&rdquo; 号都理解为字符串拼接，返回的都是一个string类型数据</p><p></p>
-<p><div class="cnblogs_code"></div></p>
-<p><pre><span style="color: #008080;">1  <span style="color: #0000ff;">var result = “37” - 7 </span></span></pre><br></p>
-<p></p><p>　　这里的 &ldquo;-&rdquo; 号却理解为 减法</p><p></p>
-<p><div class="cnblogs_code"></div></p>
-<p><pre><span style="color: #008000;">//<span style="color: #008000;">设car为null<br>1 car - 0    　　　　<span style="color: #008000;">//<span style="color: #008000;">car 减去 0<br>2 car + &ldquo;&rdquo; 　　    <span style="color: #008000;">//<span style="color: #008000;">car加上空字符串</span></span></span></span></span></span></pre><br></p>
-<p></p><p>　<span style="font-size: 16px;"><strong>　可利用这两种办法，巧妙地把car(<span style="color: #ff0000;">做减法</span>)变为<span style="color: #ff0000;">number</span>或者（<span style="color: #ff0000;">做加法）变为<span style="color: #ff0000;">string</span></span></strong></span></p><p></p>
-<p></p><p><span style="font-size: 16px; color: #000000;"><strong>5、特殊性的使用情况</strong></span></p><p></p>
-<ol><br><li><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> a = b = <span style="color: #800080;">3</span>;</pre><br></div><br><p>相当于</p><br><div class="cnblogs_code"><br><pre>b = 3<span style="color: #000000;">;<br></span><span style="color: #0000ff;">var</span> a = b;</pre><br></div><br><p>所以 b 成了全局变量，而 a 是自执行函数的一个局部变量。</p><br></li><br></ol>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_cal/" data-id="cj0wb4sw8000u6kf0di7pb8ij" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js_9" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_9/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.723Z" itemprop="datePublished">2017-03-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/30/js_9/">Javascript 之 变量提升</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;</p><br><blockquote><br><p>刚开始接触JavaScript，感觉它是个弱类型的脚本语言，语法十分宽松，好学好上手。</p><br><p>过了一阵了，渐渐地感觉到这个脚本语言其实他并不<span style="font-size: 18pt;"><strong>&ldquo;脚本&rdquo;</strong><span style="font-size: 14px;">,也一点不</span></span><span style="font-size: 18pt;"><strong>&ldquo;</strong></span><span style="font-size: 18pt;"><strong>弱&rdquo;<span style="font-size: 15px;">。</span></strong></span></p><br><p><span style="font-size: 18pt;"><span style="font-size: 15px;"><span style="font-size: 14px;">要是你不了解他的</span></span><strong><span style="font-size: 15px;"><span style="font-size: 14pt;">&ldquo;弱&rdquo;</span></span></strong><span style="font-size: 14px;">，不了解</span><span style="font-size: 15px;"><span style="font-size: 14px;">这种</span></span><strong><span style="font-size: 15px;"><span style="font-size: 14pt;">脚本语言的任性</span><span style="font-size: 14px;">，</span></span></strong><span style="font-size: 14px;">后果肯定是一次次的—<strong><span style="font-size: 14pt;">&ldquo;咦？明明没有错啊？这xx也行？&rdquo;</span></strong></span></span></p><br><p><span style="font-size: 18pt;"><span style="font-size: 14px;"><strong><span style="font-size: 14pt;"><span style="font-size: 14px;">JavaScript中的</span><span style="color: #ff0000;"><strong><span style="font-size: 14pt;">函数声明</span></strong></span><span style="font-size: 14px;">和</span><span style="color: #ff0000;"><strong><span style="font-size: 14pt;">函数表达式</span></strong></span><span style="font-size: 14px;">就是一个这样的例子，这两个平时我们看起来和使用起来没有什么差别的东西。</span></span></strong></span></span></p><br></blockquote><br><p>&nbsp;</p><br><p><strong><span style="font-size: 14pt;">&nbsp;两者区别的表现</span></strong></p><br><ul><br><li><span style="font-size: 14px;"><span style="font-size: 14px;"><span style="font-size: 14px;">在<a title="JavaScript进阶(6)---JS函数" href="http://www.cnblogs.com/HXW-from-DJTU/p/5936536.html" target="_top">JavaScript进阶(6)</a>里面，介绍了几种&ldquo;创建&rdquo;函数的方法，其中头两种便是<strong><span style="color: #ff0000;">函数声明</span></strong>与<strong><span style="color: #ff0000;">函数表达式</span></strong><span style="color: #ff0000;"><span style="color: #000000;">。</span></span></span></span></span><br><div class="cnblogs_code"><br><pre><span style="color: #008000;">//</span><span style="color: #008000;">函数声明</span><br><span style="color: #0000ff;">function</span><span style="color: #000000;"> funName(a, b) {<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">function body</span><br>}</pre><br></div><br><div class="cnblogs_code"><br><pre><span style="color: #008000;">//</span><span style="color: #008000;">函数表达式，他最大的特点就是像给变量赋值，只不过赋的是一个匿名的函数对象</span><br><span style="color: #0000ff;">var</span> funName = <span style="color: #0000ff;">function</span><span style="color: #000000;"> (a , b){<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">function body</span><br>};</pre><br></div><br></li><br><li><br><p>在平时使用实际编程中，我们经常会把这两种方式混用，看起来没什么区别，<strong>让我们调用一下试试看&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p><br><ul><br><li><strong>函数声明</strong>：<img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021104517545-953621944.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li><br><li><strong>函数表达式：</strong><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021104838185-1624121922.png" alt=""><br><ul><br><li><span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">用函数声明创建的函数compareAB可以在<span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">compareAB</span>定义之前就进行调用</span></li><br><li><span style="font-size: 14px; color: #000000;"><span style="font-family: Microsoft YaHei;"><span style="font-family: Microsoft YaHei;">用函数表达式创建的<span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">compareAB</span>函数不能在<span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">compareAB</span>被赋值之前进行调用</span></span></span></li><br><li>到这这两种区别的原因是javascript的解释器的<span style="font-size: 14pt;"><strong>变量提升</strong></span><strong>（</strong><span style="font-family: Microsoft YaHei; font-size: 14px;"><strong><span style="color: #ff0000;">Javascript hoisting<span style="color: #000000;">）。</span></span></strong></span></li><br></ul><br></li><br></ul><br></li><br></ul><br><p><span style="font-family: Microsoft YaHei; font-size: 14pt;"><strong><span style="color: #ff0000;"><span style="color: #000000;">变量提升</span></span></strong></span></p><br><blockquote><br><p><strong><span style="color: #008000; font-family: Microsoft YaHei; font-size: 16px;"><span style="color: #000000;"><em><strong>In javascript,</strong></em> <strong><em>every variable declaration is hoisted to the top of its declaration context</em></strong>.</span></span></strong></p><br><p><strong>JavaScript解释器，会将函数的声明、变量的声明提前到作用域(上下文)的最顶部先执行,</strong><span style="color: #008000; font-family: Microsoft YaHei; font-size: 16px;"><span style="color: #000000;">但是变量初始化(赋值)的顺序不变</span></span><strong><span style="color: #008000; font-family: Microsoft YaHei; font-size: 16px;"><span style="color: #000000;"><strong>。</strong></span></span></strong></p><br></blockquote><br><ul><br><li>上例子第一种情况在JavaScript解释器中是这样进行的&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021112708763-178327683.png" alt=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 使用 <strong>function</strong> 的函数声明被提前到了最顶部先执行</li><br><li>上例子第二种情况在JavaScript解释器中是这样进行的&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021112239513-1086888604.png" alt="">这样看来就很容易理解了，在函数&ldquo;创建&rdquo;之前调用了它必然会报错</li><br><li><strong>其他的例子</strong><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">var</span> myvar = ‘outterValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">2</span> (<span style="color: #0000ff;">function</span><span style="color: #000000;"> () {<br></span><span style="color: #008080;">3</span> <span style="color: #000000;">  console.log(myvar);<br></span><span style="color: #008080;">4</span>   <span style="color: #0000ff;">var</span> myvar = ‘innerValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">5</span> }) ();</pre><br></div><br><p>变量提升后</p><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">var</span> myvar = ‘outterValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">2</span> (<span style="color: #0000ff;">function</span><span style="color: #000000;"> () {<br></span><span style="color: #008080;">3</span>   <span style="color: #0000ff;">var</span> myvar；            <span style="color: #008000;">//</span><span style="color: #008000;">未进行初始化，则值为undefined</span><br><span style="color: #008080;">4</span>   console.log(myvar);   <span style="color: #008000;">//</span><span style="color: #008000;">输出undefined</span><br><span style="color: #008080;">5</span>   myvar = ‘innerValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">6</span> }) ();</pre><br></div><br><p>&nbsp;</p><br></li><br><li><strong><strong>另一个深刻理解的例子</strong></strong><br><div class="cnblogs_code"><br><pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">var</span><span style="color: #000000;"> fun1;<br></span><span style="color: #008080;"> 2</span> console.log(<span style="color: #0000ff;">typeof</span> (fun2)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;function    </span><br><span style="color: #008080;"> 3</span> console.log(<span style="color: #0000ff;">typeof</span> (<span style="color: #000000;">anonymous</span>)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;undefined</span><br><span style="color: #008080;"> 4</span> <span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">true</span><span style="color: #000000;">) {<br></span><span style="color: #008080;"> 5</span>   <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;"> 6</span>     console.log(‘我是if里面的<span style="color: #000000;">fun2</span> ‘<span style="color: #000000;">);<br></span><span style="color: #008080;"> 7</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;"> 8</span>   fun1 = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anonymous() {<br></span><span style="color: #008080;"> 9</span>     console.log(‘我是if里面的 <span style="color: #000000;">fun1</span>‘<span style="color: #000000;">);<br></span><span style="color: #008080;">10</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">11</span> } <span style="color: #0000ff;">else</span><span style="color: #000000;"> {<br></span><span style="color: #008080;">12</span>   <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;">13</span>     console.log(‘我是else里面的<span style="color: #000000;">fun2</span>‘<span style="color: #000000;">);<br></span><span style="color: #008080;">14</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">15</span>   fun1 = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anonymous() {<br></span><span style="color: #008080;">16</span>     console.log(‘我是else里面的 <span style="color: #000000;">fun1</span>‘<span style="color: #000000;">);<br></span><span style="color: #008080;">17</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">18</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">19</span> fun2();  <span style="color: #008000;">//</span><span style="color: #008000;">我是else里面的fun2  </span><br><span style="color: #008080;">20</span> fun1(); <span style="color: #008000;">//</span><span style="color: #008000;"> 我是if里面的 fun1</span></pre><br></div><br><p><strong>从中我们可以总结几点</strong>：</p><br><ul><br><li>if-else语句不会形成新的作用域，变量的提升提升到了全文的顶部</li><br><li><span style="font-family: Microsoft YaHei; font-size: 14px;">检测到作用域内有两个同名的fun2函数的定义，第一个定义先被提升，第二个定义接着被提升（第二个定义在第一个定义之下），第二个定义<span style="font-size: 18px;"><strong>覆盖</strong></span>了第一个fun2定义，所以fun2()是按照后者输出”<span style="color: #008000;"><span style="font-size: 16px;"><strong><span style="color: #ff0000;">我是else里面的fun2</span></strong></span>“</span></span></li><br><li><span style="font-family: Microsoft YaHei; font-size: 14px;">而fun1是用函数表达式创建的，其<span style="font-size: 18px;"><strong>表达式的内容是在JS运行时（不是解析时）才能确定</strong></span>（这里条件判断就起到作用了），所以fun1表达式执行了第一个函数定义并赋值，则fun1（）输出”<span style="color: #ff0000; font-size: 16px;"><strong>我是if里面的</strong> </span><span style="color: #000000;"><span style="font-size: 16px;"><strong><span style="color: #ff0000;">fun1</span></strong></span>“</span>。</span></li><br><li>相信大家不难把js解释器里面的<span style="font-size: 18px;">真实执行过程</span>写出来<br><div class="cnblogs_code"><br><pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">var</span><span style="color: #000000;"> fun1;<br></span><span style="color: #008080;"> 2</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;"> 3</span>   console.log(‘我是if里面的fun2’<span style="color: #000000;">);<br></span><span style="color: #008080;"> 4</span> <span style="color: #000000;">}<br></span><span style="color: #008080;"> 5</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;"> 6</span>   console.log(‘我是else里面的fun2’<span style="color: #000000;">);<br></span><span style="color: #008080;"> 7</span> <span style="color: #000000;">}<br></span><span style="color: #008080;"> 8</span> console.log(<span style="color: #0000ff;">typeof</span> (fun2)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;function    </span><br><span style="color: #008080;"> 9</span> console.log(<span style="color: #0000ff;">typeof</span> (anoymous)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;undefined</span><br><span style="color: #008080;">10</span> <span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">true</span><span style="color: #000000;">) {<br></span><span style="color: #008080;">11</span>   <span style="color: #008000;">//</span><span style="color: #008000;">这里的fun2声明被hoisting…到了顶部</span><br><span style="color: #008080;">12</span>   sayHello = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anoymous() {<br></span><span style="color: #008080;">13</span>     console.log(‘我是if里面的 fun1’<span style="color: #000000;">);<br></span><span style="color: #008080;">14</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">15</span> } <span style="color: #0000ff;">else</span><span style="color: #000000;"> {<br></span><span style="color: #008080;">16</span>   <span style="color: #008000;">//</span><span style="color: #008000;">这里的fun2声明被hoisting…到了顶部</span><br><span style="color: #008080;">17</span>   sayHello = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anoymous() {<br></span><span style="color: #008080;">18</span>     console.log(‘我是else里面的 fun1’<span style="color: #000000;">);<br></span><span style="color: #008080;">19</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">20</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">21</span> fun2(); <span style="color: #008000;">//</span><span style="color: #008000;"> =&gt; 我是else里面的fun2   </span><br><span style="color: #008080;">22</span> fun1(); <span style="color: #008000;">//</span><span style="color: #008000;"> =&gt; 我是if里面的 fun1</span></pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br></li><br></ul><br><p>（以上内容改编自<a href="http://home.cnblogs.com/u/isaboy/" target="_blank" rel="external">JackWang-CUMT</a>的文章《<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/isaboy/p/javascript_function.html" target="_blank" rel="external">详解Javascript 函数声明和函数表达式的区别</a>》）</p><br><p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_9/" data-id="cj0wb4svy000o6kf0a35x6o0l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js_8_oop" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_8_oop/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.721Z" itemprop="datePublished">2017-03-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/30/js_8_oop/">Javascript 之 面向对象编程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>面对对象编程（OOP）</strong></span></p><br><ul><br><li><span style="font-size: 16px;"><strong>OOP定义</strong></span></li><br></ul><br><blockquote><br><p><span style="font-size: 18px;"><strong>　　</strong>面对对象程序设计（<span style="color: #ff0000;">O</span>bject-<span style="color: #ff0000;">o</span>riented <span style="color: #ff0000;">p</span>rogramming ，OOP），是一种程序设计范型，同时也是一种程序开发的方法。对象指的是类的实例。他将对象作为程序作用的基本单元，将程序和数据封装其中，以提高程序的复用性。</span></p><br><p><span style="font-size: 18px;">　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　—维基百科</span></p><br></blockquote><br><ul><br><li><span style="font-size: 16px;"><strong>OOP特点（相信大家都已烂熟于心）</strong></span><br><ul><br><li><span style="font-size: 14px;">继承　　</span></li><br><li><span style="font-size: 14px;">封装　　</span></li><br><li><span style="font-size: 14px;">多态　　</span></li><br><li><span style="font-size: 14px;">抽象　<strong>　</strong></span></li><br></ul><br></li><br><li><span style="font-size: 16px;"><strong>对象实例化下的原型链</strong></span><br><br><ul><br><li><span style="font-size: 14px;"><span style="font-size: 14px;">任意声明一个函数foo，其prototype属性是一个object</span></span><br><ul><br><li><strong><span style="font-size: 14pt;"><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019104359263-1973515579.png" alt=""></span></strong></li><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></ul><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></li><br><li>继续测试JavaScript的内置构造器Number()，发现其prototype属性仍是一个object<br><ul><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019104646482-1460434618.png" alt=""></li><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></ul><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></li><br><li>举例说明<br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> Foo(){<br></span><span style="color: #008080;">2</span>   <span style="color: #0000ff;">this</span>.x = “x”<span style="color: #000000;"> ;<br></span><span style="color: #008080;">3</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">4</span> Foo.prototype.y=”y”<span style="color: #000000;">;<br></span><span style="color: #008080;">5</span> <span style="color: #0000ff;">var</span> foo1 = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Foo();<br></span><span style="color: #008080;">6</span> console.log(foo1.x);   <span style="color: #008000;">//</span><span style="color: #008000;"> x</span><br><span style="color: #008080;">7</span> console.log(foo1.y);   <span style="color: #008000;">//</span><span style="color: #008000;"> y</span></pre><br></div><br><p>首先明确几点：</p><br><ul><br><li>prototype与<strong>proto</strong>不是一回事，prototype是一个<span style="color: #ff0000;">JS对象</span>，而<strong>proto</strong>是一个（几乎）所有对象都有的一个<span style="color: #ff0000;">属性</span>。</li><br><li>prototype是函数对象上预设的<span style="color: #ff0000;">对象属性</span>（因为他是一个object）</li><br><li><strong>proto</strong>是对象上的原型，通常指向其构造器的prototype属性</li><br><li>第2行的 this 在第 5 行使用new关键字创建对象的时候，这个this指向的是一个原型(即<strong>proto</strong>属性)为Fun的prototype的一个空对象，然后通过this.x=”x” 给这个空对象赋予属性。不难看出这里的this就是指向新生成的foo1对象，使用this.x挂载的属性也将直接挂载在foo1对象上。</li><br><li>在使用 new 进行创建对象实例的时候，prototype会被用作 new 出来这些对象的原型</li><br><li>结构表示如图<img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019110153029-2063470187.png" alt="" width="433" height="371"></li><br></ul><br></li><br><li><span style="font-size: 14pt;"><strong>使用new创建对象实例之后，动态修改prototype的影响</strong></span><br><ul><br><li>修改已经存在的prototype上的属性 ，<span style="color: #ff0000;">会直接对已经创建的实例造成影响 &nbsp; &nbsp;</span><strong><span style="color: #ff0000;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019165133592-1308231152.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></strong></li><br><li>直接修改prototype对象本身，<span style="color: #ff0000;">不会对已经创建的实例造成影响</span><br><div class="cnblogs_code"><br><pre>Foo.prototype = {  } ;  <span style="color: #008000;">//<span style="color: #008000;">直接将prototype对象设置为一个空对象，这算是对prototype属性的自身的直接修改</span></span></pre><br></div><br><p><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019170032388-1513806563.png" alt=""></p><br></li><br><li>无论使用上述哪种方法，修改过prototype属性后，再使用new创建的实例，都会受到此次修改的影响</li><br></ul><br>　　　　　　</li><br></ul><br></li><br></ul><br><p><span style="font-size: 14pt;"><strong>OOP实现继承</strong></span></p><br><div class="cnblogs_code"><br><pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> Person(name,age){<br></span><span style="color: #008080;"> 2</span>   <span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> name ;<br></span><span style="color: #008080;"> 3</span>   <span style="color: #0000ff;">this</span>.age =<span style="color: #000000;"> age;<br></span><span style="color: #008080;"> 4</span> <span style="color: #000000;">}<br></span><span style="color: #008080;"> 5</span><br><span style="color: #008080;"> 6</span> Person.prototype.sayHi = <span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br></span><span style="color: #008080;"> 7</span>   console.log(“我的名字是：”+<span style="color: #0000ff;">this</span>.name+”我今年”+<span style="color: #0000ff;">this</span>.age+”岁。”<span style="color: #000000;">);<br></span><span style="color: #008080;"> 8</span> <span style="color: #000000;">}<br></span><span style="color: #008080;"> 9</span> Person.prototype.LEGS_NUM = 2<span style="color: #000000;">;<br></span><span style="color: #008080;">10</span> Person.prototype.ARMS_NUM = 2<span style="color: #000000;"> ;<br></span><span style="color: #008080;">11</span> Person.prototype.walk=<span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br></span><span style="color: #008080;">12</span>   console.log(<span style="color: #0000ff;">this</span>.name + “会走路…..”<span style="color: #000000;">);<br></span><span style="color: #008080;">13</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">14</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> Student(name,age,className){<br></span><span style="color: #008080;">15</span> Person.call(<span style="color: #0000ff;">this</span><span style="color: #000000;">,name,age);<br></span><span style="color: #008080;">16</span> <span style="color: #0000ff;">this</span>.className =<span style="color: #000000;"> className;<br></span><span style="color: #008080;">17</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">18</span><br><span style="color: #008080;">19</span><br><span style="color: #008080;">20</span> Student.prototype = Object.create(Person.prototype);   <span style="color: #008000;">//</span><span style="color: #008000;">创建一个空对象，并且这个对象的原型指向传入的参数</span><br><span style="color: #008080;">21</span> Student.prototype.constructor = Student;         <span style="color: #008000;">//</span><span style="color: #008000;">手动将刚才创建的对象的construct指向Student，若不修改则指向Person</span><br><span style="color: #008080;">22</span><br><span style="color: #008080;">23</span><br><span style="color: #008080;">24</span> <span style="color: #008000;">//</span><span style="color: #008000;">定义Student类自己的方法sayHi</span><br><span style="color: #008080;">25</span> Student.prototype.sayHi = <span style="color: #0000ff;">function</span><span style="color: #000000;"> (){<br></span><span style="color: #008080;">26</span>     console.log(“我的名字是：”+<span style="color: #0000ff;">this</span>.name+”我是”+<span style="color: #0000ff;">this</span>.className+”班的学生。”<span style="color: #000000;">);<br></span><span style="color: #008080;">27</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">28</span> <span style="color: #008000;">//</span><span style="color: #008000;">定义Student类自己的方法goto_school</span><br><span style="color: #008080;">29</span> Student.prototype.goto_school=<span style="color: #0000ff;">function</span><span style="color: #000000;">(subject){<br></span><span style="color: #008080;">30</span>   console.log(<span style="color: #0000ff;">this</span>.name + “每天要去上”+subject+”课”<span style="color: #000000;">);<br></span><span style="color: #008080;">31</span> <span style="color: #000000;">}<br></span><br></pre><br></div><br><p>&nbsp;</p><br><div class="cnblogs_code"><br><pre> <span style="color: #008000;">//</span><span style="color: #008000;">测试</span><br><span style="color: #0000ff;">var</span> Jay = <span style="color: #0000ff;">new</span> Student(“Jay”,37,”三年二班”<span style="color: #000000;">);<br> Jay.sayHi();                    </span><span style="color: #008000;">//</span><span style="color: #008000;">我的名字是：Jay我今年37岁。</span><br> console.log(Jay.LEGS_NUM);            <span style="color: #008000;">//</span><span style="color: #008000;">2</span><br> Jay.walk();                    <span style="color: #008000;">//</span><span style="color: #008000;">Jay会走路…..</span><br> Jay.goto_school(“数学”);            <span style="color: #008000;">//</span><span style="color: #008000;">Jay每天要去上数学课</span></pre><br></div><br><p>&nbsp;</p><br><p>&nbsp;</p><br><ul><br><li><span style="color: #000000;">&nbsp;(25行)sayHi方法绑定在Student的prototype上，每当Student实例访问sayHi方法时候，先会在对象本身上找有没有这个方法，发现没有。然后在Student中找到了，则不会继续原型链向上查找，与Java中覆盖父类方法类似</span></li><br><li>在函数对象内使用this参数接收的变量，使用new实例化的时候，会作为新创建的对象的直接属性。例如例子中的，name、age、className属性。</li><br><li>（20行）实现继承的时候，必须把父类(Person)和子类(Student)的prototype指向的对象分开来，因为子类在添加自己的属性和方法的时候就不会影响到父类的一些属性和方法。</li><br><li><strong>例子中原型链继承结构如下</strong><br><ul><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019140801795-1576067828.png" alt="" width="704" height="394"></li><br><li>从结构图中不难发现，Student.prototype是使用Object.create()方法创建的(20行)，所以他的原型(<strong>proto</strong>属性)指向的是Person.prototype。</li><br><li>对象的prototype的<strong>proto</strong>属性一般都指向原型链顶端的Object.prototype。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 　　　　&nbsp;&nbsp;&nbsp; <img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019143659935-1927762078.png" alt=""><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 　　</strong></li><br></ul><br></li><br></ul><br><p><span style="font-size: 14pt;"><strong>特别注意</strong></span></p><br><blockquote><br><p><strong>上述例子中的<strong>proto</strong>属性在chrome浏览器中测试有效，在其他环境中，请使用Object提供的方法<span style="font-size: 14pt; color: #ff0000;"><strong>Object.getPrototypeOf(目标对象)</strong></span></strong><span style="font-size: 14pt; color: #ff0000;"><span style="color: #000000;"><span style="font-size: 15px;">的方法获取对象的原型<span style="color: #ff0000;"><span style="color: #000000;">。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</span></span></span><span style="font-size: 14pt; color: #ff0000;"><span style="color: #000000;"><strong><span style="color: #000000;"><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019143314342-109895536.png" alt=""></span></strong></span></span></span></span></p><br></blockquote><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p><span style="font-size: 14pt; color: #ff0000;"><span style="color: #000000;"><span style="font-size: 15px;">（本文归纳自慕课网大BOSN的课程<a class="linkification-ext" title="Linkification: http://www.imooc.com/video/7054，加入了些许个人理解，若侵权私信告知）" href="http://www.imooc.com/video/7054，加入了些许个人理解，若侵权私信告知）" target="_blank" rel="external">http://www.imooc.com/video/7054，加入了些许个人理解，若侵权私信告知）</a></span><br></span></span></p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p><span style="color: #000000;">&nbsp;</span></p><br><p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_8_oop/" data-id="cj0wb4svs000i6kf0jck2ips8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js_7_function1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_7_function1/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.719Z" itemprop="datePublished">2017-03-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/30/js_7_function1/">Javascript 之 函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><blockquote>JS中的函数也是一种对象</blockquote></p>
-<p><blockquote>函数的返回值是return来决定的，没有则返回undefined</blockquote></p>
-<p><span style="font-size: 14pt;"><strong>　1、函数声明法　　</strong></span></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> add(a, b) {<br>    a </span>= a +<span style="color: #000000;"> a;<br>    b </span>= b +<span style="color: #000000;"> b;<br>}　　　　　</span></pre><br></div><br><p><strong><span style="font-size: 14pt;">　2、函数表达式法</span></strong></p><br><ul><br><li><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> add = function (a , b){ ……};</pre><br></div><br></li><br><li><br><div class="cnblogs_code"><br><pre>(function(){……}());</pre><br></div><br></li><br><li><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">return</span> function (){……}</pre><br></div><br></li><br><li><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> add =function foo(a,b){……}; <span style="color: #008000;">//</span><span style="color: #008000;">命名式函数表达式，存在兼容问题，并不常用</span></pre><br></div><br></li><br></ul><br><ul><br><li style="list-style-type: none;"><br><ul><br><li><span style="font-size: 18px;">为什么函数声明的前面可以提前调用该函数？</span><br><ul><br><li>因为函数声明在加载时是被预先处理的，而函数表达式中，只有函数里声明的变量会被预先处理。</li><br><li><br><div class="cnblogs_code"><br><pre>add(<span style="color: #800080;">5</span>,<span style="color: #800080;">4</span><span style="color: #000000;">);<br></span><span style="color: #0000ff;">var</span> add =function foo(a,b){alert(a+b)};</pre><br></div><br></li><br><li>而函数表达式本身并不会。所以，在函数表达式前调用该函数则会报错。</li><br></ul><br></li><br></ul><br></li><br></ul><br><p><strong><span style="font-size: 14pt;">3、Function 构造器</span></strong></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> func = <span style="color: #0000ff;">new</span> Function(‘a’,’b’,’console.log(a+b);’<span style="color: #000000;">)<br>func(</span>4,5);</pre><br></div><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>4、箭头函数</strong></span></p><br><ul><br><li><span style="font-size: 14pt;">在ES 6 标准下新增加了一种函数：箭头函数</span></li><br><li><span style="font-size: 14pt;"><span style="font-size: 14pt;"><span style="font-size: 14pt;">例如：</span></span></span><br><div class="cnblogs_code"><br><pre>x =&gt; x<em><span style="color: #000000;">x<br></span><span style="color: #008000;">//</span><span style="color: #008000;">等价于</span><br><span style="color: #0000ff;">function</span><span style="color: #000000;"> (x){<br>    </span><span style="color: #0000ff;">return</span> x</em><span style="color: #000000;">x;<br>  }</span></pre><br></div><br></li><br><li>箭头相当于省略了”function”、”{}”、”return”关键字样</li><br><li>在以下特殊情况需要有特殊的变化<br><ul><br><li>参数不是一个的情况<br><div class="cnblogs_code"><br><pre>(x,y)=&gt; x + y ; <span style="color: #008000;">//</span><span style="color: #008000;">两个参数</span><br><span style="color: #000000;"><br>()</span>=&gt; 500;       <span style="color: #008000;">//</span><span style="color: #008000;">无参数</span><br><br><span style="color: #008000;">//</span><span style="color: #008000;">可变参数的情况</span><br>(x,y, …rest) =&gt;<span style="color: #000000;"> {<br>    </span><span style="color: #0000ff;">return</span> x+<span style="color: #000000;">y;<br>  }</span></pre><br></div><br></li><br></ul><br></li><br></ul><br><ul><br><li style="list-style-type: none;"><br><ul><br><li>返回的内容是对象的情况<br><div class="cnblogs_code"><br><pre>x =&gt; { foo : x}     <span style="color: #008000;">//</span><span style="color: #008000;">错误写法</span><br><span style="color: #000000;"><br>x </span>=&gt; ({foo : x })   <span style="color: #008000;">//</span><span style="color: #008000;">正确写法</span></pre><br></div><br></li><br></ul><br></li><br></ul><br><ul><br><li><span style="font-size: 15px;"><span style="font-size: 15px;">箭头函数完全修复了 this 关键字的指向问题，在箭头函数中，this总是指向词法作用域，也就是外层调用者</span></span><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> obj_arrow =<span style="color: #000000;"> {<br>  birth:</span>1990<span style="color: #000000;">,<br>  getAge:</span><span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br>    </span><span style="color: #0000ff;">var</span> b = <span style="color: #0000ff;">this</span><span style="color: #000000;">.birth;<br>    </span><span style="color: #0000ff;">var</span> fn = ()=&gt;<span style="color: #0000ff;">new</span> Date().getFullYear()-<span style="color: #0000ff;">this</span><span style="color: #000000;">.birth;<br>    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> fn();<br>  }<br>}<br><br>console.log(obj_arrow.getAge());  </span><span style="color: #008000;">//</span><span style="color: #008000;">26 这里的this 直接指向obj</span></pre><br></div><br><p>&nbsp;</p><br></li><br><li><strong>箭头函数使用 <span style="color: #ff0000;">apply</span> 与 <span style="color: #ff0000;">call</span> 时候，因为其内部的 <span style="color: #ff0000;">this</span> 以固定指向此法作用域，则 <span style="color: #ff0000;">call</span> 与<span style="color: #ff0000;"> apply</span> 传入的第一个参数被忽略　　　　</strong></li><br></ul><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><pre>　</pre><br><p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_7_function1/" data-id="cj0wb4svv000m6kf0jie94150" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js_7_function" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_7_function/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.718Z" itemprop="datePublished">2017-03-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/30/js_7_function/">Javascript 之 函数参数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong><span style="font-size: 14pt;">arguments对象</span></strong></p><br><p><strong>　　</strong>在JavaScript中，谈到函数参数，就不得不说一说那个熟悉又陌生的argunemts</p><br><ul><br><li>arguments对象用于承载调用函数时候传入的参数</li><br><li>arguments不是一个数组，但是十分类似一个Array，有length属性，也可以用下标去访问</li><br><li><br><blockquote>arguments对象的长度是由实参个数而不是形参个数决定的。形参是函数内部重新开辟内存空间存储的变量，但是其与arguments对象内存空间并不重叠。对于arguments和值都存在的情况下，两者值是同步的，但是针对其中一个无值的情况下，对于此无值的情形值不会得以同步。如下代码可以得以验证。<br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> f(a, b, c) {<br>  console.log(arguments.length); </span><span style="color: #008000;">//</span><span style="color: #008000;"> result: “2”</span><br>  a = 100<span style="color: #000000;">;<br>   console.log(arguments[</span>0]);    <span style="color: #008000;">//</span><span style="color: #008000;"> result: “100”</span><br>  arguments[0] = ‘qqyumidi’<span style="color: #000000;">;<br>   console.log(a);               </span><span style="color: #008000;">//</span><span style="color: #008000;"> result: “qqyumidi”</span><br>   console.log(c);               <span style="color: #008000;">//</span><span style="color: #008000;"> result: “undefined”</span><br>   c = 2012<span style="color: #000000;">;<br>   console.log(arguments[</span>2]);    <span style="color: #008000;">//</span><span style="color: #008000;"> result: “undefined” </span><br><span style="color: #000000;">}<br>f(</span>1, 2);                  <span style="color: #008000;">//</span><span style="color: #008000;">实际上只传了两个参数</span></pre><br></div><br><p><strong>此处证明，函数内部的形参一开始为空的时候，则内部形参的值与arguments对应位置的值就不会同步了</strong></p><br><p><strong><span style="font-size: 12px;">（本引用参考自<a class="linkification-ext" title="Linkification: http://www.cnblogs.com/lwbqqyumidi/archive/2012/12/03/2799833.html）" href="http://www.cnblogs.com/lwbqqyumidi/archive/2012/12/03/2799833.html）" target="_blank" rel="external">http://www.cnblogs.com/lwbqqyumidi/archive/2012/12/03/2799833.html）</a></span></strong></p><br></blockquote><br></li><br><li><strong>在Javascript中，函数名相同，<span style="font-size: 16px; color: #ff0000;">传参数目/类型不同，不会被视为两个函数</span>。也不会像JAVA一样进行函数的重载</strong><strong>，利用arguments对象则可以在Javascript中<span style="color: #ff0000;">模拟出重载的效果</span></strong>。<br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> fun() {<br>  </span><span style="color: #0000ff;">if</span> (arguments.length == 0<span style="color: #000000;">) {<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">  do sth;</span><br><span style="color: #000000;">  }<br>  </span><span style="color: #0000ff;">if</span> (arguments.length == 1<span style="color: #000000;">) {<br>    </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> (arguments[0]) == ‘function’<span style="color: #000000;">) {<br>      </span><span style="color: #008000;">//</span><span style="color: #008000;">  do sth for function</span><br><span style="color: #000000;">    }<br>  }<br>  </span><span style="color: #0000ff;">if</span> (arguments.length == 2<span style="color: #000000;">) {<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">  do sth;</span><br><span style="color: #000000;">  }<br>}</span></pre><br></div><br></li><br><li><strong><strong>在Javascript中传参的个数并不会影响函数被调用　　</strong></strong><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> fun(){<br>    </span><span style="color: #0000ff;">return</span> arguments[0] + arguments[1<span style="color: #000000;">];<br>}<br>fun(</span>3,5);      <span style="color: #008000;">//</span><span style="color: #008000;"> 8</span><br>fun(3);        <span style="color: #008000;">//</span><span style="color: #008000;"> NaN</span><br>fun();         <span style="color: #008000;">//</span><span style="color: #008000;">NaN</span></pre><br></div><br><p>例子中的aruguments[0]和aruguments[1]，若未传入，则值为NaN</p><br></li><br><li><strong>arguments对象中有一个实用的属性：callee</strong><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> count(a){<br><br>    console.log(arguments.callee);<br>}<br><br>count(</span>10);<span style="color: #008000;">//</span><span style="color: #008000;"> count(a)</span></pre><br></div><br><p>返回这个函数本身</p><br></li><br></ul><br><p><span style="font-size: 14pt;"><strong>传入过量参数</strong></span></p><br><ul><br><li><span style="font-size: 14pt;"><strong><span style="font-size: 14px;">当调用某个函数时，传入了过多的参数怎么办？</span></strong></span></li><br><li><span style="font-size: 14pt;"><span style="font-size: 14pt;"><strong><span style="font-size: 14px;">在函数声明的时候使用&ldquo;…rest&rdquo;的方式来表示剩余的参数（rest为任意合法名称，为一个数组）</span></strong></span></span><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> fun(a, b, …restArray) {<br>  console.log(</span>‘我们接收了:’ + a + ‘与’ +<span style="color: #000000;"> b);<br>  </span><span style="color: #0000ff;">var</span> count=2<span style="color: #000000;">;<br>  </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">var</span><span style="color: #000000;"> x of restArray){<br>  count</span>++<span style="color: #000000;">;<br>  console.log(</span>“第”+count+”个是：”+<span style="color: #000000;">x);<br>  }<br>}<br>fun(</span>1, 8, 9, 5,8,9,6,4,8,7,8,9<span style="color: #000000;">);<br></span><span style="color: #008000;">/<em></em></span><span style="color: #008000;"><br>我们接收了:1与8<br>第3个是：9<br>第4个是：5<br>第5个是：8<br>第6个是：9<br>第7个是：6<br>第8个是：4<br>第9个是：8<br>第10个是：7<br>第11个是：8<br>第12个是：9<br></span><span style="color: #008000;">/</span></pre><br></div><br><p><strong>Javascript将会把多余的参数使用一个自定义名称的数组将其存放起来</strong></p><br></li><br></ul><br><p><span style="font-size: 14pt;"><strong>传入的参数不够</strong></span></p><br><p><span style="font-size: 14pt;"><strong>　　</strong><span style="font-size: 14px;">当调用某个函数的时候，传入的参数不够（传入的参数比接收的少），javascript就会以undefined去代替缺少的参数。这样一来，就有可能影响原函数内部的操作，现ES 6推行允许给参数福默认值，在传参缺少时，直接使用默认值。</span></span></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span> fun(a = “我是A”, b = “我是B”<span style="color: #000000;">, c){<br>    console.log(a </span>+ “ “ + b + “ “ +<span style="color: #000000;"> c);<br>  }<br><br>fun(</span>“我是A的表姐”);<span style="color: #008000;">//</span><span style="color: #008000;">我是A的表姐 我是B undefined</span></pre><br></div><br><p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_7_function/" data-id="cj0wb4svk000g6kf0ee3y7seg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js_5_closure" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_5_closure/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.704Z" itemprop="datePublished">2017-03-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/30/js_5_closure/">javascript 之 闭包</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><span style="font-size: 15px;"><strong>　　<span style="color: #ff0000;">维基百科：</span></strong></span></p><br><blockquote><br><p><span style="font-size: 15px;"><strong><span style="color: #ff0000;">　　</span><span style="font-size: 15px;"><strong>在计算机中，闭包（也称词法闭包或者函数闭包），是指一个函数或者函数的引用，与一个引用环境绑定在一起。这个引用环境是一个存储该函数每个非局部变量的表。</strong></span></strong></span></p><br></blockquote><br><p><span style="font-size: 15px;"><strong>　　<span style="color: #ff0000;">百度百科：</span>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</strong></span></p><br><blockquote><br><p><span style="font-size: 15px;"><strong>　　　<span style="font-size: 15px;"><strong>　闭包是指可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。&ldquo;闭包&rdquo; 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）</strong></span></strong></span></p><br></blockquote><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br><hr><ol><br><li><span style="font-size: 18pt;"><strong>一个简单的例子</strong><strong><strong>&nbsp;</strong></strong></span><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> outer(){<br>  </span><span style="color: #0000ff;">var</span> localVal = 30<span style="color: #000000;">;<br>  </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br>    </span><span style="color: #0000ff;">return</span><span style="color: #000000;">  localVal;<br>    }<br>  }<br></span><span style="color: #0000ff;">var</span> func =<span style="color: #000000;"> outer ();<br>func();  </span><span style="color: #008000;">//</span><span style="color: #008000;">调用func()函数，得到30</span></pre><br></div><br><p><strong>在outer()函数被调用之后，localVal未被释放，匿名函数执行的时候，仍能够调用外函数outer()中的localVal变量。（这就是一个简单的闭包）</strong></p><br></li><br><li><span style="font-size: 18pt;"><strong>闭包的优缺点</strong></span><br><ul><br><li>优点：灵活方便、可进行封装</li><br><li>不及时释放会造成是空间上的浪费、会造成内存泄漏、会造成性能上的消耗</li><br></ul><br></li><br><li><span style="font-size: 18pt;"><strong><strong>其他例子</strong></strong></span><br><div class="cnblogs_code"><br><pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> count(){<br></span><span style="color: #008080;"> 2</span>     <span style="color: #0000ff;">var</span> arr =<span style="color: #000000;"> [];<br></span><span style="color: #008080;"> 3</span>     <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">var</span> i = 1; i&lt;=3; i++<span style="color: #000000;">){<br></span><span style="color: #008080;"> 4</span>       arr.push(<span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br></span><span style="color: #008080;"> 5</span>         <span style="color: #0000ff;">return</span> i<em><span style="color: #000000;">i;<br></span><span style="color: #008080;"> 6</span> <span style="color: #000000;">      });<br></span><span style="color: #008080;"> 7</span> <span style="color: #000000;">    }<br></span><span style="color: #008080;"> 8</span>   <span style="color: #0000ff;">return</span><span style="color: #000000;"> arr;<br></span><span style="color: #008080;"> 9</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">10</span> <span style="color: #0000ff;">var</span> results =<span style="color: #000000;"> count();<br></span><span style="color: #008080;">11</span> <span style="color: #0000ff;">var</span> res1=results[0<span style="color: #000000;">];<br></span><span style="color: #008080;">12</span> <span style="color: #0000ff;">var</span> res2=results[1<span style="color: #000000;">];<br></span><span style="color: #008080;">13</span> <span style="color: #0000ff;">var</span> res3=results[2<span style="color: #000000;">];<br></span><span style="color: #008080;">14</span><br><span style="color: #008080;">15</span> console.log(res1+”\n”+res2+”\n”+<span style="color: #000000;">res3);<br></span><span style="color: #008080;">16</span> <span style="color: #008000;">/</span></em><span style="color: #008000;">function (){<br></span><span style="color: #008080;">17</span> <span style="color: #008000;">        return i<em>i;<br></em></span><span style="color: #008080;">18</span> <span style="color: #008000;">      }<br></span><span style="color: #008080;">19</span> <span style="color: #008000;">function (){<br></span><span style="color: #008080;">20</span> <span style="color: #008000;">        return ii;<br></span><span style="color: #008080;">21</span> <span style="color: #008000;">      }<br></span><span style="color: #008080;">22</span> <span style="color: #008000;">function (){<br></span><span style="color: #008080;">23</span> <span style="color: #008000;">        return i<em>i;<br></em></span><span style="color: #008080;">24</span> <span style="color: #008000;">      }<br></span><span style="color: #008080;">25</span> <span style="color: #008000;">/</span></pre><br></div><br><ul><br><li><strong>注意在代码第4行中，push进数组的是匿名函数function函数体原封不动地放进了数组，变量 i 也没有进行取值运算</strong></li><br></ul><br></li><br></ol><br><div class="cnblogs_code"><br><pre>console.log(res1()+”\n”+res2()+”\n”+res3());<span style="color: #008000;">/<em></em></span><span style="color: #008000;">16　　16　　16 </span><span style="color: #008000;">/</span></pre><br></div><br><ul><br><li style="list-style-type: none;"><br><ul><br><li><strong>　　因为在<span style="color: #ff0000;">　&ldquo;var results = count();&rdquo;</span> 执行之后，for　循环中的 i 值已经变为 4 ，现在调用，返回 i <em> i 的值自然是<span style="color: #ff0000;">16</span></em></strong></li><br></ul><br></li><br><li>如果想返回我们&ldquo;原本期望的值&ldquo;1 4 9&rdquo;的话，我们尝试做出小的改动　　</li><br><li><br><div class="cnblogs_code"><br><pre>1 <span style="color: #0000ff;">function</span><span style="color: #000000;"> count(){<br></span>2     <span style="color: #0000ff;">var</span> arr =<span style="color: #000000;"> [];<br></span>3     <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">var</span> i = 1; i&lt;=3; i++<span style="color: #000000;">){<br></span>4       arr.push(<span style="color: #0000ff;">function</span><span style="color: #000000;">(n){<br></span>5         <span style="color: #0000ff;">return</span> <span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br></span>6            <span style="color: #0000ff;">return</span> n<span style="color: #000000;">n;<br></span>7<span style="color: #000000;">           }<br></span>8         }(i));                <span style="color: #008000;">//</span><span style="color: #008000;">关键点在此处</span><br>9<span style="color: #000000;">     }<br></span>10   <span style="color: #0000ff;">return</span><span style="color: #000000;"> arr;<br></span>11<span style="color: #000000;">   }<br></span>12 <span style="color: #0000ff;">var</span> results =<span style="color: #000000;"> count();<br></span>13 <span style="color: #0000ff;">var</span> res1=results[0<span style="color: #000000;">];<br></span>14 <span style="color: #0000ff;">var</span> res2=results[1<span style="color: #000000;">];<br></span>15 <span style="color: #0000ff;">var</span> res3=results[2<span style="color: #000000;">];<br></span>16<br>17 console.log(res1+”\n”+res2+”\n”+<span style="color: #000000;">res3);<br></span>18 <span style="color: #008000;">/<em></em></span><span style="color: #008000;">function (){<br></span><span style="color: #008000;">19         return ii;<br></span><span style="color: #008000;">20       }<br></span><span style="color: #008000;">21 function (){<br></span><span style="color: #008000;">22         return i<em>i;<br></em></span><span style="color: #008000;">23       }<br></span><span style="color: #008000;">24 function (){<br></span><span style="color: #008000;">25         return ii;<br></span><span style="color: #008000;">26       }<br></span><span style="color: #008000;">27 </span><span style="color: #008000;"><em>/</em></span><br>28 console.log(res1()+”\n”+res2()+”\n”+res3());<span style="color: #008000;">/</span><span style="color: #008000;"> 1 4 9</span><span style="color: #008000;"><em>/</em></span></pre><br></div><br><p>&nbsp;</p><br></li><br><li><span style="font-size: 15px;"><strong>我们再返回一个函数的同时使用&ldquo;<span style="color: #ff0000;">（）</span>&rdquo;符号将函数就地执行了，这个要才能够保证内部函数中的<span style="color: #ff0000;"> i  i</span> 返回的是当次循环的的<span style="color: #ff0000;"> i</span> 值。</strong></span></li><br></ul><br><p>　　4、<strong><span style="font-size: 18pt;">其他笔记</span></strong></p><br><ul><br><li><strong><strong><span style="font-size: 15px;">因为Javscript不算是一门面对现对象的语言，所以<span style="color: #ff0000;">无法直接封装私有变量</span>，但<span style="color: #ff0000;">利用闭包</span>，我们可以模拟这个过程</span></strong></strong><br><div class="cnblogs_code"><br><pre>1 <span style="color: #0000ff;">function</span><span style="color: #000000;"> create_sth(initial){<br></span>2     <span style="color: #0000ff;">var</span> x = initial || 0<span style="color: #000000;"> ;<br></span>3     <span style="color: #0000ff;">return</span><span style="color: #000000;"> {<br></span>4       inc : <span style="color: #0000ff;">function</span><span style="color: #000000;"> (){<br></span>5         x + = 1<span style="color: #000000;">;<br></span>6           <span style="color: #0000ff;">return</span> x;  <span style="color: #008000;">//</span><span style="color: #008000;">返回的对象中包含着inc函数，该函数又携带着一个局部变量x。</span><br>7<span style="color: #000000;">       }<br></span>8<span style="color: #000000;">     }<br></span>9   }</pre><br></div><br></li><br></ul><br><ul><br><li><span style="font-size: 18px;"><strong>换句话说，<span style="color: #ff6600;">闭包就是携带状态的函数</span>，并且它的状态可以对外界完全隐藏起来。</strong></span></li><br></ul><br><p><span style="font-size: 14pt;"><strong>　　&nbsp;</strong><span style="font-size: 14px;">5、<span style="font-size: 18pt;"><strong>闭包的用处</strong></span></span></span></p><br><div class="cnblogs_code"><br><pre>(<span style="color: #0000ff;">function</span><span style="color: #000000;"> () {<br>  </span><span style="color: #0000ff;">var</span> userID = ‘我的ID’<span style="color: #000000;">;<br>  </span><span style="color: #0000ff;">var</span> someFunc = ‘opening some function’<span style="color: #000000;">;<br>  </span><span style="color: #0000ff;">var</span> privateValue = ‘var定义的内部privateValue’<span style="color: #000000;">;<br>  </span><span style="color: #0000ff;">var</span> publicValue = ‘var定义的内部publicValue’<span style="color: #000000;">;<br>  </span><span style="color: #008000;">//</span><span style="color: #008000;">定义一个空壳对象，用于承载属性与方法</span><br>  <span style="color: #0000ff;">var</span> appObj =<span style="color: #000000;"> {};<br>  </span><span style="color: #008000;">//</span><span style="color: #008000;">定义一个私有方法，处理内部逻辑</span><br>  <span style="color: #0000ff;">function</span><span style="color: #000000;"> usePrivateValue() {<br>    alert(privateValue)<br>  }<br>  </span><span style="color: #008000;">//</span><span style="color: #008000;">绑定一个公有方法，访问的是私有属性</span><br>  appObj.getUserID = <span style="color: #0000ff;">function</span><span style="color: #000000;"> () {<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">do sth</span><br>    userID += ‘ 我被修改过了’<span style="color: #000000;">;<br>    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> userID;<br>  }<br>  </span><span style="color: #008000;">//</span><span style="color: #008000;">绑定一个公有属性,将内部属性暴露出去</span><br>  appObj.publicVal =<span style="color: #000000;"> publicValue;<br>  </span><span style="color: #008000;">//</span><span style="color: #008000;">将创建的对象appObj通过赋值给window.application，挂在全局变量widnow上</span><br>  window.application =<span style="color: #000000;"> appObj;<br>}()); </span><span style="color: #008000;">//</span><span style="color: #008000;">立即执行<br><br></span><br>application.usePrivateValue(); <span style="color: #008000;">//</span><span style="color: #008000;">error application.usePrivateValue is not a function</span><br>console.log(application.getUserID()); <span style="color: #008000;">//</span><span style="color: #008000;">我的ID 我被修改过了</span><br>console.log(application.publicVal); <span style="color: #008000;">//</span><span style="color: #008000;">var定义的内部publicValue</span><br>console.log(application.privateValue); <span style="color: #008000;">//</span><span style="color: #008000;"> undefined</span></pre><br></div><br><ul><br><li>&nbsp;<span class="LangWithName"><span lang="en"><span lang="en"><span lang="en">闭包不同于一般函数，它允许一个函数在立即此法调用的作用域外，仍可访问非本地变量。</span></span></span></span></li><br><li>在例子中，有私有属性/方法，公共属性/方法，可以通过<span style="font-size: 16px; color: #ff6600;"><strong>在公共方法中使用私有属性/方法</strong></span>或<span style="font-size: 16px; color: #ff6600;"><strong>将私有属性赋值给公有属性</strong></span>的方式，达到在其作用域之外，仍能够对其进行调用的效果。</li><br><li>将所有的公共属性/方法都挂载到一个全局的属性application（可自定义）上，能够有效地区分，在全局使用var 直接声明的全局变量对这个闭包的影响</li><br><li>这么做，也可以在一定程度上保障了闭包内部变量实现功能的稳定性，不易受外界变量影响</li><br></ul><br><p><span style="font-size: 14pt;"><span style="font-size: 14px;"><span style="font-size: 18pt;"><strong>　　</strong></span></span></span></p><br><p><strong><span style="font-size: 18pt;">　　</span></strong></p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>　　</p><br><p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_5_closure/" data-id="cj0wb4svc000d6kf0cpl3plpj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js_4_class" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_4_class/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.702Z" itemprop="datePublished">2017-03-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/30/js_4_class/">Jvascript的类</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><span style="font-size: 18px;"><strong>Javascript类的编写</strong></span></p><br><ul><br><li>在内部定义变量和方法</li><br></ul><br><ol><br><li>凡是定义共公共属性与公共方法都要使用this声明</li><br><li>在内部的 var 声明，或者直接不写var（隐式声明）的都私有属性与私有方法</li><br><li>类的实例只能够访问公共属性与公共方法<br><div class="cnblogs_code"><br><pre>　　<span style="color: #0000ff;">function</span><span style="color: #000000;"> Pet(_name,_age,_price){<br>    </span><span style="color: #0000ff;">this</span>.name=<span style="color: #000000;">_name;<br> 　　 </span><span style="color: #0000ff;">var</span> age=_age;　　　　<span style="color: #008000;">//</span><span style="color: #008000;">私有属性</span><br> 　　 <span style="color: #0000ff;">var</span> price=_price;<span style="color: #008000;">//</span><span style="color: #008000;">私有属性</span><br>  　　<span style="color: #0000ff;">this</span>.setAge = <span style="color: #0000ff;">function</span><span style="color: #000000;">(intAge) {<br>  　　　　age </span>=<span style="color: #000000;"> intAge;<br> 　　}<br> 　　 </span><span style="color: #008000;">/<em></em></span><span style="color: #008000;">定义私有属性Age的对外公开访问方法</span><span style="color: #008000;">/</span><br>  　　 <span style="color: #0000ff;">this</span>.getAge = <span style="color: #0000ff;">function</span><span style="color: #000000;">() {<br>  　　　　 </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> age;<br>      }</span><span style="color: #000000;"><br>   }</span></pre><br></div><br></li><br></ol><br><ul><br><li>使用prototype，在原型链上定义方法与属性</li><br></ul><br><ol><br><li>使用prototype定义的属性与方法都是共有的</li><br><li>写法 ①在类的内部给出共有的构造方法 或者 ② 直接将类定义为空，然后直接将类的prototype写成JS对象的形式</li><br></ol><br><p>　　<strong>写法一：</strong></p><br><div class="cnblogs_code"><br><pre><span style="color: #008000;">/<em></em></span><span style="color: #008000;">使用写法①定义一个Pet类</span><span style="color: #008000;">/</span><br><span style="color: #0000ff;">function</span><span style="color: #000000;"> Pet(_name, _age, _price, _color)<br>{<br>    </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.init(_name, _age, _price, _color);<br>}<br><br>Pet.prototype.name;<br>Pet.prototype.age;<br>Pet.prototype.price;<br>Pet.prototype.color;<br>Pet.prototype.init </span>= <span style="color: #0000ff;">function</span><span style="color: #000000;"> (_name, _age, _price, _color)<br>{<br>    </span><span style="color: #0000ff;">if</span> (_name != undefined &amp;&amp; _age != undefined &amp;&amp; _price != undefined &amp;&amp; _color !=<span style="color: #000000;"> undefined)<br>    {<br>        </span><span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> _name;<br>        </span><span style="color: #0000ff;">this</span>.age =<span style="color: #000000;"> _age;<br>        </span><span style="color: #0000ff;">this</span>.price =<span style="color: #000000;"> _price;<br>        </span><span style="color: #0000ff;">this</span>.color =<span style="color: #000000;"> _color;<br>        document.writeln(</span>“this.name=” + <span style="color: #0000ff;">this</span>.name + “,this.age=” + <span style="color: #0000ff;">this</span>.age + “,this.price=” + <span style="color: #0000ff;">this</span>.price + “,this.color=” + <span style="color: #0000ff;">this</span><span style="color: #000000;">.color);<br>    }<br>}</span></pre><br></div><br><p>&nbsp;</p><br><p>　　<strong>写法二：</strong></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span> Person2() { } <br><span style="color: #008000;">/<em></em></span><span style="color: #008000;">在类的prototype上以JS对象的形式构造一个类</span><span style="color: #008000;">/</span><span style="color: #000000;"><br>Person2.prototype </span>=<span style="color: #000000;"><br>{<br>    name : </span>“”, <span style="color: #008000;">//</span><span style="color: #008000;">public属性</span><br>    age : 0, weight : 0, height : 0, <span style="color: #008000;">/<em></em></span><span style="color: #008000;">public方法</span><span style="color: #008000;">/</span><span style="color: #000000;"><br>    init : </span><span style="color: #0000ff;">function</span><span style="color: #000000;"> (_name, _age, _weight, _height)<br>    {<br>        </span><span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> _name;<br>        </span><span style="color: #0000ff;">this</span>.age =<span style="color: #000000;"> _age;<br>        </span><span style="color: #0000ff;">this</span>.weight =<span style="color: #000000;"> _weight;<br>        </span><span style="color: #0000ff;">this</span>.height =<span style="color: #000000;"> _height;<br>        document.writeln(</span>“this.name=” + <span style="color: #0000ff;">this</span>.name + “,this.age=” + <span style="color: #0000ff;">this</span>.age + “,this.weight=” + <span style="color: #0000ff;">this</span>.weight + “,this.height=” + <span style="color: #0000ff;">this</span><span style="color: #000000;">.height);<br>    },<br>    </span><span style="color: #008000;">/<em></em></span><span style="color: #008000;">public方法</span><span style="color: #008000;">/</span><span style="color: #000000;"><br>    show : </span><span style="color: #0000ff;">function</span><span style="color: #000000;"> ()<br>    {<br>        document.writeln(</span>“show method”<span style="color: #000000;">);<br>    }<br>};</span></pre><br></div><br><p>　<span style="font-size: 18px;"><strong>　</strong></span></p><br><hr><br><p>&nbsp;</p><br><p><span style="font-size: 18px;"><strong>利用上面归纳的特点，我们可以总结出一套高效可行的编写方法</strong></span></p><br><ul><br><li><span style="font-size: 18px;"><strong>使用构造函数的方式来定义<span style="color: #ff0000;">public</span>属性，<span style="color: #ff0000;">private</span>属性</strong></span></li><br><li><span style="font-size: 18px;"><strong>用原型链<span style="color: #ff0000;">prototype</span>的方式来定义类的方法（public方法），然后利用这些方法去访问<span style="color: #00ff00;">public</span>的和<span style="color: #00ff00;">private</span>的属性</strong></span></li><br></ul><br><div class="cnblogs_code"><br><pre><span style="color: #008000;">/<em></em></span><span style="color: #008000;">定义一个Person类</span><span style="color: #008000;">/</span><br><span style="color: #0000ff;">function</span><span style="color: #000000;"> Person(_name, _age, _price)<br>{<br>    </span><span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> _name;<br>    </span><span style="color: #0000ff;">var</span> age =<span style="color: #000000;"> _age;<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">私有属性，只能在类内部使用</span><br>    <span style="color: #0000ff;">var</span> price =<span style="color: #000000;"> _price;<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">私有属性，只能在类内部使用</span><br>    <span style="color: #0000ff;">function</span><span style="color: #000000;"> privateFn()<br>    {<br>        console.log(</span>“我是Pet类的私有属性age，只能在Pet类内部使用，初始化后age=” +<span style="color: #000000;"> age);<br>        console.log(</span>“我是Pet类的私有函数privateFn，只能在Pet类内部使用”<span style="color: #000000;">);<br>    }<br>    </span><span style="color: #0000ff;">var</span> privateFn2 = <span style="color: #0000ff;">function</span><span style="color: #000000;"> ()<br>    {<br>        console.log(</span>“我是Pet类的私有属性price，只能在Pet类内部使用，初始化后price=” +<span style="color: #000000;"> price);<br>        console.log(</span>“我是Pet类的私有函数privateFn2，只能在Pet类内部使用”<span style="color: #000000;">);<br>    }<br>    privateFn();<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">在Pet类内部调用私有方法</span><br><span style="color: #000000;">    privateFn2();<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">在Pet类内部调用私有方法</span><br><span style="color: #000000;">}<br>Pet.prototype </span>=<span style="color: #000000;"><br>{<br>    setName : </span><span style="color: #0000ff;">function</span><span style="color: #000000;"> (_name)<br>    {<br>        </span><span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> _name;<br>    },<br>    getName : </span><span style="color: #0000ff;">function</span><span style="color: #000000;"> ()<br>    {<br>        </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">this</span><span style="color: #000000;">.name;<br>    },<br>    show : </span><span style="color: #0000ff;">function</span><span style="color: #000000;"> ()<br>    {<br>        console.log(</span>“公开方法show”<span style="color: #000000;">);<br>    }<br>};　</span></pre><br></div><br><hr><br><p>参考资料：<a class="linkification-ext" title="Linkification: http://www.cnblogs.com/xdp-gacl/p/3700840.html" href="http://www.cnblogs.com/xdp-gacl/p/3700840.html" target="_blank" rel="external">http://www.cnblogs.com/xdp-gacl/p/3700840.html</a></p><br><p>　　</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_4_class/" data-id="cj0wb4sv5000a6kf0u7szd3p4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
-  </nav>
+    <time datetime="2017-03-30T11:17:47.729Z" itemprop="datePublished">2017-03-30</time>
+  </a>
 </section>
-        
-          <aside id="sidebar">
+
+  <section class="post" itemscope itemprop="blogPost">
   
+    <a href="/2017/03/30/js_object/" title="Javascript 之 对象" itemprop="url">
+  
+    <h1 itemprop="name">Javascript 之 对象</h1>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
-    </div>
-  </div>
-
-
-  
+     
+           <p itemprop="description" >Javascript原始对象类型（6种）：（数据类型）number、string、boolean、function、undefined（对象类型）object（null、{}、Array、Date、RegExp…）&amp;nbsp;&amp;nbsp;关于NaNNaN是一个特殊的number类</p>
+        
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
-    </div>
-  </div>
+    <time datetime="2017-03-30T11:17:47.728Z" itemprop="datePublished">2017-03-30</time>
+  </a>
+</section>
 
-
+  <section class="post" itemscope itemprop="blogPost">
   
+    <a href="/2017/03/30/js_common/" title="Javascript 之 常见问题收集" itemprop="url">
+  
+    <h1 itemprop="name">Javascript 之 常见问题收集</h1>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
-    </div>
-  </div>
-
-  
+     
+           <p itemprop="description" >1、写一个按照下面方式调用都能正常工作的 sum 方法console.log(sum(2,3)); // Outputs 5console.log(sum(2)(3)); // Outputs 5解决方案function sum() {  var fir = arguments[</p>
+        
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
-    </div>
-  </div>
+    <time datetime="2017-03-30T11:17:47.726Z" itemprop="datePublished">2017-03-30</time>
+  </a>
+</section>
 
-
+  <section class="post" itemscope itemprop="blogPost">
   
+    <a href="/2017/03/30/js_cal/" title="Javascript 之 运算符" itemprop="url">
+  
+    <h1 itemprop="name">Javascript 之 运算符</h1>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+     
+           <p itemprop="description" >1、关于Javascript中的&amp;ldquo;===&amp;rdquo;与&amp;ldquo;==&amp;rdquo;的比较
+　　简而言之：&amp;ldquo;===&amp;rdquo;要求类型与数值都相等。
+　　　　　　　　&amp;ldquo;==&amp;rdquo;只要求数值相等
+
+var num_str=&amp;ldqu</p>
         
-          <li>
-            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
-          </li>
+    
+    <time datetime="2017-03-30T11:17:47.725Z" itemprop="datePublished">2017-03-30</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/03/30/js_9/" title="Javascript 之 变量提升" itemprop="url">
+  
+    <h1 itemprop="name">Javascript 之 变量提升</h1>
+    
+     
+           <p itemprop="description" >&amp;nbsp;刚开始接触JavaScript，感觉它是个弱类型的脚本语言，语法十分宽松，好学好上手。过了一阵了，渐渐地感觉到这个脚本语言其实他并不&amp;ldquo;脚本&amp;rdquo;,也一点不&amp;ldquo;弱&amp;rdquo;。要是你不了解他的&amp;ldquo;弱&amp;rdquo;，不了解这种脚本</p>
         
-          <li>
-            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
-          </li>
+    
+    <time datetime="2017-03-30T11:17:47.723Z" itemprop="datePublished">2017-03-30</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/03/30/js_8_oop/" title="Javascript 之 面向对象编程" itemprop="url">
+  
+    <h1 itemprop="name">Javascript 之 面向对象编程</h1>
+    
+     
+           <p itemprop="description" >&amp;nbsp;面对对象编程（OOP）OOP定义　　面对对象程序设计（Object-oriented programming ，OOP），是一种程序设计范型，同时也是一种程序开发的方法。对象指的是类的实例。他将对象作为程序作用的基本单元，将程序和数据封装其中，以提高程序的复用性。　　</p>
         
-          <li>
-            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
-          </li>
+    
+    <time datetime="2017-03-30T11:17:47.721Z" itemprop="datePublished">2017-03-30</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/03/30/js_7_function1/" title="Javascript 之 函数" itemprop="url">
+  
+    <h1 itemprop="name">Javascript 之 函数</h1>
+    
+     
+           <p itemprop="description" >JS中的函数也是一种对象
+函数的返回值是return来决定的，没有则返回undefined
+　1、函数声明法　　function add(a, b) {    a = a + a;    b = b + b;}　　　　　　2、函数表达式法var add = function (a</p>
         
-          <li>
-            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
-          </li>
+    
+    <time datetime="2017-03-30T11:17:47.719Z" itemprop="datePublished">2017-03-30</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/03/30/js_7_function/" title="Javascript 之 函数参数" itemprop="url">
+  
+    <h1 itemprop="name">Javascript 之 函数参数</h1>
+    
+     
+           <p itemprop="description" >arguments对象　　在JavaScript中，谈到函数参数，就不得不说一说那个熟悉又陌生的argunemtsarguments对象用于承载调用函数时候传入的参数arguments不是一个数组，但是十分类似一个Array，有length属性，也可以用下标去访问argument</p>
         
-          <li>
-            <a href="/2017/03/30/sass_install/">SASS安装</a>
-          </li>
+    
+    <time datetime="2017-03-30T11:17:47.718Z" itemprop="datePublished">2017-03-30</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/03/30/js_5_closure/" title="javascript 之 闭包" itemprop="url">
+  
+    <h1 itemprop="name">javascript 之 闭包</h1>
+    
+     
+           <p itemprop="description" >维基百科：　　在计算机中，闭包（也称词法闭包或者函数闭包），是指一个函数或者函数的引用，与一个引用环境绑定在一起。这个引用环境是一个存储该函数每个非局部变量的表。　　百度百科：　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</p>
         
-      </ul>
-    </div>
-  </div>
+    
+    <time datetime="2017-03-30T11:17:47.704Z" itemprop="datePublished">2017-03-30</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/03/30/js_4_class/" title="Jvascript的类" itemprop="url">
+  
+    <h1 itemprop="name">Jvascript的类</h1>
+    
+     
+           <p itemprop="description" >Javascript类的编写在内部定义变量和方法凡是定义共公共属性与公共方法都要使用this声明在内部的 var 声明，或者直接不写var（隐式声明）的都私有属性与私有方法类的实例只能够访问公共属性与公共方法　　function Pet(_name,_age,_price){  </p>
+        
+    
+    <time datetime="2017-03-30T11:17:47.702Z" itemprop="datePublished">2017-03-30</time>
+  </a>
+</section>
+
+
+  <nav id="page-nav" class="clearfix">
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
 
   
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/CSS样式/" title="CSS样式">CSS样式<sup>3</sup></a></li>
+		
+			<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Typescript/" title="Typescript">Typescript<sup>3</sup></a></li>
+		
+			<li><a href="/categories/css样式/" title="css样式">css样式<sup>1</sup></a></li>
+		
+			<li><a href="/categories/http/" title="http">http<sup>2</sup></a></li>
+		
+			<li><a href="/categories/javascript进阶/" title="javascript进阶">javascript进阶<sup>11</sup></a></li>
+		
+			<li><a href="/categories/前端规范/" title="前端规范">前端规范<sup>1</sup></a></li>
+		
+			<li><a href="/categories/前端进阶/" title="前端进阶">前端进阶<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/其他/" title="其他">其他<sup>23</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
+
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+</div>
     </div>
-  </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
+		
+		<a href="http://yoursite.com" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
-</body>
-</html>
+
+  </body>
+ </html>

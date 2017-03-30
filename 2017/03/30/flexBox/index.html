@@ -1,234 +1,328 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Flex布局 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Flex是什么&amp;nbsp;&amp;nbsp;&amp;nbsp; 弹性布局（flexible box）模块（目前是w3c候选的推荐）旨在提供一个更加有效的方式来布置，对齐和分布在容器之间的各项内容，即使它们的大小是未知或者动态变化的。　　由于flexbox是一个整体模块，而不是单一的一个属性，它涉及到了很多东西，包括它的整个属性集。它们之中有一些是在父容器上设置，而有一些则是在子容器上设置。与栅格布局（grid">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Flex布局">
-<meta property="og:url" content="http://yoursite.com/2017/03/30/flexBox/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Flex是什么&amp;nbsp;&amp;nbsp;&amp;nbsp; 弹性布局（flexible box）模块（目前是w3c候选的推荐）旨在提供一个更加有效的方式来布置，对齐和分布在容器之间的各项内容，即使它们的大小是未知或者动态变化的。　　由于flexbox是一个整体模块，而不是单一的一个属性，它涉及到了很多东西，包括它的整个属性集。它们之中有一些是在父容器上设置，而有一些则是在子容器上设置。与栅格布局（grid">
-<meta property="og:updated_time" content="2017-03-30T10:56:41.400Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flex布局">
-<meta name="twitter:description" content="Flex是什么&amp;nbsp;&amp;nbsp;&amp;nbsp; 弹性布局（flexible box）模块（目前是w3c候选的推荐）旨在提供一个更加有效的方式来布置，对齐和分布在容器之间的各项内容，即使它们的大小是未知或者动态变化的。　　由于flexbox是一个整体模块，而不是单一的一个属性，它涉及到了很多东西，包括它的整个属性集。它们之中有一些是在父容器上设置，而有一些则是在子容器上设置。与栅格布局（grid">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Flex布局 | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    <meta name="description" content="Flex是什么&amp;nbsp;&amp;nbsp;&amp;nbsp; 弹性布局（flexible box）模块（目前是w3c候选的推荐）旨在提供一个更加有效的方式来布置，对齐和分布在容器之间的各项内容，即使它们的大小是未知或者动态变化的。　　由于flexbox是一个整体模块，而不是单一的一个属性，它涉及到了很多东西，">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/03/30/flexBox/" title="Flex布局" itemprop="url">Flex布局</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="John Doe">John Doe</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-03-30T11:17:47.699Z" itemprop="datePublished">2017-03-30</time>
+    Updated:<time datetime="2017-03-30T10:56:41.400Z" itemprop="dateModified">2017-03-30</time>
+    
+  </p>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-flexBox" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/flexBox/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.699Z" itemprop="datePublished">2017-03-30</time>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#t5"><span class="toc-number">1.</span> <span class="toc-text">2、flex-direction (适用于父类容器的元素上）　　定义：设置或检索伸缩盒对象的子元素在父容器中的位置。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t6"><span class="toc-number">2.</span> <span class="toc-text">3、flex-wrap (适用于父类容器上) 设置或检索伸缩盒对象的子元素超出父容器时是否换行。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t9"><span class="toc-number">3.</span> <span class="toc-text">6、align-items (适用于父类容器上)   设置或检索弹性盒子元素在侧轴（纵轴）方向上的对齐方式。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t11"><span class="toc-number">4.</span> <span class="toc-text">8、order (适用于弹性盒模型容器子元素)</span></a></li></ol>
+		</div>
+		
+		<p>Flex是什么</p><br><blockquote><br><p><strong>&nbsp;&nbsp;&nbsp; <span class="wp_keywordlink_affiliate"><span style="font-size: 14pt;">弹性布局</span>（flexible box）模块（目前是w3c候选的推荐）旨在提供一个更加有<code>效的方式</code>来布置，对齐和分布在容器之间的各项内容，即使它们的大小是未知或者动态变化的。</span></strong></p><br><p><strong><span class="wp_keywordlink_affiliate">　　由于flexbox是一个<span style="font-size: 14pt;">整体模块</span>，而不是单一的一个属性，它涉及到了很多东西，包括它的整个属性集。它们之<span style="font-size: 14px;">中有一些是在父容器上设置，</span>而<span style="font-size: 14px;">有一些则是在子容器上设置。</span></span></strong></p><br></blockquote><br><p>与栅格布局（grid Layout）的区别</p><br><blockquote><br><p><strong>&nbsp; &nbsp; Flexbox布局是最合适的一个应用程序的组件，以及小规模的布局，而网格布局是用于较大规模的布局。</strong></p><br></blockquote><br><p>&nbsp;属性介绍</p><br><blockquote><br><p><strong><span style="font-size: 18px;"><span style="font-size: 18px;">1、display属性 (适用于父类容器元素上)<span style="font-size: 18px;">&nbsp;&nbsp; <span style="font-size: 18px;">定义一个flex容器，内联或者根据指定的值，来作用于下面的子类容器。</span></span></span></span></strong></p><br></blockquote><br><ul><br><li>box：将对象作为弹性伸缩盒显示。（伸缩盒最老版本）</li><br><li>inline-box：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）</li><br><li>flexbox：将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）</li><br><li>inline-flexbox：将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）</li><br><li><strong><span style="font-size: 14pt;"><span style="background-color: #ffffff; color: #00ff00;">flex</span>：将对象作为弹性伸缩盒显示。（伸缩盒最新版本）</span></strong></li><br><li><strong><span style="font-size: 14pt;"><span style="color: #00ff00;">inline-flex</span>：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）</span></strong></li><br><li><strong><span style="font-size: 14pt;">css 列（CSS columns）在弹性盒子中不起作用</span></strong></li><br><li><span style="font-size: 14pt;"><strong><span style="color: #ff0000; background-color: #999999;"><code>float</code></span>,&nbsp;<span style="color: #ff0000;"><span style="background-color: #999999;"><code>clear</code></span>&nbsp;</span>and&nbsp;<span style="color: #ff0000; background-color: #999999;"><code>vertical-align</code></span>&nbsp;在flex项目中不起作用</strong></span><span style="font-size: 14pt;"><strong>2、</strong></span><span style="font-size: 14pt;">flex-direction (适用于父类容器的元素上)&nbsp;&nbsp; <strong>定义：</strong>设置或检索伸缩盒对象的子元素在父容器中的位置。</span><span style="opacity: 0;">原文来自：<a class="linkification-ext" title="Linkification: http://caibaojian.com/flexbox-guide.html" href="http://caibaojian.com/flexbox-guide.html" target="_blank" rel="external">http://caibaojian.com/flexbox-guide.html</a></span></li><br></ul><br><blockquote><br><h4 id="t5"><span style="font-size: 14pt;">2、flex-direction (适用于父类容器的元素上）　　<strong>定义：</strong>设置或检索伸缩盒对象的子元素在父容器中的位置。</span></h4><br></blockquote><br><ul><br><li>row：横向从左到右排列（左对齐），默认的排列方式。</li><br><li>row-reverse：反转横向排列（右对齐，从后往前排，最后一项排在最前面。</li><br><li>column：纵向排列。</li><br><li>column-reverse：反转纵向排列，从后往前排，最后一项排在最上面。<br><br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    flex-direction</span>:<span style="color: #0000ff;">row</span>;<br>    }</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><blockquote><br><h4 id="t6"><span style="font-size: 14pt;">3、flex-wrap (适用于父类容器上) 设置或检索伸缩盒对象的子元素超出父容器时是否换行。</span></h4><br></blockquote><br><ul><br><li>nowrap：当子元素溢出父容器时不换行。</li><br><li>wrap：当子元素溢出父容器时自动换行。</li><br><li>wrap-reverse：反转 wrap 排列。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-flex-wrap</span>:<span style="color: #0000ff;">nowrap</span>;<span style="color: #ff0000;"><br>    flex-wrap</span>:<span style="color: #0000ff;">nowrap</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><p>&nbsp;</p><br><blockquote><br><p><strong>　<span style="font-size: 14pt;">4、flex-flow (适用于父类容器上) &nbsp;复合属性。设置或检索伸缩盒对象的子元素排列方式。(本属性，实为<code>flex-direction</code>属性和<code>flex-wrap</code>属性的结合)</span></strong></p><br></blockquote><br><ul><br><li>[&nbsp;flex-direction&nbsp;]：定义弹性盒子元素的排列方向。</li><br><li>[&nbsp;flex-wrap&nbsp;]：定义弹性盒子元素溢出父容器时是否换行。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-flex-flow</span>:<span style="color: #0000ff;">row nowrap</span>;<span style="color: #ff0000;"><br>    flex-flow</span>:<span style="color: #0000ff;">row nowrap</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><blockquote><br><p>　<span style="font-size: 14pt;"><strong>5、justify-content (适用于父类容器上) &nbsp;设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。 &nbsp;当弹性盒里一行上的所有子元素都不能伸缩或已经达到其最大值时，这一属性可协助对多余的空间进行分配。当元素溢出某行时，这一属性同样会在对齐上进行控制。</strong></span></p><br></blockquote><br><ul><br><li>flex-start：弹性盒子元素将向行起始位置对齐。</li><br><li>flex-end：弹性盒子元素将向行结束位置对齐。</li><br><li>center：弹性盒子元素将向行中间位置对齐。</li><br><li>space-between：弹性盒子元素会平均地分布在行里。如果最左边的剩余空间是负数，或该行只有一个子元素，则该值等效于’flex-start’。</li><br><li>space-around：弹性盒子元素会平均地分布在行里，两端保留子元素与子元素之间间距大小的一半。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-justify-content</span>:<span style="color: #0000ff;">flex-start</span>;<span style="color: #ff0000;"><br>    justify-content</span>:<span style="color: #0000ff;">flex-start</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><blockquote><br><h4 id="t9"><span style="font-size: 14pt;">6、align-items (适用于父类容器上)&nbsp;&nbsp; 设置或检索弹性盒子元素在侧轴（纵轴）方向上的对齐方式。</span></h4><br></blockquote><br><ul><br><li>flex-start：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。</li><br><li>flex-end：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。</li><br><li>center：弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。</li><br><li>baseline：如弹性盒子元素的行内轴与侧轴为同一条，则该值与’flex-start’等效。其它情况下，该值将参与基线对齐。</li><br><li>stretch：如果指定侧轴大小的属性值为’auto’，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照’min/max-width/height’属性的限制。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-align-items</span>:<span style="color: #0000ff;">flex-start</span>;<span style="color: #ff0000;"><br>    align-items</span>:<span style="color: #0000ff;">flex-start</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><blockquote><br><p><span style="font-size: 14pt;"><strong>7、align-content (适用于父类容器上) 设置或检索弹性盒堆叠伸缩行的对齐方式。</strong></span></p><br></blockquote><br><ul><br><li>flex-start：各行向弹性盒容器的起始位置堆叠。</li><br><li>flex-end：各行向弹性盒容器的结束位置堆叠。</li><br><li>center：各行向弹性盒容器的中间位置堆叠。</li><br><li>space-between：各行在弹性盒容器中平均分布。</li><br><li>space-around：各行在弹性盒容器中平均分布，两端保留子元素与子元素之间间距大小的一半。</li><br><li>stretch：各行将会伸展以占用剩余的空间。如果剩余的空间是负数，该值等效于’flex-start’。在其它情况下，剩余空间被所有行平分，以扩大它们的侧轴尺寸。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-flex-wrap</span>:<span style="color: #0000ff;">wrap</span>;<span style="color: #ff0000;"><br>    flex-direction</span>:<span style="color: #0000ff;">wrap</span>;<span style="color: #ff0000;"><br>    -webkit-align-content</span>:<span style="color: #0000ff;">flex-start</span>;<span style="color: #ff0000;"><br>    align-content</span>:<span style="color: #0000ff;">flex-start</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><blockquote><br><h4 id="t11"><span style="font-size: 14pt;">8、order (适用于弹性盒模型容器子元素)</span></h4><br></blockquote><br><ul><br><li>&lt;integer&gt;：用整数值来定义排列顺序，数值小的排在前面。可以为负值。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-order</span>:<span style="color: #0000ff;">-1</span>;<span style="color: #ff0000;"><br>    order</span>:<span style="color: #0000ff;">-1</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><p>&nbsp;</p>  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/其他/">其他</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/css样式/">css样式</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2017/03/30/flexBox/" data-title="Flex布局 | Hexo" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/03/30/httpReqRes/" title="前端也要知道的HTTP--Req &amp; Res">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  前端也要知道的HTTP--Req &amp; Res</span>
 </a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/css样式/">css样式</a>
-  </div>
+</div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Flex布局
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Flex是什么</p><br><blockquote><br><p><strong>&nbsp;&nbsp;&nbsp; <span class="wp_keywordlink_affiliate"><span style="font-size: 14pt;">弹性布局</span>（flexible box）模块（目前是w3c候选的推荐）旨在提供一个更加有<code>效的方式</code>来布置，对齐和分布在容器之间的各项内容，即使它们的大小是未知或者动态变化的。</span></strong></p><br><p><strong><span class="wp_keywordlink_affiliate">　　由于flexbox是一个<span style="font-size: 14pt;">整体模块</span>，而不是单一的一个属性，它涉及到了很多东西，包括它的整个属性集。它们之<span style="font-size: 14px;">中有一些是在父容器上设置，</span>而<span style="font-size: 14px;">有一些则是在子容器上设置。</span></span></strong></p><br></blockquote><br><p>与栅格布局（grid Layout）的区别</p><br><blockquote><br><p><strong>&nbsp; &nbsp; Flexbox布局是最合适的一个应用程序的组件，以及小规模的布局，而网格布局是用于较大规模的布局。</strong></p><br></blockquote><br><p>&nbsp;属性介绍</p><br><blockquote><br><p><strong><span style="font-size: 18px;"><span style="font-size: 18px;">1、display属性 (适用于父类容器元素上)<span style="font-size: 18px;">&nbsp;&nbsp; <span style="font-size: 18px;">定义一个flex容器，内联或者根据指定的值，来作用于下面的子类容器。</span></span></span></span></strong></p><br></blockquote><br><ul><br><li>box：将对象作为弹性伸缩盒显示。（伸缩盒最老版本）</li><br><li>inline-box：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）</li><br><li>flexbox：将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）</li><br><li>inline-flexbox：将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）</li><br><li><strong><span style="font-size: 14pt;"><span style="background-color: #ffffff; color: #00ff00;">flex</span>：将对象作为弹性伸缩盒显示。（伸缩盒最新版本）</span></strong></li><br><li><strong><span style="font-size: 14pt;"><span style="color: #00ff00;">inline-flex</span>：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）</span></strong></li><br><li><strong><span style="font-size: 14pt;">css 列（CSS columns）在弹性盒子中不起作用</span></strong></li><br><li><span style="font-size: 14pt;"><strong><span style="color: #ff0000; background-color: #999999;"><code>float</code></span>,&nbsp;<span style="color: #ff0000;"><span style="background-color: #999999;"><code>clear</code></span>&nbsp;</span>and&nbsp;<span style="color: #ff0000; background-color: #999999;"><code>vertical-align</code></span>&nbsp;在flex项目中不起作用</strong></span><span style="font-size: 14pt;"><strong>2、</strong></span><span style="font-size: 14pt;">flex-direction (适用于父类容器的元素上)&nbsp;&nbsp; <strong>定义：</strong>设置或检索伸缩盒对象的子元素在父容器中的位置。</span><span style="opacity: 0;">原文来自：<a class="linkification-ext" title="Linkification: http://caibaojian.com/flexbox-guide.html" href="http://caibaojian.com/flexbox-guide.html" target="_blank" rel="external">http://caibaojian.com/flexbox-guide.html</a></span></li><br></ul><br><blockquote><br><h4 id="t5"><span style="font-size: 14pt;">2、flex-direction (适用于父类容器的元素上）　　<strong>定义：</strong>设置或检索伸缩盒对象的子元素在父容器中的位置。</span></h4><br></blockquote><br><ul><br><li>row：横向从左到右排列（左对齐），默认的排列方式。</li><br><li>row-reverse：反转横向排列（右对齐，从后往前排，最后一项排在最前面。</li><br><li>column：纵向排列。</li><br><li>column-reverse：反转纵向排列，从后往前排，最后一项排在最上面。<br><br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    flex-direction</span>:<span style="color: #0000ff;">row</span>;<br>    }</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><blockquote><br><h4 id="t6"><span style="font-size: 14pt;">3、flex-wrap (适用于父类容器上) 设置或检索伸缩盒对象的子元素超出父容器时是否换行。</span></h4><br></blockquote><br><ul><br><li>nowrap：当子元素溢出父容器时不换行。</li><br><li>wrap：当子元素溢出父容器时自动换行。</li><br><li>wrap-reverse：反转 wrap 排列。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-flex-wrap</span>:<span style="color: #0000ff;">nowrap</span>;<span style="color: #ff0000;"><br>    flex-wrap</span>:<span style="color: #0000ff;">nowrap</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><p>&nbsp;</p><br><blockquote><br><p><strong>　<span style="font-size: 14pt;">4、flex-flow (适用于父类容器上) &nbsp;复合属性。设置或检索伸缩盒对象的子元素排列方式。(本属性，实为<code>flex-direction</code>属性和<code>flex-wrap</code>属性的结合)</span></strong></p><br></blockquote><br><ul><br><li>[&nbsp;flex-direction&nbsp;]：定义弹性盒子元素的排列方向。</li><br><li>[&nbsp;flex-wrap&nbsp;]：定义弹性盒子元素溢出父容器时是否换行。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-flex-flow</span>:<span style="color: #0000ff;">row nowrap</span>;<span style="color: #ff0000;"><br>    flex-flow</span>:<span style="color: #0000ff;">row nowrap</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><blockquote><br><p>　<span style="font-size: 14pt;"><strong>5、justify-content (适用于父类容器上) &nbsp;设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。 &nbsp;当弹性盒里一行上的所有子元素都不能伸缩或已经达到其最大值时，这一属性可协助对多余的空间进行分配。当元素溢出某行时，这一属性同样会在对齐上进行控制。</strong></span></p><br></blockquote><br><ul><br><li>flex-start：弹性盒子元素将向行起始位置对齐。</li><br><li>flex-end：弹性盒子元素将向行结束位置对齐。</li><br><li>center：弹性盒子元素将向行中间位置对齐。</li><br><li>space-between：弹性盒子元素会平均地分布在行里。如果最左边的剩余空间是负数，或该行只有一个子元素，则该值等效于’flex-start’。</li><br><li>space-around：弹性盒子元素会平均地分布在行里，两端保留子元素与子元素之间间距大小的一半。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-justify-content</span>:<span style="color: #0000ff;">flex-start</span>;<span style="color: #ff0000;"><br>    justify-content</span>:<span style="color: #0000ff;">flex-start</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><blockquote><br><h4 id="t9"><span style="font-size: 14pt;">6、align-items (适用于父类容器上)&nbsp;&nbsp; 设置或检索弹性盒子元素在侧轴（纵轴）方向上的对齐方式。</span></h4><br></blockquote><br><ul><br><li>flex-start：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。</li><br><li>flex-end：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。</li><br><li>center：弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。</li><br><li>baseline：如弹性盒子元素的行内轴与侧轴为同一条，则该值与’flex-start’等效。其它情况下，该值将参与基线对齐。</li><br><li>stretch：如果指定侧轴大小的属性值为’auto’，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照’min/max-width/height’属性的限制。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-align-items</span>:<span style="color: #0000ff;">flex-start</span>;<span style="color: #ff0000;"><br>    align-items</span>:<span style="color: #0000ff;">flex-start</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><blockquote><br><p><span style="font-size: 14pt;"><strong>7、align-content (适用于父类容器上) 设置或检索弹性盒堆叠伸缩行的对齐方式。</strong></span></p><br></blockquote><br><ul><br><li>flex-start：各行向弹性盒容器的起始位置堆叠。</li><br><li>flex-end：各行向弹性盒容器的结束位置堆叠。</li><br><li>center：各行向弹性盒容器的中间位置堆叠。</li><br><li>space-between：各行在弹性盒容器中平均分布。</li><br><li>space-around：各行在弹性盒容器中平均分布，两端保留子元素与子元素之间间距大小的一半。</li><br><li>stretch：各行将会伸展以占用剩余的空间。如果剩余的空间是负数，该值等效于’flex-start’。在其它情况下，剩余空间被所有行平分，以扩大它们的侧轴尺寸。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-flex-wrap</span>:<span style="color: #0000ff;">wrap</span>;<span style="color: #ff0000;"><br>    flex-direction</span>:<span style="color: #0000ff;">wrap</span>;<span style="color: #ff0000;"><br>    -webkit-align-content</span>:<span style="color: #0000ff;">flex-start</span>;<span style="color: #ff0000;"><br>    align-content</span>:<span style="color: #0000ff;">flex-start</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><blockquote><br><h4 id="t11"><span style="font-size: 14pt;">8、order (适用于弹性盒模型容器子元素)</span></h4><br></blockquote><br><ul><br><li>&lt;integer&gt;：用整数值来定义排列顺序，数值小的排在前面。可以为负值。<br><div class="cnblogs_code"><br><pre><span style="color: #800000;">.box</span>{<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">-webkit-flex</span>;<span style="color: #ff0000;"><br>    display</span>:<span style="color: #0000ff;">flex</span>;<span style="color: #ff0000;"><br>    -webkit-order</span>:<span style="color: #0000ff;">-1</span>;<span style="color: #ff0000;"><br>    order</span>:<span style="color: #0000ff;">-1</span>;<br>}</pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br><p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/flexBox/" data-id="cj0wb4sux00066kf0g1kbjgz9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+<div class="next">
+<a href="/2017/03/30/badTaste/"  title="代码的臭味道">
+ <strong>NEXT:</strong><br/> 
+ <span>代码的臭味道
+</span>
+</a>
+</div>
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/03/30/httpReqRes/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          前端也要知道的HTTP--Req &amp; Res
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/03/30/badTaste/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">代码的臭味道</div>
-    </a>
-  
 </nav>
 
-  
-</article>
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
-    </div>
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#t5"><span class="toc-number">1.</span> <span class="toc-text">2、flex-direction (适用于父类容器的元素上）　　定义：设置或检索伸缩盒对象的子元素在父容器中的位置。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t6"><span class="toc-number">2.</span> <span class="toc-text">3、flex-wrap (适用于父类容器上) 设置或检索伸缩盒对象的子元素超出父容器时是否换行。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t9"><span class="toc-number">3.</span> <span class="toc-text">6、align-items (适用于父类容器上)   设置或检索弹性盒子元素在侧轴（纵轴）方向上的对齐方式。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t11"><span class="toc-number">4.</span> <span class="toc-text">8、order (适用于弹性盒模型容器子元素)</span></a></li></ol>
   </div>
 
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
-    </div>
-  </div>
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/CSS样式/" title="CSS样式">CSS样式<sup>3</sup></a></li>
+		
+			<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Typescript/" title="Typescript">Typescript<sup>3</sup></a></li>
+		
+			<li><a href="/categories/css样式/" title="css样式">css样式<sup>1</sup></a></li>
+		
+			<li><a href="/categories/http/" title="http">http<sup>2</sup></a></li>
+		
+			<li><a href="/categories/javascript进阶/" title="javascript进阶">javascript进阶<sup>11</sup></a></li>
+		
+			<li><a href="/categories/前端规范/" title="前端规范">前端规范<sup>1</sup></a></li>
+		
+			<li><a href="/categories/前端进阶/" title="前端进阶">前端进阶<sup>1</sup></a></li>
+		
+		</ul>
+</div>
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
-    </div>
-  </div>
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/其他/" title="其他">其他<sup>23</sup></a></li>
+		
+		</ul>
+</div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/sass_install/">SASS安装</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
 
-  
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+</div>
     </div>
-  </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
+		
+		<a href="http://yoursite.com" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
-</body>
+
+
+
+  </body>
 </html>

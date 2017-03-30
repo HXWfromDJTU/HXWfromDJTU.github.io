@@ -1,234 +1,328 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Typescript 之 什么是TypeScript？ | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;什么是TypeScript？&amp;nbsp; TypeScript为JavaScript的超集（ECMAScript6）， 这个语言添加了基于类的面向对象编程。TypeScript作为JavaScript很大的一个语法糖，本质上是类似于css的less、sass，都是为了易于维护、开发，使用TypeScript这种语言撰写的源代码需要经过TypeScript编译器的编译，而产生的目标代码是">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Typescript 之 什么是TypeScript？">
-<meta property="og:url" content="http://yoursite.com/2017/03/30/typescriptFirst/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="&amp;nbsp;什么是TypeScript？&amp;nbsp; TypeScript为JavaScript的超集（ECMAScript6）， 这个语言添加了基于类的面向对象编程。TypeScript作为JavaScript很大的一个语法糖，本质上是类似于css的less、sass，都是为了易于维护、开发，使用TypeScript这种语言撰写的源代码需要经过TypeScript编译器的编译，而产生的目标代码是">
-<meta property="og:updated_time" content="2017-02-22T23:59:12.388Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Typescript 之 什么是TypeScript？">
-<meta name="twitter:description" content="&amp;nbsp;什么是TypeScript？&amp;nbsp; TypeScript为JavaScript的超集（ECMAScript6）， 这个语言添加了基于类的面向对象编程。TypeScript作为JavaScript很大的一个语法糖，本质上是类似于css的less、sass，都是为了易于维护、开发，使用TypeScript这种语言撰写的源代码需要经过TypeScript编译器的编译，而产生的目标代码是">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Typescript 之 什么是TypeScript？ | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    <meta name="description" content="&amp;nbsp;什么是TypeScript？&amp;nbsp; TypeScript为JavaScript的超集（ECMAScript6）， 这个语言添加了基于类的面向对象编程。TypeScript作为JavaScript很大的一个语法糖，本质上是类似于css的less、sass，都是为了易于维护、开发，使用">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/03/30/typescriptFirst/" title="Typescript 之 什么是TypeScript？" itemprop="url">Typescript 之 什么是TypeScript？</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="John Doe">John Doe</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-03-30T11:17:47.743Z" itemprop="datePublished">2017-03-30</time>
+    Updated:<time datetime="2017-02-22T23:59:12.388Z" itemprop="dateModified">2017-02-23</time>
+    
+  </p>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-typescriptFirst" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/typescriptFirst/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.743Z" itemprop="datePublished">2017-03-30</time>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+		</div>
+		
+		<p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>什么是TypeScript？</strong></span></p><br><p>&nbsp;<a href="http://baike.baidu.com/link?url=qOzKwx3THfLZvdv3MO2b6Gbr1gwcewMT9Yq1QSaECqjSgs_fwGMO_H1KaYYYcmUYQmD0BOznlTB8sJMFmuAEtTexePDBH8n3MzzRJ2n1Xee" target="_blank"> TypeScript</a>为JavaScript的超集（ECMAScript6）， 这个语言添加了基于类的<span style="color: #000000;">面向对象编程。TypeScript作为JavaScript很大的一个语法糖，<span style="color: #000000;">本质上是类似于css的less、sass，都是为了易于维护、开发，使用TypeScript这种语言撰写的源代码需要经过TypeScript编译器的编译，而产生的目标代码是标准的JavaScript。</span></span></p><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong><span style="color: #000000;"><span style="color: #000000;">TypeScript的特点？</span></span></strong></span></p><br><ul><br><li><span style="font-size: 14px;"><strong><span style="font-size: 18px;">立即得到：</span></strong>TypeScript支持on-the-fly编译，即写一句TypeScript就可以立即得到对应的JavaScript代码，这个特性和<a href="http://baike.baidu.com/link?url=RNxYr8MHOUISdiR_OVPihII_wXmjb7SZ8WHX9rkZERGwQgW3N78Z32EKKbHFarF1WScNp9fK-saz7522x3FNUXVI0s_VVFdiARYZCTBIpMK" target="_blank">CoffeeScript</a>类似。但它比CoffeeScript支持更强的上下文推导，不需要完整的语句写完，就可以生成对应的、不完整的JavaScript代码。</span></li><br><li><strong><span style="font-size: 18px;">上手简单：</span></strong> TypeScript是JavaScript的超集（superset），&ldquo;任何合法的ECMAScript 6都是合法的TypeScript。&rdquo;JavaScript程序员可以从自己已有的代码出发一步步向typescript转型，单同时也把我这随时&ldquo;喊停&rdquo;的权利。（表示①转型的程度的一适可而止②不要求程序猿一开始就完全使用TS来编程）。</li><br><li><strong><span style="font-size: 18px;">更好的JavaScript：</span></strong>TypeScript充分利用了JavaScript原有的对象模型并在此基础上做了扩充，添加了较为严格的类型检查机制，添加了模块支持和API导出的能力。比起JavaScript，TypeScript提供了更多在语言层面上的支持，使得程序员能够以更加标准化的语法来表达语义上的约束，从而降低了程序出错的机率；TypeScript也使得代码组织和复用变得更加有序，使得开发大型Web应用有了一套标准方法。</li><br></ul><br><p><span style="font-size: 18px;"><strong>　</strong></span></p><br><p>&nbsp;</p><br><p><span style="font-size: 18px;"><strong>在Typescript发布大会上，MS的<span>Anders Hejlsberg</span>说到了几点：</strong></span></p><br><p><span style="font-size: 14px;">视频源:<a class="linkification-ext" title="Linkification: http://video.ch9.ms/ch9/4ae3/062c336d-9cf0-498f-ae9a-582b87954ae3/B881_mid.mp4）" href="http://video.ch9.ms/ch9/4ae3/062c336d-9cf0-498f-ae9a-582b87954ae3/B881_mid.mp4）" target="_blank" rel="external">http://video.ch9.ms/ch9/4ae3/062c336d-9cf0-498f-ae9a-582b87954ae3/B881_mid.mp4 (需要手动粘贴到地址栏打开)</a></span></p><br><blockquote><br><p><span style="font-size: 18px;"><strong><span style="font-size: 18px;"><strong>　<span style="font-size: 14px;"> In the ouput javascript,all that happened is the type went away.They just remove the type and ouput the javascript that will be run in your browser.</span></strong></span></strong></span></p><br></blockquote><br><p>&nbsp;</p>  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/其他/">其他</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Typescript/">Typescript</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2017/03/30/typescriptFirst/" data-title="Typescript 之 什么是TypeScript？ | Hexo" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/03/30/typescriptInit/" title="Typescript 之 TS入门">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Typescript 之 TS入门</span>
 </a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Typescript/">Typescript</a>
-  </div>
+</div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Typescript 之 什么是TypeScript？
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>什么是TypeScript？</strong></span></p><br><p>&nbsp;<a href="http://baike.baidu.com/link?url=qOzKwx3THfLZvdv3MO2b6Gbr1gwcewMT9Yq1QSaECqjSgs_fwGMO_H1KaYYYcmUYQmD0BOznlTB8sJMFmuAEtTexePDBH8n3MzzRJ2n1Xee" target="_blank"> TypeScript</a>为JavaScript的超集（ECMAScript6）， 这个语言添加了基于类的<span style="color: #000000;">面向对象编程。TypeScript作为JavaScript很大的一个语法糖，<span style="color: #000000;">本质上是类似于css的less、sass，都是为了易于维护、开发，使用TypeScript这种语言撰写的源代码需要经过TypeScript编译器的编译，而产生的目标代码是标准的JavaScript。</span></span></p><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong><span style="color: #000000;"><span style="color: #000000;">TypeScript的特点？</span></span></strong></span></p><br><ul><br><li><span style="font-size: 14px;"><strong><span style="font-size: 18px;">立即得到：</span></strong>TypeScript支持on-the-fly编译，即写一句TypeScript就可以立即得到对应的JavaScript代码，这个特性和<a href="http://baike.baidu.com/link?url=RNxYr8MHOUISdiR_OVPihII_wXmjb7SZ8WHX9rkZERGwQgW3N78Z32EKKbHFarF1WScNp9fK-saz7522x3FNUXVI0s_VVFdiARYZCTBIpMK" target="_blank">CoffeeScript</a>类似。但它比CoffeeScript支持更强的上下文推导，不需要完整的语句写完，就可以生成对应的、不完整的JavaScript代码。</span></li><br><li><strong><span style="font-size: 18px;">上手简单：</span></strong> TypeScript是JavaScript的超集（superset），&ldquo;任何合法的ECMAScript 6都是合法的TypeScript。&rdquo;JavaScript程序员可以从自己已有的代码出发一步步向typescript转型，单同时也把我这随时&ldquo;喊停&rdquo;的权利。（表示①转型的程度的一适可而止②不要求程序猿一开始就完全使用TS来编程）。</li><br><li><strong><span style="font-size: 18px;">更好的JavaScript：</span></strong>TypeScript充分利用了JavaScript原有的对象模型并在此基础上做了扩充，添加了较为严格的类型检查机制，添加了模块支持和API导出的能力。比起JavaScript，TypeScript提供了更多在语言层面上的支持，使得程序员能够以更加标准化的语法来表达语义上的约束，从而降低了程序出错的机率；TypeScript也使得代码组织和复用变得更加有序，使得开发大型Web应用有了一套标准方法。</li><br></ul><br><p><span style="font-size: 18px;"><strong>　</strong></span></p><br><p>&nbsp;</p><br><p><span style="font-size: 18px;"><strong>在Typescript发布大会上，MS的<span>Anders Hejlsberg</span>说到了几点：</strong></span></p><br><p><span style="font-size: 14px;">视频源:<a class="linkification-ext" title="Linkification: http://video.ch9.ms/ch9/4ae3/062c336d-9cf0-498f-ae9a-582b87954ae3/B881_mid.mp4）" href="http://video.ch9.ms/ch9/4ae3/062c336d-9cf0-498f-ae9a-582b87954ae3/B881_mid.mp4）" target="_blank" rel="external">http://video.ch9.ms/ch9/4ae3/062c336d-9cf0-498f-ae9a-582b87954ae3/B881_mid.mp4 (需要手动粘贴到地址栏打开)</a></span></p><br><blockquote><br><p><span style="font-size: 18px;"><strong><span style="font-size: 18px;"><strong>　<span style="font-size: 14px;"> In the ouput javascript,all that happened is the type went away.They just remove the type and ouput the javascript that will be run in your browser.</span></strong></span></strong></span></p><br></blockquote><br><p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/typescriptFirst/" data-id="cj0wb4sx6001m6kf06bvgygz4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+<div class="next">
+<a href="/2017/03/30/sass_install/"  title="SASS安装">
+ <strong>NEXT:</strong><br/> 
+ <span>SASS安装
+</span>
+</a>
+</div>
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/03/30/typescriptInit/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Typescript 之 TS入门
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/03/30/sass_install/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">SASS安装</div>
-    </a>
-  
 </nav>
 
-  
-</article>
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
-</section>
-        
-          <aside id="sidebar">
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
-    </div>
   </div>
 
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
-    </div>
-  </div>
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/CSS样式/" title="CSS样式">CSS样式<sup>3</sup></a></li>
+		
+			<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Typescript/" title="Typescript">Typescript<sup>3</sup></a></li>
+		
+			<li><a href="/categories/css样式/" title="css样式">css样式<sup>1</sup></a></li>
+		
+			<li><a href="/categories/http/" title="http">http<sup>2</sup></a></li>
+		
+			<li><a href="/categories/javascript进阶/" title="javascript进阶">javascript进阶<sup>11</sup></a></li>
+		
+			<li><a href="/categories/前端规范/" title="前端规范">前端规范<sup>1</sup></a></li>
+		
+			<li><a href="/categories/前端进阶/" title="前端进阶">前端进阶<sup>1</sup></a></li>
+		
+		</ul>
+</div>
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
-    </div>
-  </div>
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/其他/" title="其他">其他<sup>23</sup></a></li>
+		
+		</ul>
+</div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/sass_install/">SASS安装</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
 
-  
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+</div>
     </div>
-  </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
+		
+		<a href="http://yoursite.com" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
-</body>
+
+
+
+  </body>
 </html>

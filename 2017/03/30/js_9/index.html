@@ -1,239 +1,328 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Javascript 之 变量提升 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;刚开始接触JavaScript，感觉它是个弱类型的脚本语言，语法十分宽松，好学好上手。过了一阵了，渐渐地感觉到这个脚本语言其实他并不&amp;ldquo;脚本&amp;rdquo;,也一点不&amp;ldquo;弱&amp;rdquo;。要是你不了解他的&amp;ldquo;弱&amp;rdquo;，不了解这种脚本语言的任性，后果肯定是一次次的—&amp;ldquo;咦？明明没有错啊？这xx也行？&amp;rdquo;JavaScript中的函数声">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Javascript 之 变量提升">
-<meta property="og:url" content="http://yoursite.com/2017/03/30/js_9/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="&amp;nbsp;刚开始接触JavaScript，感觉它是个弱类型的脚本语言，语法十分宽松，好学好上手。过了一阵了，渐渐地感觉到这个脚本语言其实他并不&amp;ldquo;脚本&amp;rdquo;,也一点不&amp;ldquo;弱&amp;rdquo;。要是你不了解他的&amp;ldquo;弱&amp;rdquo;，不了解这种脚本语言的任性，后果肯定是一次次的—&amp;ldquo;咦？明明没有错啊？这xx也行？&amp;rdquo;JavaScript中的函数声">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021104517545-953621944.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021104838185-1624121922.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021112708763-178327683.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021112239513-1086888604.png">
-<meta property="og:updated_time" content="2017-02-22T23:56:10.301Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript 之 变量提升">
-<meta name="twitter:description" content="&amp;nbsp;刚开始接触JavaScript，感觉它是个弱类型的脚本语言，语法十分宽松，好学好上手。过了一阵了，渐渐地感觉到这个脚本语言其实他并不&amp;ldquo;脚本&amp;rdquo;,也一点不&amp;ldquo;弱&amp;rdquo;。要是你不了解他的&amp;ldquo;弱&amp;rdquo;，不了解这种脚本语言的任性，后果肯定是一次次的—&amp;ldquo;咦？明明没有错啊？这xx也行？&amp;rdquo;JavaScript中的函数声">
-<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021104517545-953621944.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Javascript 之 变量提升 | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    <meta name="description" content="&amp;nbsp;刚开始接触JavaScript，感觉它是个弱类型的脚本语言，语法十分宽松，好学好上手。过了一阵了，渐渐地感觉到这个脚本语言其实他并不&amp;ldquo;脚本&amp;rdquo;,也一点不&amp;ldquo;弱&amp;rdquo;。要是你不了解他的&amp;ldquo;弱&amp;rdquo;，不了解这种脚本语言的任性，后果肯定">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/03/30/js_9/" title="Javascript 之 变量提升" itemprop="url">Javascript 之 变量提升</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="John Doe">John Doe</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-03-30T11:17:47.723Z" itemprop="datePublished">2017-03-30</time>
+    Updated:<time datetime="2017-02-22T23:56:10.301Z" itemprop="dateModified">2017-02-23</time>
+    
+  </p>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-js_9" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/js_9/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.723Z" itemprop="datePublished">2017-03-30</time>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+		</div>
+		
+		<p>&nbsp;</p><br><blockquote><br><p>刚开始接触JavaScript，感觉它是个弱类型的脚本语言，语法十分宽松，好学好上手。</p><br><p>过了一阵了，渐渐地感觉到这个脚本语言其实他并不<span style="font-size: 18pt;"><strong>&ldquo;脚本&rdquo;</strong><span style="font-size: 14px;">,也一点不</span></span><span style="font-size: 18pt;"><strong>&ldquo;</strong></span><span style="font-size: 18pt;"><strong>弱&rdquo;<span style="font-size: 15px;">。</span></strong></span></p><br><p><span style="font-size: 18pt;"><span style="font-size: 15px;"><span style="font-size: 14px;">要是你不了解他的</span></span><strong><span style="font-size: 15px;"><span style="font-size: 14pt;">&ldquo;弱&rdquo;</span></span></strong><span style="font-size: 14px;">，不了解</span><span style="font-size: 15px;"><span style="font-size: 14px;">这种</span></span><strong><span style="font-size: 15px;"><span style="font-size: 14pt;">脚本语言的任性</span><span style="font-size: 14px;">，</span></span></strong><span style="font-size: 14px;">后果肯定是一次次的—<strong><span style="font-size: 14pt;">&ldquo;咦？明明没有错啊？这xx也行？&rdquo;</span></strong></span></span></p><br><p><span style="font-size: 18pt;"><span style="font-size: 14px;"><strong><span style="font-size: 14pt;"><span style="font-size: 14px;">JavaScript中的</span><span style="color: #ff0000;"><strong><span style="font-size: 14pt;">函数声明</span></strong></span><span style="font-size: 14px;">和</span><span style="color: #ff0000;"><strong><span style="font-size: 14pt;">函数表达式</span></strong></span><span style="font-size: 14px;">就是一个这样的例子，这两个平时我们看起来和使用起来没有什么差别的东西。</span></span></strong></span></span></p><br></blockquote><br><p>&nbsp;</p><br><p><strong><span style="font-size: 14pt;">&nbsp;两者区别的表现</span></strong></p><br><ul><br><li><span style="font-size: 14px;"><span style="font-size: 14px;"><span style="font-size: 14px;">在<a title="JavaScript进阶(6)---JS函数" href="http://www.cnblogs.com/HXW-from-DJTU/p/5936536.html" target="_top">JavaScript进阶(6)</a>里面，介绍了几种&ldquo;创建&rdquo;函数的方法，其中头两种便是<strong><span style="color: #ff0000;">函数声明</span></strong>与<strong><span style="color: #ff0000;">函数表达式</span></strong><span style="color: #ff0000;"><span style="color: #000000;">。</span></span></span></span></span><br><div class="cnblogs_code"><br><pre><span style="color: #008000;">//</span><span style="color: #008000;">函数声明</span><br><span style="color: #0000ff;">function</span><span style="color: #000000;"> funName(a, b) {<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">function body</span><br>}</pre><br></div><br><div class="cnblogs_code"><br><pre><span style="color: #008000;">//</span><span style="color: #008000;">函数表达式，他最大的特点就是像给变量赋值，只不过赋的是一个匿名的函数对象</span><br><span style="color: #0000ff;">var</span> funName = <span style="color: #0000ff;">function</span><span style="color: #000000;"> (a , b){<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">function body</span><br>};</pre><br></div><br></li><br><li><br><p>在平时使用实际编程中，我们经常会把这两种方式混用，看起来没什么区别，<strong>让我们调用一下试试看&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p><br><ul><br><li><strong>函数声明</strong>：<img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021104517545-953621944.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li><br><li><strong>函数表达式：</strong><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021104838185-1624121922.png" alt=""><br><ul><br><li><span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">用函数声明创建的函数compareAB可以在<span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">compareAB</span>定义之前就进行调用</span></li><br><li><span style="font-size: 14px; color: #000000;"><span style="font-family: Microsoft YaHei;"><span style="font-family: Microsoft YaHei;">用函数表达式创建的<span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">compareAB</span>函数不能在<span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">compareAB</span>被赋值之前进行调用</span></span></span></li><br><li>到这这两种区别的原因是javascript的解释器的<span style="font-size: 14pt;"><strong>变量提升</strong></span><strong>（</strong><span style="font-family: Microsoft YaHei; font-size: 14px;"><strong><span style="color: #ff0000;">Javascript hoisting<span style="color: #000000;">）。</span></span></strong></span></li><br></ul><br></li><br></ul><br></li><br></ul><br><p><span style="font-family: Microsoft YaHei; font-size: 14pt;"><strong><span style="color: #ff0000;"><span style="color: #000000;">变量提升</span></span></strong></span></p><br><blockquote><br><p><strong><span style="color: #008000; font-family: Microsoft YaHei; font-size: 16px;"><span style="color: #000000;"><em><strong>In javascript,</strong></em> <strong><em>every variable declaration is hoisted to the top of its declaration context</em></strong>.</span></span></strong></p><br><p><strong>JavaScript解释器，会将函数的声明、变量的声明提前到作用域(上下文)的最顶部先执行,</strong><span style="color: #008000; font-family: Microsoft YaHei; font-size: 16px;"><span style="color: #000000;">但是变量初始化(赋值)的顺序不变</span></span><strong><span style="color: #008000; font-family: Microsoft YaHei; font-size: 16px;"><span style="color: #000000;"><strong>。</strong></span></span></strong></p><br></blockquote><br><ul><br><li>上例子第一种情况在JavaScript解释器中是这样进行的&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021112708763-178327683.png" alt=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 使用 <strong>function</strong> 的函数声明被提前到了最顶部先执行</li><br><li>上例子第二种情况在JavaScript解释器中是这样进行的&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021112239513-1086888604.png" alt="">这样看来就很容易理解了，在函数&ldquo;创建&rdquo;之前调用了它必然会报错</li><br><li><strong>其他的例子</strong><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">var</span> myvar = ‘outterValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">2</span> (<span style="color: #0000ff;">function</span><span style="color: #000000;"> () {<br></span><span style="color: #008080;">3</span> <span style="color: #000000;">  console.log(myvar);<br></span><span style="color: #008080;">4</span>   <span style="color: #0000ff;">var</span> myvar = ‘innerValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">5</span> }) ();</pre><br></div><br><p>变量提升后</p><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">var</span> myvar = ‘outterValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">2</span> (<span style="color: #0000ff;">function</span><span style="color: #000000;"> () {<br></span><span style="color: #008080;">3</span>   <span style="color: #0000ff;">var</span> myvar；            <span style="color: #008000;">//</span><span style="color: #008000;">未进行初始化，则值为undefined</span><br><span style="color: #008080;">4</span>   console.log(myvar);   <span style="color: #008000;">//</span><span style="color: #008000;">输出undefined</span><br><span style="color: #008080;">5</span>   myvar = ‘innerValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">6</span> }) ();</pre><br></div><br><p>&nbsp;</p><br></li><br><li><strong><strong>另一个深刻理解的例子</strong></strong><br><div class="cnblogs_code"><br><pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">var</span><span style="color: #000000;"> fun1;<br></span><span style="color: #008080;"> 2</span> console.log(<span style="color: #0000ff;">typeof</span> (fun2)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;function    </span><br><span style="color: #008080;"> 3</span> console.log(<span style="color: #0000ff;">typeof</span> (<span style="color: #000000;">anonymous</span>)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;undefined</span><br><span style="color: #008080;"> 4</span> <span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">true</span><span style="color: #000000;">) {<br></span><span style="color: #008080;"> 5</span>   <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;"> 6</span>     console.log(‘我是if里面的<span style="color: #000000;">fun2</span> ‘<span style="color: #000000;">);<br></span><span style="color: #008080;"> 7</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;"> 8</span>   fun1 = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anonymous() {<br></span><span style="color: #008080;"> 9</span>     console.log(‘我是if里面的 <span style="color: #000000;">fun1</span>‘<span style="color: #000000;">);<br></span><span style="color: #008080;">10</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">11</span> } <span style="color: #0000ff;">else</span><span style="color: #000000;"> {<br></span><span style="color: #008080;">12</span>   <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;">13</span>     console.log(‘我是else里面的<span style="color: #000000;">fun2</span>‘<span style="color: #000000;">);<br></span><span style="color: #008080;">14</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">15</span>   fun1 = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anonymous() {<br></span><span style="color: #008080;">16</span>     console.log(‘我是else里面的 <span style="color: #000000;">fun1</span>‘<span style="color: #000000;">);<br></span><span style="color: #008080;">17</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">18</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">19</span> fun2();  <span style="color: #008000;">//</span><span style="color: #008000;">我是else里面的fun2  </span><br><span style="color: #008080;">20</span> fun1(); <span style="color: #008000;">//</span><span style="color: #008000;"> 我是if里面的 fun1</span></pre><br></div><br><p><strong>从中我们可以总结几点</strong>：</p><br><ul><br><li>if-else语句不会形成新的作用域，变量的提升提升到了全文的顶部</li><br><li><span style="font-family: Microsoft YaHei; font-size: 14px;">检测到作用域内有两个同名的fun2函数的定义，第一个定义先被提升，第二个定义接着被提升（第二个定义在第一个定义之下），第二个定义<span style="font-size: 18px;"><strong>覆盖</strong></span>了第一个fun2定义，所以fun2()是按照后者输出”<span style="color: #008000;"><span style="font-size: 16px;"><strong><span style="color: #ff0000;">我是else里面的fun2</span></strong></span>“</span></span></li><br><li><span style="font-family: Microsoft YaHei; font-size: 14px;">而fun1是用函数表达式创建的，其<span style="font-size: 18px;"><strong>表达式的内容是在JS运行时（不是解析时）才能确定</strong></span>（这里条件判断就起到作用了），所以fun1表达式执行了第一个函数定义并赋值，则fun1（）输出”<span style="color: #ff0000; font-size: 16px;"><strong>我是if里面的</strong> </span><span style="color: #000000;"><span style="font-size: 16px;"><strong><span style="color: #ff0000;">fun1</span></strong></span>“</span>。</span></li><br><li>相信大家不难把js解释器里面的<span style="font-size: 18px;">真实执行过程</span>写出来<br><div class="cnblogs_code"><br><pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">var</span><span style="color: #000000;"> fun1;<br></span><span style="color: #008080;"> 2</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;"> 3</span>   console.log(‘我是if里面的fun2’<span style="color: #000000;">);<br></span><span style="color: #008080;"> 4</span> <span style="color: #000000;">}<br></span><span style="color: #008080;"> 5</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;"> 6</span>   console.log(‘我是else里面的fun2’<span style="color: #000000;">);<br></span><span style="color: #008080;"> 7</span> <span style="color: #000000;">}<br></span><span style="color: #008080;"> 8</span> console.log(<span style="color: #0000ff;">typeof</span> (fun2)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;function    </span><br><span style="color: #008080;"> 9</span> console.log(<span style="color: #0000ff;">typeof</span> (anoymous)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;undefined</span><br><span style="color: #008080;">10</span> <span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">true</span><span style="color: #000000;">) {<br></span><span style="color: #008080;">11</span>   <span style="color: #008000;">//</span><span style="color: #008000;">这里的fun2声明被hoisting…到了顶部</span><br><span style="color: #008080;">12</span>   sayHello = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anoymous() {<br></span><span style="color: #008080;">13</span>     console.log(‘我是if里面的 fun1’<span style="color: #000000;">);<br></span><span style="color: #008080;">14</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">15</span> } <span style="color: #0000ff;">else</span><span style="color: #000000;"> {<br></span><span style="color: #008080;">16</span>   <span style="color: #008000;">//</span><span style="color: #008000;">这里的fun2声明被hoisting…到了顶部</span><br><span style="color: #008080;">17</span>   sayHello = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anoymous() {<br></span><span style="color: #008080;">18</span>     console.log(‘我是else里面的 fun1’<span style="color: #000000;">);<br></span><span style="color: #008080;">19</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">20</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">21</span> fun2(); <span style="color: #008000;">//</span><span style="color: #008000;"> =&gt; 我是else里面的fun2   </span><br><span style="color: #008080;">22</span> fun1(); <span style="color: #008000;">//</span><span style="color: #008000;"> =&gt; 我是if里面的 fun1</span></pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br></li><br></ul><br><p>（以上内容改编自<a href="http://home.cnblogs.com/u/isaboy/" target="_blank" rel="external">JackWang-CUMT</a>的文章《<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/isaboy/p/javascript_function.html" target="_blank" rel="external">详解Javascript 函数声明和函数表达式的区别</a>》）</p><br><p>&nbsp;</p>  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/其他/">其他</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2017/03/30/js_9/" data-title="Javascript 之 变量提升 | Hexo" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/03/30/js_cal/" title="Javascript 之 运算符">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Javascript 之 运算符</span>
 </a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
-  </div>
+</div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Javascript 之 变量提升
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;</p><br><blockquote><br><p>刚开始接触JavaScript，感觉它是个弱类型的脚本语言，语法十分宽松，好学好上手。</p><br><p>过了一阵了，渐渐地感觉到这个脚本语言其实他并不<span style="font-size: 18pt;"><strong>&ldquo;脚本&rdquo;</strong><span style="font-size: 14px;">,也一点不</span></span><span style="font-size: 18pt;"><strong>&ldquo;</strong></span><span style="font-size: 18pt;"><strong>弱&rdquo;<span style="font-size: 15px;">。</span></strong></span></p><br><p><span style="font-size: 18pt;"><span style="font-size: 15px;"><span style="font-size: 14px;">要是你不了解他的</span></span><strong><span style="font-size: 15px;"><span style="font-size: 14pt;">&ldquo;弱&rdquo;</span></span></strong><span style="font-size: 14px;">，不了解</span><span style="font-size: 15px;"><span style="font-size: 14px;">这种</span></span><strong><span style="font-size: 15px;"><span style="font-size: 14pt;">脚本语言的任性</span><span style="font-size: 14px;">，</span></span></strong><span style="font-size: 14px;">后果肯定是一次次的—<strong><span style="font-size: 14pt;">&ldquo;咦？明明没有错啊？这xx也行？&rdquo;</span></strong></span></span></p><br><p><span style="font-size: 18pt;"><span style="font-size: 14px;"><strong><span style="font-size: 14pt;"><span style="font-size: 14px;">JavaScript中的</span><span style="color: #ff0000;"><strong><span style="font-size: 14pt;">函数声明</span></strong></span><span style="font-size: 14px;">和</span><span style="color: #ff0000;"><strong><span style="font-size: 14pt;">函数表达式</span></strong></span><span style="font-size: 14px;">就是一个这样的例子，这两个平时我们看起来和使用起来没有什么差别的东西。</span></span></strong></span></span></p><br></blockquote><br><p>&nbsp;</p><br><p><strong><span style="font-size: 14pt;">&nbsp;两者区别的表现</span></strong></p><br><ul><br><li><span style="font-size: 14px;"><span style="font-size: 14px;"><span style="font-size: 14px;">在<a title="JavaScript进阶(6)---JS函数" href="http://www.cnblogs.com/HXW-from-DJTU/p/5936536.html" target="_top">JavaScript进阶(6)</a>里面，介绍了几种&ldquo;创建&rdquo;函数的方法，其中头两种便是<strong><span style="color: #ff0000;">函数声明</span></strong>与<strong><span style="color: #ff0000;">函数表达式</span></strong><span style="color: #ff0000;"><span style="color: #000000;">。</span></span></span></span></span><br><div class="cnblogs_code"><br><pre><span style="color: #008000;">//</span><span style="color: #008000;">函数声明</span><br><span style="color: #0000ff;">function</span><span style="color: #000000;"> funName(a, b) {<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">function body</span><br>}</pre><br></div><br><div class="cnblogs_code"><br><pre><span style="color: #008000;">//</span><span style="color: #008000;">函数表达式，他最大的特点就是像给变量赋值，只不过赋的是一个匿名的函数对象</span><br><span style="color: #0000ff;">var</span> funName = <span style="color: #0000ff;">function</span><span style="color: #000000;"> (a , b){<br>    </span><span style="color: #008000;">//</span><span style="color: #008000;">function body</span><br>};</pre><br></div><br></li><br><li><br><p>在平时使用实际编程中，我们经常会把这两种方式混用，看起来没什么区别，<strong>让我们调用一下试试看&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p><br><ul><br><li><strong>函数声明</strong>：<img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021104517545-953621944.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li><br><li><strong>函数表达式：</strong><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021104838185-1624121922.png" alt=""><br><ul><br><li><span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">用函数声明创建的函数compareAB可以在<span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">compareAB</span>定义之前就进行调用</span></li><br><li><span style="font-size: 14px; color: #000000;"><span style="font-family: Microsoft YaHei;"><span style="font-family: Microsoft YaHei;">用函数表达式创建的<span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">compareAB</span>函数不能在<span style="font-family: Microsoft YaHei; font-size: 14px; color: #000000;">compareAB</span>被赋值之前进行调用</span></span></span></li><br><li>到这这两种区别的原因是javascript的解释器的<span style="font-size: 14pt;"><strong>变量提升</strong></span><strong>（</strong><span style="font-family: Microsoft YaHei; font-size: 14px;"><strong><span style="color: #ff0000;">Javascript hoisting<span style="color: #000000;">）。</span></span></strong></span></li><br></ul><br></li><br></ul><br></li><br></ul><br><p><span style="font-family: Microsoft YaHei; font-size: 14pt;"><strong><span style="color: #ff0000;"><span style="color: #000000;">变量提升</span></span></strong></span></p><br><blockquote><br><p><strong><span style="color: #008000; font-family: Microsoft YaHei; font-size: 16px;"><span style="color: #000000;"><em><strong>In javascript,</strong></em> <strong><em>every variable declaration is hoisted to the top of its declaration context</em></strong>.</span></span></strong></p><br><p><strong>JavaScript解释器，会将函数的声明、变量的声明提前到作用域(上下文)的最顶部先执行,</strong><span style="color: #008000; font-family: Microsoft YaHei; font-size: 16px;"><span style="color: #000000;">但是变量初始化(赋值)的顺序不变</span></span><strong><span style="color: #008000; font-family: Microsoft YaHei; font-size: 16px;"><span style="color: #000000;"><strong>。</strong></span></span></strong></p><br></blockquote><br><ul><br><li>上例子第一种情况在JavaScript解释器中是这样进行的&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021112708763-178327683.png" alt=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 使用 <strong>function</strong> 的函数声明被提前到了最顶部先执行</li><br><li>上例子第二种情况在JavaScript解释器中是这样进行的&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161021112239513-1086888604.png" alt="">这样看来就很容易理解了，在函数&ldquo;创建&rdquo;之前调用了它必然会报错</li><br><li><strong>其他的例子</strong><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">var</span> myvar = ‘outterValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">2</span> (<span style="color: #0000ff;">function</span><span style="color: #000000;"> () {<br></span><span style="color: #008080;">3</span> <span style="color: #000000;">  console.log(myvar);<br></span><span style="color: #008080;">4</span>   <span style="color: #0000ff;">var</span> myvar = ‘innerValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">5</span> }) ();</pre><br></div><br><p>变量提升后</p><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">var</span> myvar = ‘outterValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">2</span> (<span style="color: #0000ff;">function</span><span style="color: #000000;"> () {<br></span><span style="color: #008080;">3</span>   <span style="color: #0000ff;">var</span> myvar；            <span style="color: #008000;">//</span><span style="color: #008000;">未进行初始化，则值为undefined</span><br><span style="color: #008080;">4</span>   console.log(myvar);   <span style="color: #008000;">//</span><span style="color: #008000;">输出undefined</span><br><span style="color: #008080;">5</span>   myvar = ‘innerValue’<span style="color: #000000;">;<br></span><span style="color: #008080;">6</span> }) ();</pre><br></div><br><p>&nbsp;</p><br></li><br><li><strong><strong>另一个深刻理解的例子</strong></strong><br><div class="cnblogs_code"><br><pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">var</span><span style="color: #000000;"> fun1;<br></span><span style="color: #008080;"> 2</span> console.log(<span style="color: #0000ff;">typeof</span> (fun2)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;function    </span><br><span style="color: #008080;"> 3</span> console.log(<span style="color: #0000ff;">typeof</span> (<span style="color: #000000;">anonymous</span>)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;undefined</span><br><span style="color: #008080;"> 4</span> <span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">true</span><span style="color: #000000;">) {<br></span><span style="color: #008080;"> 5</span>   <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;"> 6</span>     console.log(‘我是if里面的<span style="color: #000000;">fun2</span> ‘<span style="color: #000000;">);<br></span><span style="color: #008080;"> 7</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;"> 8</span>   fun1 = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anonymous() {<br></span><span style="color: #008080;"> 9</span>     console.log(‘我是if里面的 <span style="color: #000000;">fun1</span>‘<span style="color: #000000;">);<br></span><span style="color: #008080;">10</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">11</span> } <span style="color: #0000ff;">else</span><span style="color: #000000;"> {<br></span><span style="color: #008080;">12</span>   <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;">13</span>     console.log(‘我是else里面的<span style="color: #000000;">fun2</span>‘<span style="color: #000000;">);<br></span><span style="color: #008080;">14</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">15</span>   fun1 = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anonymous() {<br></span><span style="color: #008080;">16</span>     console.log(‘我是else里面的 <span style="color: #000000;">fun1</span>‘<span style="color: #000000;">);<br></span><span style="color: #008080;">17</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">18</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">19</span> fun2();  <span style="color: #008000;">//</span><span style="color: #008000;">我是else里面的fun2  </span><br><span style="color: #008080;">20</span> fun1(); <span style="color: #008000;">//</span><span style="color: #008000;"> 我是if里面的 fun1</span></pre><br></div><br><p><strong>从中我们可以总结几点</strong>：</p><br><ul><br><li>if-else语句不会形成新的作用域，变量的提升提升到了全文的顶部</li><br><li><span style="font-family: Microsoft YaHei; font-size: 14px;">检测到作用域内有两个同名的fun2函数的定义，第一个定义先被提升，第二个定义接着被提升（第二个定义在第一个定义之下），第二个定义<span style="font-size: 18px;"><strong>覆盖</strong></span>了第一个fun2定义，所以fun2()是按照后者输出”<span style="color: #008000;"><span style="font-size: 16px;"><strong><span style="color: #ff0000;">我是else里面的fun2</span></strong></span>“</span></span></li><br><li><span style="font-family: Microsoft YaHei; font-size: 14px;">而fun1是用函数表达式创建的，其<span style="font-size: 18px;"><strong>表达式的内容是在JS运行时（不是解析时）才能确定</strong></span>（这里条件判断就起到作用了），所以fun1表达式执行了第一个函数定义并赋值，则fun1（）输出”<span style="color: #ff0000; font-size: 16px;"><strong>我是if里面的</strong> </span><span style="color: #000000;"><span style="font-size: 16px;"><strong><span style="color: #ff0000;">fun1</span></strong></span>“</span>。</span></li><br><li>相信大家不难把js解释器里面的<span style="font-size: 18px;">真实执行过程</span>写出来<br><div class="cnblogs_code"><br><pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">var</span><span style="color: #000000;"> fun1;<br></span><span style="color: #008080;"> 2</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;"> 3</span>   console.log(‘我是if里面的fun2’<span style="color: #000000;">);<br></span><span style="color: #008080;"> 4</span> <span style="color: #000000;">}<br></span><span style="color: #008080;"> 5</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> fun2() {<br></span><span style="color: #008080;"> 6</span>   console.log(‘我是else里面的fun2’<span style="color: #000000;">);<br></span><span style="color: #008080;"> 7</span> <span style="color: #000000;">}<br></span><span style="color: #008080;"> 8</span> console.log(<span style="color: #0000ff;">typeof</span> (fun2)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;function    </span><br><span style="color: #008080;"> 9</span> console.log(<span style="color: #0000ff;">typeof</span> (anoymous)); <span style="color: #008000;">//</span><span style="color: #008000;">=&gt;undefined</span><br><span style="color: #008080;">10</span> <span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">true</span><span style="color: #000000;">) {<br></span><span style="color: #008080;">11</span>   <span style="color: #008000;">//</span><span style="color: #008000;">这里的fun2声明被hoisting…到了顶部</span><br><span style="color: #008080;">12</span>   sayHello = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anoymous() {<br></span><span style="color: #008080;">13</span>     console.log(‘我是if里面的 fun1’<span style="color: #000000;">);<br></span><span style="color: #008080;">14</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">15</span> } <span style="color: #0000ff;">else</span><span style="color: #000000;"> {<br></span><span style="color: #008080;">16</span>   <span style="color: #008000;">//</span><span style="color: #008000;">这里的fun2声明被hoisting…到了顶部</span><br><span style="color: #008080;">17</span>   sayHello = <span style="color: #0000ff;">function</span><span style="color: #000000;"> anoymous() {<br></span><span style="color: #008080;">18</span>     console.log(‘我是else里面的 fun1’<span style="color: #000000;">);<br></span><span style="color: #008080;">19</span> <span style="color: #000000;">  }<br></span><span style="color: #008080;">20</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">21</span> fun2(); <span style="color: #008000;">//</span><span style="color: #008000;"> =&gt; 我是else里面的fun2   </span><br><span style="color: #008080;">22</span> fun1(); <span style="color: #008000;">//</span><span style="color: #008000;"> =&gt; 我是if里面的 fun1</span></pre><br></div><br><p>&nbsp;</p><br></li><br></ul><br></li><br></ul><br><p>（以上内容改编自<a href="http://home.cnblogs.com/u/isaboy/" target="_blank" rel="external">JackWang-CUMT</a>的文章《<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/isaboy/p/javascript_function.html" target="_blank" rel="external">详解Javascript 函数声明和函数表达式的区别</a>》）</p><br><p>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/js_9/" data-id="cj0wb4svy000o6kf0a35x6o0l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+<div class="next">
+<a href="/2017/03/30/js_8_oop/"  title="Javascript 之 面向对象编程">
+ <strong>NEXT:</strong><br/> 
+ <span>Javascript 之 面向对象编程
+</span>
+</a>
+</div>
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/03/30/js_cal/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Javascript 之 运算符
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/03/30/js_8_oop/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Javascript 之 面向对象编程</div>
-    </a>
-  
 </nav>
 
-  
-</article>
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
-</section>
-        
-          <aside id="sidebar">
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
-    </div>
   </div>
 
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
-    </div>
-  </div>
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/CSS样式/" title="CSS样式">CSS样式<sup>3</sup></a></li>
+		
+			<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Typescript/" title="Typescript">Typescript<sup>3</sup></a></li>
+		
+			<li><a href="/categories/css样式/" title="css样式">css样式<sup>1</sup></a></li>
+		
+			<li><a href="/categories/http/" title="http">http<sup>2</sup></a></li>
+		
+			<li><a href="/categories/javascript进阶/" title="javascript进阶">javascript进阶<sup>11</sup></a></li>
+		
+			<li><a href="/categories/前端规范/" title="前端规范">前端规范<sup>1</sup></a></li>
+		
+			<li><a href="/categories/前端进阶/" title="前端进阶">前端进阶<sup>1</sup></a></li>
+		
+		</ul>
+</div>
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
-    </div>
-  </div>
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/其他/" title="其他">其他<sup>23</sup></a></li>
+		
+		</ul>
+</div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/sass_install/">SASS安装</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
 
-  
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+</div>
     </div>
-  </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
+		
+		<a href="http://yoursite.com" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
-</body>
+
+
+
+  </body>
 </html>

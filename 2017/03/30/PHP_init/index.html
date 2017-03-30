@@ -1,234 +1,328 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>PHP 入门基础 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="初识PHP&amp;nbsp;- PHP是一种服务器端运行的编程语言，因为它可以在WEB服务器端运行。&amp;nbsp;- 网站的数据一般储存在服务器端，PHP则是用来处理这些服务器端德尔数据的。&amp;nbsp;- PHP是一种跨平台的语言，可以运行在各种语言搭建起来的操作系统。&amp;nbsp;- PHP是通过脚本来控制服务器处理数据的。PHP的标识码&amp;nbsp;- 页面中的PHP代码需要编写在&amp;lt;?php 与&amp;n">
-<meta property="og:type" content="article">
-<meta property="og:title" content="PHP 入门基础">
-<meta property="og:url" content="http://yoursite.com/2017/03/30/PHP_init/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="初识PHP&amp;nbsp;- PHP是一种服务器端运行的编程语言，因为它可以在WEB服务器端运行。&amp;nbsp;- 网站的数据一般储存在服务器端，PHP则是用来处理这些服务器端德尔数据的。&amp;nbsp;- PHP是一种跨平台的语言，可以运行在各种语言搭建起来的操作系统。&amp;nbsp;- PHP是通过脚本来控制服务器处理数据的。PHP的标识码&amp;nbsp;- 页面中的PHP代码需要编写在&amp;lt;?php 与&amp;n">
-<meta property="og:updated_time" content="2017-02-22T23:57:11.016Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP 入门基础">
-<meta name="twitter:description" content="初识PHP&amp;nbsp;- PHP是一种服务器端运行的编程语言，因为它可以在WEB服务器端运行。&amp;nbsp;- 网站的数据一般储存在服务器端，PHP则是用来处理这些服务器端德尔数据的。&amp;nbsp;- PHP是一种跨平台的语言，可以运行在各种语言搭建起来的操作系统。&amp;nbsp;- PHP是通过脚本来控制服务器处理数据的。PHP的标识码&amp;nbsp;- 页面中的PHP代码需要编写在&amp;lt;?php 与&amp;n">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>PHP 入门基础 | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    <meta name="description" content="初识PHP&amp;nbsp;- PHP是一种服务器端运行的编程语言，因为它可以在WEB服务器端运行。&amp;nbsp;- 网站的数据一般储存在服务器端，PHP则是用来处理这些服务器端德尔数据的。&amp;nbsp;- PHP是一种跨平台的语言，可以运行在各种语言搭建起来的操作系统。&amp;nbsp;- PHP是通过脚本来控制">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/03/30/PHP_init/" title="PHP 入门基础" itemprop="url">PHP 入门基础</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="John Doe">John Doe</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-03-30T11:17:47.734Z" itemprop="datePublished">2017-03-30</time>
+    Updated:<time datetime="2017-02-22T23:57:11.016Z" itemprop="dateModified">2017-02-23</time>
+    
+  </p>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-PHP_init" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/30/PHP_init/" class="article-date">
-  <time datetime="2017-03-30T11:17:47.734Z" itemprop="datePublished">2017-03-30</time>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+		</div>
+		
+		<p><span style="font-size: 18pt;"><strong>初识PHP</strong></span><br><br>&nbsp;- PHP是一种服务器端运行的编程语言，因为它可以在WEB服务器端运行。<br>&nbsp;- 网站的数据一般储存在服务器端，PHP则是用来处理这些服务器端德尔数据的。<br>&nbsp;- PHP是一种跨平台的语言，可以运行在各种语言搭建起来的操作系统。<br>&nbsp;- PHP是通过脚本来控制服务器处理数据的。<br><br>PHP的标识码<br><br>&nbsp;- 页面中的PHP代码需要编写在&lt;?php 与&nbsp; ?&gt;标志之间<br>&nbsp;- 并且&lt;?与PHP之间不允许有空格<br>&nbsp;- 但是后面的?&gt;是可以省略的<br>&nbsp;- PHP每一条语句的结尾都必须加入&nbsp; ;&nbsp; 分号，以表示语句结束<br><br>Echo语句<br><br>&nbsp;- echo语句在PHP中是用于输出的，可以把字符串输出<br>&nbsp;- 输出的字符串需要用双引号括起来<br>&nbsp;- echo字符串与echo关键字之间必须至少留有一个空格<br>&nbsp; &nbsp;<span class="cnblogs_code"> &lt;?PHP <span style="color: #0000ff;">echo</span>“Hello HXW_from_DJTU”; ?&gt;</span>&nbsp;的写法是不正确的<br><br>echo语句的基本功能<br><br>&nbsp;- 计算表达式<br>&nbsp;&nbsp; &lt;?php echo 2*4;?&gt;的输出结果是 36<br>&nbsp;- 输出字符串<br>&nbsp;&nbsp; 输出字符串的时候可以使用双引号或者单引号包裹字符串<br>&nbsp;&nbsp;&nbsp;&nbsp; 单个字符串&nbsp;<span class="cnblogs_code">&lt;?php <span style="color: #0000ff;">echo</span> “HI HXW_from_DJTU” ?&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp; 多个字符串连接&nbsp;<span class="cnblogs_code">&lt;?php <span style="color: #0000ff;">echo</span> ‘HI’.’HXW_from_DJTU’?&gt;</span>&nbsp;，当多个字符串连接一并输出的时候，使用.(点号)来连接连个分隔的字符串<br><br>PHP中的注释语句<br><br>&nbsp;- PHP中的注释语句使用双斜杠//来标识<br><br>PHP命名规则<br><br>&nbsp;- PHP中的变量定义时候，变量名必须通过$符号来标识，如&nbsp;<span class="cnblogs_code"><span style="color: #800080;">$DJTU</span>、<span style="color: #800080;">$man</span>、<span style="color: #800080;">$my_book</span></span>&nbsp;<br>&nbsp;- PHP变量名必须以字母或者下划线开头，如&nbsp;<span class="cnblogs_code">$3HXW_DJTU</span>&nbsp;是不正确的<br>&nbsp;- PHP变量的名称能够包括字母、下划线、数字、汉字，但汉字不能够用于开头<br>&nbsp;- PHP的变量名中不支持出现空格，若是出现复合词语，建议使用下划线或者著名的驼峰命名法来命名。<br>&nbsp;- PHP中的变量名是区分大小写的，如&nbsp;<span class="cnblogs_code"><span style="color: #800080;">$HXW_from_DJTU与$hxw_FROM_djtu</span></span>&nbsp;是两个不同的变量<br><br>PHP的数据类型<br><br>&nbsp;- 同样的内容，以不同的数据类型保存到变量中，必定会占用电脑内存不同的大小（其他的语言貌似也是）如654，分别以$n=654;、$n=654.00;、$n=”654”;、$n=array（”654”）;定义，占用的内存肯定不一<br>&nbsp;- PHP像JavaScript一样不需要声明传入变量的数据类型<br>&nbsp;- PHP支持八种原始数据类型<br>&nbsp;- 四种标量类型：string(字符串)&nbsp; integer（整形）&nbsp; float（浮点型，也称作double）&nbsp; boolean布尔型<br>&nbsp;- 两种复合类型：array（数组）&nbsp; object（对象）<br>&nbsp;- 两种特殊类型：resource（资源） NULL（空）<br>&nbsp;- 使用var_dump(变量)函数可以获取变量的真正数据类型<br><br>与PHP字符串有关的注意事项<br>&nbsp;<br>&nbsp;- 当变量中出现双引号包括双引号或者单引号包括单引号的时候，可以通过在先要表现的单双引号前面加上转义字符/（反斜杠）的方法来实现。（好拗口的样子/(ㄒoㄒ)/~~，明白就好）<br>&nbsp;&nbsp; 例如：<br>&nbsp;</p><br><div class="cnblogs_code"><br><pre> <span style="color: #800080;">$string1</span>=’A问：”你认识XHW_from_DJTU吗？”‘<span style="color: #000000;">;单引号包括单引号<br>   </span><span style="color: #800080;">$string2</span>=”B回答：’肯定认识啦！’”;双引号包括单引号</pre><br></div><br><p>&nbsp;</p><br><p><br>———————-这两种情况不需要转义字符/（反斜杠）—————————–<br>&nbsp;</p><br><div class="cnblogs_code"><br><pre> <span style="color: #800080;">$string3</span>=’A问:\’能告诉我他现在在哪吗？\’’<span style="color: #000000;">;  单引号包括单引号<br>   </span><span style="color: #800080;">$string4</span>=’B答道:\”就不告诉你\”‘;  双引号包括双引号  </pre><br></div><br><p>&nbsp;</p><br><p><br>———————-这种情况就学要使用/（反斜杠）————————————<br>&nbsp;- 当字符串中出现变量的时候：（前提：$HXW=”strong man”;）<br>&nbsp;&nbsp; 当是双引号包裹字符串时，变量输出它的值；如：&nbsp;<span class="cnblogs_code"><span style="color: #800080;">$string1</span>=”你好，<span style="color: #800080;">$HXW</span>“;</span>&nbsp;&nbsp; echo输出&nbsp;&nbsp; &nbsp;<span class="cnblogs_code">你好，strong man</span>&nbsp;<br>&nbsp;&nbsp; 当是单引号包裹字符串时，变量输出$号和它的变量名；如：&nbsp;<span class="cnblogs_code"><span style="color: #800080;">$string2</span>=’你好，$HXW’;</span>&nbsp;&nbsp; echo输出 &nbsp;<span class="cnblogs_code">你好，<span style="color: #800080;">$HXW</span></span>&nbsp;<br>&nbsp;- 当字符串超级超级长时，使用Heredoc结构形式来构造字符串，也就是使用&lt;&lt;&lt;ABC和ABC来代替前后引号来构造字符串（这里的ACB字母不限是什么字母，但要求前后一样，并且最后一行除了ABC和结束分号以外不能有别的东西哦） <br>例如：<br>&nbsp;<span class="cnblogs_code"><span style="color: #800080;">$HXW_from_DJTU</span>=&lt;&lt;&lt;ABC HXW_from_DJTU该同志工作勤勤恳恳，始终忠于共产PARTY，哈哈哈哈哈此处应换行ABC;</span>&nbsp;<br>echo输出</p><br><p>&nbsp;&nbsp;<span class="cnblogs_code">HXW_from_DJTU该同志工作勤勤恳恳，始终忠于共产PARTY，哈哈哈哈哈此处应换行</span>&nbsp;<br><br>PHP特殊数据类型—资源（初步理解）<br><br>&nbsp;- PHP中的资源类型是有专门的函数来创建和使用的<br>&nbsp;- 它就像是一个外部资源的引用，如外部文件、外部数据库、图形画布等。<br>&nbsp;- 在使用前需要打开，在试用结束后需要关闭（感觉有点像JAVA的数据流）<br><br>PHP特殊类型—空类<br><br>&nbsp;- 变量值为空的三种情况<br>&nbsp; 1、 一个变量被赋值为&nbsp;<span class="cnblogs_code"><span style="color: #0000ff;">NULL</span> <span style="color: #800080;">$var</span>=<span style="color: #0000ff;">null</span>;</span>&nbsp;<br>&nbsp;&nbsp; 2、变量上未被赋值 <br>&nbsp;&nbsp; 3、 变量被&nbsp;<span class="cnblogs_code"><span style="color: #0000ff;">unset</span>()</span>&nbsp;方法处理之后&nbsp;<span class="cnblogs_code"> <span style="color: #0000ff;">unset</span>(<span style="color: #0000ff;">var</span>);</span>&nbsp;</p>  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/其他/">其他</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/PHP/">PHP</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2017/03/30/PHP_init/" data-title="PHP 入门基础 | Hexo" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/03/30/rest/" title="前端编码规范 之 REST规范">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  前端编码规范 之 REST规范</span>
 </a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/PHP/">PHP</a>
-  </div>
+</div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      PHP 入门基础
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><span style="font-size: 18pt;"><strong>初识PHP</strong></span><br><br>&nbsp;- PHP是一种服务器端运行的编程语言，因为它可以在WEB服务器端运行。<br>&nbsp;- 网站的数据一般储存在服务器端，PHP则是用来处理这些服务器端德尔数据的。<br>&nbsp;- PHP是一种跨平台的语言，可以运行在各种语言搭建起来的操作系统。<br>&nbsp;- PHP是通过脚本来控制服务器处理数据的。<br><br>PHP的标识码<br><br>&nbsp;- 页面中的PHP代码需要编写在&lt;?php 与&nbsp; ?&gt;标志之间<br>&nbsp;- 并且&lt;?与PHP之间不允许有空格<br>&nbsp;- 但是后面的?&gt;是可以省略的<br>&nbsp;- PHP每一条语句的结尾都必须加入&nbsp; ;&nbsp; 分号，以表示语句结束<br><br>Echo语句<br><br>&nbsp;- echo语句在PHP中是用于输出的，可以把字符串输出<br>&nbsp;- 输出的字符串需要用双引号括起来<br>&nbsp;- echo字符串与echo关键字之间必须至少留有一个空格<br>&nbsp; &nbsp;<span class="cnblogs_code"> &lt;?PHP <span style="color: #0000ff;">echo</span>“Hello HXW_from_DJTU”; ?&gt;</span>&nbsp;的写法是不正确的<br><br>echo语句的基本功能<br><br>&nbsp;- 计算表达式<br>&nbsp;&nbsp; &lt;?php echo 2*4;?&gt;的输出结果是 36<br>&nbsp;- 输出字符串<br>&nbsp;&nbsp; 输出字符串的时候可以使用双引号或者单引号包裹字符串<br>&nbsp;&nbsp;&nbsp;&nbsp; 单个字符串&nbsp;<span class="cnblogs_code">&lt;?php <span style="color: #0000ff;">echo</span> “HI HXW_from_DJTU” ?&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp; 多个字符串连接&nbsp;<span class="cnblogs_code">&lt;?php <span style="color: #0000ff;">echo</span> ‘HI’.’HXW_from_DJTU’?&gt;</span>&nbsp;，当多个字符串连接一并输出的时候，使用.(点号)来连接连个分隔的字符串<br><br>PHP中的注释语句<br><br>&nbsp;- PHP中的注释语句使用双斜杠//来标识<br><br>PHP命名规则<br><br>&nbsp;- PHP中的变量定义时候，变量名必须通过$符号来标识，如&nbsp;<span class="cnblogs_code"><span style="color: #800080;">$DJTU</span>、<span style="color: #800080;">$man</span>、<span style="color: #800080;">$my_book</span></span>&nbsp;<br>&nbsp;- PHP变量名必须以字母或者下划线开头，如&nbsp;<span class="cnblogs_code">$3HXW_DJTU</span>&nbsp;是不正确的<br>&nbsp;- PHP变量的名称能够包括字母、下划线、数字、汉字，但汉字不能够用于开头<br>&nbsp;- PHP的变量名中不支持出现空格，若是出现复合词语，建议使用下划线或者著名的驼峰命名法来命名。<br>&nbsp;- PHP中的变量名是区分大小写的，如&nbsp;<span class="cnblogs_code"><span style="color: #800080;">$HXW_from_DJTU与$hxw_FROM_djtu</span></span>&nbsp;是两个不同的变量<br><br>PHP的数据类型<br><br>&nbsp;- 同样的内容，以不同的数据类型保存到变量中，必定会占用电脑内存不同的大小（其他的语言貌似也是）如654，分别以$n=654;、$n=654.00;、$n=”654”;、$n=array（”654”）;定义，占用的内存肯定不一<br>&nbsp;- PHP像JavaScript一样不需要声明传入变量的数据类型<br>&nbsp;- PHP支持八种原始数据类型<br>&nbsp;- 四种标量类型：string(字符串)&nbsp; integer（整形）&nbsp; float（浮点型，也称作double）&nbsp; boolean布尔型<br>&nbsp;- 两种复合类型：array（数组）&nbsp; object（对象）<br>&nbsp;- 两种特殊类型：resource（资源） NULL（空）<br>&nbsp;- 使用var_dump(变量)函数可以获取变量的真正数据类型<br><br>与PHP字符串有关的注意事项<br>&nbsp;<br>&nbsp;- 当变量中出现双引号包括双引号或者单引号包括单引号的时候，可以通过在先要表现的单双引号前面加上转义字符/（反斜杠）的方法来实现。（好拗口的样子/(ㄒoㄒ)/~~，明白就好）<br>&nbsp;&nbsp; 例如：<br>&nbsp;</p><br><div class="cnblogs_code"><br><pre> <span style="color: #800080;">$string1</span>=’A问：”你认识XHW_from_DJTU吗？”‘<span style="color: #000000;">;单引号包括单引号<br>   </span><span style="color: #800080;">$string2</span>=”B回答：’肯定认识啦！’”;双引号包括单引号</pre><br></div><br><p>&nbsp;</p><br><p><br>———————-这两种情况不需要转义字符/（反斜杠）—————————–<br>&nbsp;</p><br><div class="cnblogs_code"><br><pre> <span style="color: #800080;">$string3</span>=’A问:\’能告诉我他现在在哪吗？\’’<span style="color: #000000;">;  单引号包括单引号<br>   </span><span style="color: #800080;">$string4</span>=’B答道:\”就不告诉你\”‘;  双引号包括双引号  </pre><br></div><br><p>&nbsp;</p><br><p><br>———————-这种情况就学要使用/（反斜杠）————————————<br>&nbsp;- 当字符串中出现变量的时候：（前提：$HXW=”strong man”;）<br>&nbsp;&nbsp; 当是双引号包裹字符串时，变量输出它的值；如：&nbsp;<span class="cnblogs_code"><span style="color: #800080;">$string1</span>=”你好，<span style="color: #800080;">$HXW</span>“;</span>&nbsp;&nbsp; echo输出&nbsp;&nbsp; &nbsp;<span class="cnblogs_code">你好，strong man</span>&nbsp;<br>&nbsp;&nbsp; 当是单引号包裹字符串时，变量输出$号和它的变量名；如：&nbsp;<span class="cnblogs_code"><span style="color: #800080;">$string2</span>=’你好，$HXW’;</span>&nbsp;&nbsp; echo输出 &nbsp;<span class="cnblogs_code">你好，<span style="color: #800080;">$HXW</span></span>&nbsp;<br>&nbsp;- 当字符串超级超级长时，使用Heredoc结构形式来构造字符串，也就是使用&lt;&lt;&lt;ABC和ABC来代替前后引号来构造字符串（这里的ACB字母不限是什么字母，但要求前后一样，并且最后一行除了ABC和结束分号以外不能有别的东西哦） <br>例如：<br>&nbsp;<span class="cnblogs_code"><span style="color: #800080;">$HXW_from_DJTU</span>=&lt;&lt;&lt;ABC HXW_from_DJTU该同志工作勤勤恳恳，始终忠于共产PARTY，哈哈哈哈哈此处应换行ABC;</span>&nbsp;<br>echo输出</p><br><p>&nbsp;&nbsp;<span class="cnblogs_code">HXW_from_DJTU该同志工作勤勤恳恳，始终忠于共产PARTY，哈哈哈哈哈此处应换行</span>&nbsp;<br><br>PHP特殊数据类型—资源（初步理解）<br><br>&nbsp;- PHP中的资源类型是有专门的函数来创建和使用的<br>&nbsp;- 它就像是一个外部资源的引用，如外部文件、外部数据库、图形画布等。<br>&nbsp;- 在使用前需要打开，在试用结束后需要关闭（感觉有点像JAVA的数据流）<br><br>PHP特殊类型—空类<br><br>&nbsp;- 变量值为空的三种情况<br>&nbsp; 1、 一个变量被赋值为&nbsp;<span class="cnblogs_code"><span style="color: #0000ff;">NULL</span> <span style="color: #800080;">$var</span>=<span style="color: #0000ff;">null</span>;</span>&nbsp;<br>&nbsp;&nbsp; 2、变量上未被赋值 <br>&nbsp;&nbsp; 3、 变量被&nbsp;<span class="cnblogs_code"><span style="color: #0000ff;">unset</span>()</span>&nbsp;方法处理之后&nbsp;<span class="cnblogs_code"> <span style="color: #0000ff;">unset</span>(<span style="color: #0000ff;">var</span>);</span>&nbsp;</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/PHP_init/" data-id="cj0wb4su400006kf0s5rdfpgj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+<div class="next">
+<a href="/2017/03/30/js_x_analysis/"  title="Javascript 之 几种情况分析">
+ <strong>NEXT:</strong><br/> 
+ <span>Javascript 之 几种情况分析
+</span>
+</a>
+</div>
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/03/30/rest/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          前端编码规范 之 REST规范
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/03/30/js_x_analysis/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Javascript 之 几种情况分析</div>
-    </a>
-  
 </nav>
 
-  
-</article>
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
-</section>
-        
-          <aside id="sidebar">
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
-    </div>
   </div>
 
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
-    </div>
-  </div>
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/CSS样式/" title="CSS样式">CSS样式<sup>3</sup></a></li>
+		
+			<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Typescript/" title="Typescript">Typescript<sup>3</sup></a></li>
+		
+			<li><a href="/categories/css样式/" title="css样式">css样式<sup>1</sup></a></li>
+		
+			<li><a href="/categories/http/" title="http">http<sup>2</sup></a></li>
+		
+			<li><a href="/categories/javascript进阶/" title="javascript进阶">javascript进阶<sup>11</sup></a></li>
+		
+			<li><a href="/categories/前端规范/" title="前端规范">前端规范<sup>1</sup></a></li>
+		
+			<li><a href="/categories/前端进阶/" title="前端进阶">前端进阶<sup>1</sup></a></li>
+		
+		</ul>
+</div>
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
-    </div>
-  </div>
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/其他/" title="其他">其他<sup>23</sup></a></li>
+		
+		</ul>
+</div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/30/sass_install/">SASS安装</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
 
-  
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+</div>
     </div>
-  </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
+		
+		<a href="http://yoursite.com" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
-</body>
+
+
+
+  </body>
 </html>
