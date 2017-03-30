@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Javascript 之 prototype | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Javascript是一种 prototype based programming 语言，而与我们经常接触的calss based programming有很大区别。&amp;nbsp;函数是 first class object,即函数与对象具有相同的语言地位。&amp;nbsp;没有类，只有对象函数也是一种对象，没有所谓的函数对象对象是按引用来传递的 function Person(name,sex){">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 之 prototype">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/js_prototype/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Javascript是一种 prototype based programming 语言，而与我们经常接触的calss based programming有很大区别。&amp;nbsp;函数是 first class object,即函数与对象具有相同的语言地位。&amp;nbsp;没有类，只有对象函数也是一种对象，没有所谓的函数对象对象是按引用来传递的 function Person(name,sex){">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018104027810-1471757135.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018105909185-594910523.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018110143670-1884048004.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018113742842-1779298202.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018114340138-427419279.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018115023357-1576473683.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018115435607-266511541.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018115920998-544906901.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018120102810-1677855518.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018120340357-1550010276.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161006160103551-695459870.png">
+<meta property="og:updated_time" content="2017-02-22T23:56:26.205Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript 之 prototype">
+<meta name="twitter:description" content="Javascript是一种 prototype based programming 语言，而与我们经常接触的calss based programming有很大区别。&amp;nbsp;函数是 first class object,即函数与对象具有相同的语言地位。&amp;nbsp;没有类，只有对象函数也是一种对象，没有所谓的函数对象对象是按引用来传递的 function Person(name,sex){">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018104027810-1471757135.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js_prototype" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/30/js_prototype/" class="article-date">
+  <time datetime="2017-03-30T11:17:47.729Z" itemprop="datePublished">2017-03-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript 之 prototype
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><ul></ul></p>
+<li><strong>Javascript是一种 prototype based programming 语言，而与我们经常接触的calss based programming有很大区别。</strong></li><br><br><ol><br><li>&nbsp;函数是 first class object,即函数与对象具有相同的语言地位。</li><br><li>&nbsp;没有类，只有对象</li><br><li>函数也是一种对象，没有所谓的函数对象</li><br><li>对象是按引用来传递的 <br><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> Person(name,sex){<br>  </span><span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> name;<br>  </span><span style="color: #0000ff;">this</span>.sex =<span style="color: #000000;"> sex;<br>  </span><span style="color: #0000ff;">this</span>.say = <span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br>      </span><span style="color: #0000ff;">var</span> words = “i am “ + <span style="color: #0000ff;">this</span><span style="color: #000000;">.name;<br>      </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> words;<br>      };<br>   }<br><br>  Person.prototype.age </span>= 24<span style="color: #000000;">;<br>  Person.prototype.getAge </span>= <span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">this</span><span style="color: #000000;">.age;<br>   }<br><br>  </span><span style="color: #0000ff;">var</span> James = <span style="color: #0000ff;">new</span> Person(“James”,”Male”<span style="color: #000000;">);<br>  console.log(James.name);  </span><span style="color: #008000;">//</span><span style="color: #008000;">“James”</span><br>  <span style="color: #008000;">//</span><span style="color: #008000;">若在Person中没有找到的属性，会继续沿着原型链向上查找</span><br>  console.log(James.age);   <span style="color: #008000;">//</span><span style="color: #008000;">24</span><br>  console.log(James.getAge()); <span style="color: #008000;">//</span><span style="color: #008000;">24</span></pre><br></div><br></li><br></ol><br><p>　<strong>　每一个<span style="color: #ff0000;">对象的实例</span>都有一个constructor属性，用于指向创建其的函数对象。</strong></p><br><p><strong>　　<img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018104027810-1471757135.png" alt=""></strong></p><br><p><strong>　　（例子中的James.constructor指向的是Peson方法）</strong></p><br><ul><br><li><strong>　函数中自身声明的方法与属性，与在prototype中声明的有何不同？</strong></li><br></ul><br><ol><br><li>自身声明的方法与属性是<strong><span style="color: #ff0000;">静态的</span></strong><span style="color: #ff0000;"><span style="color: #000000;">，也就是使用该对象创建一个实例，再去修改对象中的属性和方法，实例中的属性与方法不会随之改变</span></span></li><br><li><span style="color: #ff0000;"><span style="color: #ff0000;"><span style="color: #000000;">而prototype可以动态地更新自己所拥有的修改的方法，从而使动态地，一旦函数对象声明了了相关的prototype的属性，由其创建的对象也会自动地继承这些对象。</span></span></span><br><div class="cnblogs_code"><br><pre>　　<span style="color: #008000;">//</span><span style="color: #008000;">（接着前面的例子）</span><br>　　console.log(James.testPro);  <span style="color: #008000;">//</span><span style="color: #008000;">undefined, 因为根本就不存在这个属性</span><br>　　console.log(James.name);     <span style="color: #008000;">//</span><span style="color: #008000;">James</span><br>　　Person.name = “Jenny”;       <span style="color: #008000;">//</span><span style="color: #008000;">改变对象的name属性</span><br>　　Person.testPro = “123”<span style="color: #000000;">;<br>　　console.log(James.testPro);  </span><span style="color: #008000;">//</span><span style="color: #008000;">Person的prototype中属性的变化，所以实例中属性也跟着变</span><br>　　console.log(James.name);     <span style="color: #008000;">//</span><span style="color: #008000;">James声明并且实例化后对象变化，实例中的属性并不会跟着改变</span></pre><br></div><br></li><br></ol><br><ul><br><li><strong>属性搜索的过程</strong></li><br></ul><br><ol><br><li>先搜索自身的，若有则立即访问执行</li><br><li>若自身未找到，则去搜索上一层，直至prototype chain的结尾，结尾一般是object对象</li><br><li>若实例中定义了和prototype同名的属性或者函数，则会覆盖prototype中的属性或函数</li><br></ol><br><p>&nbsp;</p><br><ul><br><li><strong><span style="color: #ff0000;"><span style="color: #ff0000;"><span style="color: #000000;">一个例子（不带继承）</span></span></span></strong><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span> Person(name){  <span style="color: #0000ff;">this</span>.name =<span style="color: #000000;">name;<br> }<br>Person.prototype.printName </span>= <span style="color: #0000ff;">function</span><span style="color: #000000;"> (){<br>        console.log(</span><span style="color: #0000ff;">this</span><span style="color: #000000;">.name);<br>   }<br></span><span style="color: #0000ff;">var</span> person1 = <span style="color: #0000ff;">new</span> Person(‘Byron’<span style="color: #000000;">);<br></span><span style="color: #0000ff;">var</span> person2 = <span style="color: #0000ff;">new</span> Person(‘Frank’);</pre><br></div><br></li><br></ul><br><ol><br><li>Person声明之后，会自动获得一个prototype属性，而prototype也是一个对象，prototype内部会有一个constructor属性，该属性正是指向Person对象</li><br><li>当调用构造函数创建一个实例的时候，实例的内部将会包含一个内部指针(即<strong>proto</strong>)指向构造函数的prototype，这个链接存在于实例和构造它的函数的prototype之间，而不是在实例和它创建出来的实例之间。（貌似有点绕哈:-D</li><br><li>对于Person的一个实例person1来说<br><ol><ol><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018105909185-594910523.png" alt="">实例的constructor属性指向创造它的函数</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018110143670-1884048004.png" alt="">实例的<strong>proto</strong>属性，指向他的构造器的prototype，在这里就是指向Person的prototype</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018113742842-1779298202.png" alt="">对象的实例是没有prototype属性的</li>
+
+<p></p></ol></ol></li><p></p>
+<li>对与Person对象本身来说<ol><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018114340138-427419279.png" alt="">Person的prototype属性，指向一个对象（初始时为空对象），这个对象上有一个printName方法，是我们手动添加的</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018115023357-1576473683.png" alt="">Person作为一个函数对象，他的constructor指向Function()构造器</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018115435607-266511541.png" alt="">Person的<strong>proto</strong>属性，同样是指向的是其构造器的prototype，也就是Function()构造器的prototype</li>
+
+<p></p></ol></li><p></p>
+<li>对于Person.prototype来说<ol><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018115920998-544906901.png" alt="">Person.prototype的constructor属性，指向函数对象本身</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018120102810-1677855518.png" alt="">Person.prototype的<strong>proto</strong>属性指向的是原型链的末端Object对象</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161018120340357-1550010276.png" alt="">函数本身才会有prototype属性，所以这里返回undefined</li><br><li>总结如下图</li><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161006160103551-695459870.png" alt="" width="769" height="394"></li><br><li><span style="color: #ff0000;">图中Person的实例Person1与Person2包含了name属性，同时生成了<strong>proto</strong>属性，该属性指向Person的prototype，可以访问到prototype内定义的方法printName</span></li>
+
+<p></p></ol></li><p></p>
+<p></p></ol><p></p>
+<p>&nbsp;</p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/30/js_prototype/" data-id="cj0wb3uxh0012sof0fv6cw92f" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/30/js_x_analysis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Javascript 之 几种情况分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/30/js_object/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Javascript 之 对象</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/sass_install/">SASS安装</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

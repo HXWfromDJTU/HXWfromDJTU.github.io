@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Hexo</title>
+  <title>前端编码规范 之 REST规范 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="REST相关概念
+REST ：REST ( REpresentational State Transfer ) “表现层状态转化”。 定义了REST的规范，主要说明了在web项目中，所有的东西都是资源，肯定都能使用URL来访问到。RESTful：满足上述REST规范，所编出来的应用程序，都可以被称之为RESTful，是这一类程序的总称。restlet 与 resteasy：是由实际的web服务器厂">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/03/30/hello-world/index.html">
+<meta property="og:title" content="前端编码规范 之 REST规范">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/rest/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2017-03-30T11:14:54.165Z">
+<meta property="og:description" content="REST相关概念
+REST ：REST ( REpresentational State Transfer ) “表现层状态转化”。 定义了REST的规范，主要说明了在web项目中，所有的东西都是资源，肯定都能使用URL来访问到。RESTful：满足上述REST规范，所编出来的应用程序，都可以被称之为RESTful，是这一类程序的总称。restlet 与 resteasy：是由实际的web服务器厂">
+<meta property="og:updated_time" content="2017-02-22T23:57:21.575Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="前端编码规范 之 REST规范">
+<meta name="twitter:description" content="REST相关概念
+REST ：REST ( REpresentational State Transfer ) “表现层状态转化”。 定义了REST的规范，主要说明了在web项目中，所有的东西都是资源，肯定都能使用URL来访问到。RESTful：满足上述REST规范，所编出来的应用程序，都可以被称之为RESTful，是这一类程序的总称。restlet 与 resteasy：是由实际的web服务器厂">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -66,12 +66,16 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-rest" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/03/30/hello-world/" class="article-date">
-  <time datetime="2017-03-30T11:14:54.159Z" itemprop="datePublished">2017-03-30</time>
+    <a href="/2017/03/30/rest/" class="article-date">
+  <time datetime="2017-03-30T11:17:47.736Z" itemprop="datePublished">2017-03-30</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端规范/">前端规范</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -80,7 +84,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      前端编码规范 之 REST规范
     </h1>
   
 
@@ -88,41 +92,35 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <p></p><p><strong><span style="font-size: 14pt;">REST相关概念</span></strong></p><p></p>
+<ul><br><li><span style="font-size: 16px;">REST ：</span><br><ul><br><li><span style="font-size: 16px;">REST ( REpresentational State Transfer ) “表现层状态转化”。</span></li><br><li><span style="font-size: 16px;"> 定义了REST的规范，主要说明了在web项目中，所有的东西都是资源，肯定都能使用URL来访问到。</span></li><br></ul><br></li><br><li><span style="font-size: 16px;">RESTful：满足上述REST规范，所编出来的应用程序，都可以被称之为RESTful，是这一类程序的总称。</span></li><br><li><span style="font-size: 16px;">restlet 与 resteasy：是由实际的web服务器厂商生产出来的RESTful程序，又称之为RESTful web框架，实际就是一个servlet，通过在web.xml中配置url匹配，达到拦截url的效果。</span></li><br></ul><br><p><span style="font-size: 14pt;"><strong>REST作用</strong></span></p><br><ul><br><li><span style="font-size: 16px;">对url进行规范。使url简洁。</span></li><br><li>对http方法，进行规范。（官方声明，没什么卵用）<br><ul><br><li>GET&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 获取资源</li><br><li>POST　　　&nbsp; 提交资源</li><br><li>PUT 　　　　更新资源</li><br><li>DELETE　　&nbsp;&nbsp; 删除资源</li><br></ul><br></li><br><li>对请求结果返回类型进行规范。（json格式的支持）</li><br></ul>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/30/hello-world/" data-id="cj0wb3uvq0005sof03145uor3" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/03/30/rest/" data-id="cj0wb3uxx0019sof05dtxjqnk" class="article-share-link">Partager</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2017/03/30/badTaste/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/03/30/sass/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
-          代码的臭味道
+          SASS编译
         
       </div>
     </a>
   
   
-    <a href="/2017/02/04/测试文章/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/03/30/PHP_init/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">测试文章</div>
+      <div class="article-nav-title">PHP 入门基础</div>
     </a>
   
 </nav>

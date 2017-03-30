@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Javascript 之 运算符 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、关于Javascript中的&amp;ldquo;===&amp;rdquo;与&amp;ldquo;==&amp;rdquo;的比较
+　　简而言之：&amp;ldquo;===&amp;rdquo;要求类型与数值都相等。
+　　　　　　　　&amp;ldquo;==&amp;rdquo;只要求数值相等
+
+var num_str=&amp;ldquo;1&amp;rdquo;;  // num_str为字符型变量num_str  ==  1;//结果为truenum_str">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 之 运算符">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/js_cal/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、关于Javascript中的&amp;ldquo;===&amp;rdquo;与&amp;ldquo;==&amp;rdquo;的比较
+　　简而言之：&amp;ldquo;===&amp;rdquo;要求类型与数值都相等。
+　　　　　　　　&amp;ldquo;==&amp;rdquo;只要求数值相等
+
+var num_str=&amp;ldquo;1&amp;rdquo;;  // num_str为字符型变量num_str  ==  1;//结果为truenum_str">
+<meta property="og:updated_time" content="2017-02-22T23:56:13.715Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript 之 运算符">
+<meta name="twitter:description" content="1、关于Javascript中的&amp;ldquo;===&amp;rdquo;与&amp;ldquo;==&amp;rdquo;的比较
+　　简而言之：&amp;ldquo;===&amp;rdquo;要求类型与数值都相等。
+　　　　　　　　&amp;ldquo;==&amp;rdquo;只要求数值相等
+
+var num_str=&amp;ldquo;1&amp;rdquo;;  // num_str为字符型变量num_str  ==  1;//结果为truenum_str">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js_cal" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/30/js_cal/" class="article-date">
+  <time datetime="2017-03-30T11:17:47.725Z" itemprop="datePublished">2017-03-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript 之 运算符
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><p><span style="font-size: 14px;"><strong>1、<span style="font-size: 14pt;">关于Javascript中的&ldquo;===&rdquo;与&ldquo;==&rdquo;的比较</span></strong></span></p><p></p>
+<p></p><p><span style="font-size: 14px;"><strong>　　简而言之：&ldquo;===&rdquo;要求类型与数值都相等。<br></strong></span></p><p></p>
+<p></p><p><span style="font-size: 14px;"><strong>　　　　　　　　&ldquo;==&rdquo;只要求数值相等</strong></span></p><p></p>
+<p><div class="cnblogs_code"></div></p>
+<p><pre><span style="color: #0000ff;">var</span> num_str=&ldquo;1&rdquo;;  <span style="color: #008000;">//</span><span style="color: #008000;"> num_str为字符型变量</span><br><span style="color: #000000;"><br>num_str  </span>==  1;<span style="color: #008000;">//</span><span style="color: #008000;">结果为true</span><br><span style="color: #000000;"><br>num_str </span>=== 1;<span style="color: #008000;">//</span><span style="color: #008000;">值相同，但是类型不相同。结果为false</span></pre></p>
+<p>1===1 ;<span style="color: #008000;">//</span><span style="color: #008000;">值与类型都相同，返回true</span></p>
+<p>1===2 ；<span style="color: #008000;">//</span><span style="color: #008000;">类型同，值不同，返回false</span><br></p>
+<p></p><p>&nbsp;</p><p></p>
+<p></p><p><span style="font-size: 14px;"><strong>2、<span style="font-size: 14pt;">关于&ldquo;<strong>||</strong>&rdquo;与&ldquo;&amp;&amp;&rdquo;逻辑符</span><br></strong></span></p><p></p>
+<p></p><p><span style="font-size: 14px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 设有 A||B&nbsp;&nbsp; 与 C&amp;&amp;D</strong></span></p><p></p>
+<p></p><p><span style="font-size: 14px;"><strong>　　A与B只需要有一个为真，整体则都为真<br></strong></span></p><p></p>
+<p></p><p><span style="font-size: 14px;"><strong>　　C与D只需要有一个为假，则整体值为假<br></strong></span></p><p></p>
+<p></p><p><span style="font-size: 14px;">　　注意：<span style="color: #ff0000;">若A为真，则B部分就不需要被执行了</span>。<strong><br></strong></span></p><p></p>
+<p></p><p><span style="font-size: 14px;"><strong>　　　　</strong>　<span style="color: #ff0000;">若C为假，则D部分就不需要被执行了</span>。</span></p><p></p>
+<p></p><p><span style="font-size: 14px;"><strong>　　　　　　</strong>（Javascript默认不执行）</span></p><p></p>
+<p></p><p><span style="font-size: 14px;"><span style="font-size: 14px;"><strong>3、<span style="font-size: 14pt;">操作符之间的优先级　</span></strong><span style="font-size: 14px;">　　</span></span></span></p><p></p>
+<p></p><p><span style="font-size: 14px;"><span style="font-size: 14px;"><span style="font-size: 14px;">　　<strong>算术操作符</strong> &gt; <strong>比较操作符</strong> &gt; <strong>逻辑操作符</strong> &gt;<strong>&nbsp; 赋值等号”=”</strong></span></span></span></p><p></p>
+<p></p><p><strong><span style="font-size: 16px;"><span style="color: #ff0000;"><span style="color: #000000;">4、<span style="font-size: 14pt;">运算符的特殊用法（<strong><span style="color: #ff0000;"><span style="color: #000000;">隐式转换</span></span></strong>）</span></span></span></span></strong></p><p></p>
+<p><div class="cnblogs_code"></div></p>
+<p><pre><span style="color: #008080;">1 <span style="color: #0000ff;">var x = “66H34TYY” + 42<span style="color: #000000;"> ;<br><span style="color: #008080;">2 <span style="color: #0000ff;">var y = 42 + “hahaha”<span style="color: #000000;">;<br><span style="color: #008080;">3 “37” + 37 </span></span></span></span></span></span></span></pre><br></p>
+<p></p><p>　　以上三种 &ldquo;+&rdquo; 号都理解为字符串拼接，返回的都是一个string类型数据</p><p></p>
+<p><div class="cnblogs_code"></div></p>
+<p><pre><span style="color: #008080;">1  <span style="color: #0000ff;">var result = “37” - 7 </span></span></pre><br></p>
+<p></p><p>　　这里的 &ldquo;-&rdquo; 号却理解为 减法</p><p></p>
+<p><div class="cnblogs_code"></div></p>
+<p><pre><span style="color: #008000;">//<span style="color: #008000;">设car为null<br>1 car - 0    　　　　<span style="color: #008000;">//<span style="color: #008000;">car 减去 0<br>2 car + &ldquo;&rdquo; 　　    <span style="color: #008000;">//<span style="color: #008000;">car加上空字符串</span></span></span></span></span></span></pre><br></p>
+<p></p><p>　<span style="font-size: 16px;"><strong>　可利用这两种办法，巧妙地把car(<span style="color: #ff0000;">做减法</span>)变为<span style="color: #ff0000;">number</span>或者（<span style="color: #ff0000;">做加法）变为<span style="color: #ff0000;">string</span></span></strong></span></p><p></p>
+<p></p><p><span style="font-size: 16px; color: #000000;"><strong>5、特殊性的使用情况</strong></span></p><p></p>
+<ol><br><li><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> a = b = <span style="color: #800080;">3</span>;</pre><br></div><br><p>相当于</p><br><div class="cnblogs_code"><br><pre>b = 3<span style="color: #000000;">;<br></span><span style="color: #0000ff;">var</span> a = b;</pre><br></div><br><p>所以 b 成了全局变量，而 a 是自执行函数的一个局部变量。</p><br></li><br></ol>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/30/js_cal/" data-id="cj0wb3ux2000tsof0bc8px9l4" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/30/js_common/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Javascript 之 常见问题收集
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/30/js_9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Javascript 之 变量提升</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/sass_install/">SASS安装</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

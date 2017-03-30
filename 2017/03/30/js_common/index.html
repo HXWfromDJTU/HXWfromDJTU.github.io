@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Javascript 之 常见问题收集 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、写一个按照下面方式调用都能正常工作的 sum 方法console.log(sum(2,3)); // Outputs 5console.log(sum(2)(3)); // Outputs 5解决方案function sum() {  var fir = arguments[0];  if (arguments.length === 2) {    return arguments[0] +">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 之 常见问题收集">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/js_common/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、写一个按照下面方式调用都能正常工作的 sum 方法console.log(sum(2,3)); // Outputs 5console.log(sum(2)(3)); // Outputs 5解决方案function sum() {  var fir = arguments[0];  if (arguments.length === 2) {    return arguments[0] +">
+<meta property="og:updated_time" content="2017-02-22T23:56:17.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript 之 常见问题收集">
+<meta name="twitter:description" content="1、写一个按照下面方式调用都能正常工作的 sum 方法console.log(sum(2,3)); // Outputs 5console.log(sum(2)(3)); // Outputs 5解决方案function sum() {  var fir = arguments[0];  if (arguments.length === 2) {    return arguments[0] +">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js_common" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/30/js_common/" class="article-date">
+  <time datetime="2017-03-30T11:17:47.726Z" itemprop="datePublished">2017-03-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript 之 常见问题收集
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>1、<span style="font-size: 14pt;">写一个按照下面方式调用都能正常工作的 sum 方法</span></strong></p><br><div class="cnblogs_code"><br><pre>console.log(sum(2,3)); <span style="color: #008000;">//</span><span style="color: #008000;"> Outputs 5</span><br>console.log(sum(2)(3)); <span style="color: #008000;">//</span><span style="color: #008000;"> Outputs 5</span></pre><br></div><br><p>解决方案</p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> sum() {<br>  </span><span style="color: #0000ff;">var</span> fir = arguments[0<span style="color: #000000;">];<br>  </span><span style="color: #0000ff;">if</span> (arguments.length === 2<span style="color: #000000;">) {<br>    </span><span style="color: #0000ff;">return</span> arguments[0] + arguments[1<span style="color: #000000;">]<br>  } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> (sec) {<br>      </span><span style="color: #0000ff;">return</span> fir +<span style="color: #000000;"> sec;<br>    }<br>  }<br>}<br>sum(</span>2)(5)</pre><br></div><br><p><strong>2、<span style="font-size: 14pt;">下面的代码会输出什么？为什么？</span></strong></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> arr1 = “john”.split(‘’<span style="color: #000000;">); j o h n<br></span><span style="color: #0000ff;">var</span> arr2 =<span style="color: #000000;"> arr1.reverse(); n h o j<br></span><span style="color: #0000ff;">var</span> arr3 = “jones”.split(‘’<span style="color: #000000;">); j o n e s<br>arr2.push(arr3);<br>console.log(</span>“array 1: length=” + arr1.length + “ last=” + arr1.slice(-1<span style="color: #000000;">));<br>console.log(</span>“array 2: length=” + arr2.length + “ last=” + arr2.slice(-1));</pre><br></div><br><ul><br><li>reverse() 会改变数组本身，并返回原数组的引用。</li><br><li>slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。<br><div class="cnblogs_code"><br><pre><span style="color: #000000;">stringObject.slice(start,end);<br>arrayObject.slice(start,end);</span></pre><br></div><br><ul><br><li>start和end如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符，-2 指倒数第二个字符，以此类推。　</li><br></ul><br></li><br></ul><br><p>3、<span style="font-size: 14pt;"><strong>下面的代码会输出什么？为什么？</strong></span></p><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> console.log(1 + “2” + “2”<span style="color: #000000;">);<br></span><span style="color: #008080;">2</span> console.log(1 + +”2” + “2”<span style="color: #000000;">);<br></span><span style="color: #008080;">3</span> console.log(1 + -“1” + “2”<span style="color: #000000;">);<br></span><span style="color: #008080;">4</span> console.log(+”1” + “1” + “2”<span style="color: #000000;">);<br></span><span style="color: #008080;">5</span> console.log( “A” - “B” + “2”<span style="color: #000000;">);<br></span><span style="color: #008080;">6</span> console.log( “A” - “B” + 2);</pre><br></div><br><p>　　我们先来看几条规则：</p><br><ul><br><li>数字字符串之前存在数字中的正负号(+/-)时，会被转换成数字<br><div class="cnblogs_code"><br><pre>console.log(“类型：”+(<span style="color: #0000ff;">typeof</span> ‘3’)+” 内容为：”+’3’)      <span style="color: #008000;">//</span><span style="color: #008000;">类型：string 内容为：3</span><br>console.log(“类型：”+(<span style="color: #0000ff;">typeof</span> +’3’)+” 值为：”+(+’3’))    <span style="color: #008000;">//</span><span style="color: #008000;">类型：number 值为：3</span><br>console.log(“类型：”+(<span style="color: #0000ff;">typeof</span> -‘3’)+” 值为：”+(-‘3’)); 　<span style="color: #008000;">//</span><span style="color: #008000;">类型：number 值为：-3</span></pre><br></div><br></li><br><li>(字符串 + 数字) 或者 (数字+字符串) ，都得到一个字符<br><div class="cnblogs_code"><br><pre>console.log(5 + ‘A’);    <span style="color: #008000;">//</span><span style="color: #008000;">5A </span><br>console.log(‘A’ + 5);    <span style="color: #008000;">//</span><span style="color: #008000;">A5</span><br>console.log(NaN + ‘A’); <span style="color: #008000;">//</span><span style="color: #008000;">NaNA</span><br>console.log(‘A’ + NaN); <span style="color: #008000;">//</span><span style="color: #008000;">ANaN</span></pre><br></div><br></li><br><li>对于运算结果不能转换成数字的，将返回 NaN<br><div class="cnblogs_code"><br><pre>console.log(‘a’ * ‘sd’); <span style="color: #008000;">//</span><span style="color: #008000;">NaN</span><br>console.log(‘A’ - ‘B’); <span style="color: #008000;">//</span><span style="color: #008000;"> NaN</span></pre><br></div><br></li><br><li>其他的一些例子<br><div class="cnblogs_code"><br><pre>console.log(‘-3’ - 2 + 1);    <span style="color: #008000;">//</span><span style="color: #008000;">-4   number类型</span><br>console.log( 3 + ‘-2’ + 1);   <span style="color: #008000;">//</span><span style="color: #008000;">3-21 string类型</span><br>console.log( 3 - ‘-2’ + 1);   <span style="color: #008000;">//</span><span style="color: #008000;">6    number类型</span></pre><br></div><br></li><br><li><span style="color: #ff6600;"><strong>也许我们已经有答案了</strong></span><br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> console.log(1 + “2” + “2”);      <span style="color: #008000;">//</span><span style="color: #008000;"> “122”</span><br><span style="color: #008080;">2</span> console.log(1 + +”2” + “2”);     <span style="color: #008000;">//</span><span style="color: #008000;"> “32”</span><br><span style="color: #008080;">3</span> console.log(1 + -“1” + “2”);     <span style="color: #008000;">//</span><span style="color: #008000;"> “02”</span><br><span style="color: #008080;">4</span> console.log(+”1” + “1” + “2”);   <span style="color: #008000;">//</span><span style="color: #008000;">“122”</span><br><span style="color: #008080;">5</span> console.log( “A” - “B” + “2”);  <span style="color: #008000;">//</span><span style="color: #008000;"> “NaN2”</span><br><span style="color: #008080;">6</span> console.log( “A” - “B” + 2);    <span style="color: #008000;">//</span><span style="color: #008000;">NaN</span></pre><br></div><br><p>&nbsp;（未完待续）</p><br></li><br></ul><br><p>&nbsp;</p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/30/js_common/" data-id="cj0wb3ux5000vsof0eepinqti" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/30/js_object/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Javascript 之 对象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/30/js_cal/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Javascript 之 运算符</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/sass_install/">SASS安装</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

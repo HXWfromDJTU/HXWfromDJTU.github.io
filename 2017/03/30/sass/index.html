@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SASS编译 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="命令行编译单个sass文件编译sass  &amp;lt;要编译的Sass文件路径&amp;gt; : &amp;lt;要输出CSS文件路径&amp;gt;多文件编译（整个项目目录文件下所有的sass/scss同时操作）sass sass/:css/上面的命令表示将项目中&amp;ldquo;sass&amp;rdquo;文件夹中所有&amp;ldquo;.scss&amp;rdquo;(&amp;ldquo;.sass&amp;rdquo;)文件编译成&amp;ldquo;.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SASS编译">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/sass/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="命令行编译单个sass文件编译sass  &amp;lt;要编译的Sass文件路径&amp;gt; : &amp;lt;要输出CSS文件路径&amp;gt;多文件编译（整个项目目录文件下所有的sass/scss同时操作）sass sass/:css/上面的命令表示将项目中&amp;ldquo;sass&amp;rdquo;文件夹中所有&amp;ldquo;.scss&amp;rdquo;(&amp;ldquo;.sass&amp;rdquo;)文件编译成&amp;ldquo;.css">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017134427685-1787871963.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017162721467-1324654488.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017155141404-1325179267.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017160825810-2078847312.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017162247498-1561167055.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017162739623-1272827551.png">
+<meta property="og:updated_time" content="2017-02-22T23:57:51.576Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SASS编译">
+<meta name="twitter:description" content="命令行编译单个sass文件编译sass  &amp;lt;要编译的Sass文件路径&amp;gt; : &amp;lt;要输出CSS文件路径&amp;gt;多文件编译（整个项目目录文件下所有的sass/scss同时操作）sass sass/:css/上面的命令表示将项目中&amp;ldquo;sass&amp;rdquo;文件夹中所有&amp;ldquo;.scss&amp;rdquo;(&amp;ldquo;.sass&amp;rdquo;)文件编译成&amp;ldquo;.css">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017134427685-1787871963.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-sass" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/30/sass/" class="article-date">
+  <time datetime="2017-03-30T11:17:47.737Z" itemprop="datePublished">2017-03-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS样式/">CSS样式</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SASS编译
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><span style="font-size: 16px;">命令行编译</span></strong></p><br><ul><br><li>单个sass文件编译<br><div class="cnblogs_code"><br><pre><span style="font-size: 16px;">sass  <span style="color: #ff6600;">&lt;要编译的Sass文件路径&gt;</span> : <span style="color: #ff6600;">&lt;要输出CSS文件路径&gt;</span></span></pre><br></div><br></li><br><li>多文件编译（整个项目目录文件下所有的sass/scss同时操作）<br><div class="cnblogs_code"><br><pre><span style="font-size: 16px;">sass sass/:css/</span></pre><br></div><br><p>上面的命令表示将项目中&ldquo;sass&rdquo;文件夹中所有&ldquo;.scss&rdquo;(&ldquo;.sass&rdquo;)文件编译成&ldquo;.css&rdquo;文件，并且将这些 CSS 文件都放在项目中&ldquo;css&rdquo;文件夹中。</p><br></li><br><li><span style="color: #000000;"><span style="color: #000000;">开启&ldquo;<strong>watch</strong>&rdquo;功能，这样只要你的代码进行任保修改，都能自动监测到代码的变化，并且给你直接编译出来</span></span><br><div class="cnblogs_code"><br><pre><span style="font-size: 16px;">sass <span style="color: #ff0000;">–watch</span> <span style="color: #ff6600;"> &lt;要编译的Sass文件路径&gt; </span>:   <span style="color: #ff6600;">&lt;要输出CSS文件路径&gt;</span> </span></pre><br></div><br></li><br></ul><br><p><strong>GUI 界面工具编译&nbsp;</strong></p><br><ul><br><li>推荐使用 Koala<br><br><ul><br><li>下载地址(<a href="http://koala-app.com/" target="_blank">http://koala-app.com/</a>)</li><br><li>一般教程(<a href="http://www.w3cplus.com/preprocessor/sass-gui-tool-koala.html" target="_blank">http://www.w3cplus.com/preprocessor/sass-gui-tool-koala.html）</a></li><br><br><br></ul><br><br><br></li><br><br><br></ul><br><p><span style="font-size: 14px;"><strong>IDE自助编译</strong></span></p><br><p><span style="font-size: 16px;"><strong>　　webstorm设置</strong></span></p><br><ol><br><li><span style="font-size: 14px;"><strong>点击左上角的<span style="color: #ff6600;"><code>File</code></span>&rarr;<span style="color: #ff6600;"><code>Settings</code></span>&rarr;<span style="color: #ff6600;"><code>File Watchers</code></span></strong></span></li><br><li><span style="font-size: 14px;"><strong>在弹窗的窗口的右上角点击绿色的 &lsquo;<span style="color: #99cc00;"><span style="color: #00ff00;">+</span>&rsquo;</span> 号,然后选择<span style="color: #ff6600;">scss</span></strong></span></li><br><li><strong>arguments(配置编译后的文件的输出路径)</strong><br><div class="cnblogs_code"><br><pre>–no-cache –update –sourcemap –watch $FileName$:$FileParentDir$\css\$FileNameWithoutExtension$.css</pre><br></div><br></li><br><li><strong>Output paths to refresh</strong><br><div class="cnblogs_code"><br><pre>$FileNameWithoutExtension$.css:$FileNameWithoutExtension$.css.map</pre><br></div><br></li><br></ol><ol><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017134427685-1787871963.png" alt="" width="1057" height="689"></li><br></ol><br><h2 id="J_CodeLang" class="code-head" data-lang="SASS" data-regular="0"><span style="font-size: 18px;">常见的编译错误</span></h2><br><ul><br><li>在Sass的编译的过程中，是不是支持&ldquo;GBK&rdquo;编码的。所以在创建 Sass 文件时，就需要将文件编码设置为&ldquo;utf-8&rdquo;</li><br><li>在项目中文件命名或者文件目录命名不要使用中文字符</li><br><li>其他人为失误造成的编译失败，在编译过程中都会有具体的说明，可以根据编译器提供的错误信息进行对应的修改。</li><br></ul><br><p><span style="font-size: 14pt;"><strong>四种编译后css样式</strong></span></p><br><ul><br><li><strong>嵌套输出方式 nested</strong><strong><span style="font-size: 13.3333339691162px; line-height: 21.3333339691162px;">、展开输出方式 expanded 、</span></strong><strong><span style="font-size: 13.3333339691162px; line-height: 21.3333339691162px;">紧凑输出方式 compact </span></strong><strong>、压缩输出方式 compressed</strong></li><br></ul><br><ul><br><li><strong>编译出来的CSS样式风格的选择完全是个人喜好问题，可以根据自己喜欢的风格选择参数。</strong></li><br><li><strong><span style="color: #000000;">一段时间之后，你实际上就不再需要写 CSS 代码了，只用写 Sass 代码。</span></strong></li><br></ul><br><p><span style="font-size: 18px;"><strong><span style="color: #000000;">这里有一段scss</span></strong></span></p><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017162721467-1324654488.png" alt=""></strong></span></p><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>嵌套输出方式 （nested）</strong></span></p><br><div class="cnblogs_code"><br><pre><span style="font-size: 14pt;">sass <span style="color: #ff0000;">–watch test.scss:test.css <span style="color: #00ff00;">–style nested</span></span></span></pre><br></div><br><p><span style="font-size: 18px;"><strong>css</strong></span></p><br><p><strong><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017155141404-1325179267.png" alt=""></strong></p><br><p>&nbsp;</p><br><hr><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong><span style="line-height: 21.3333px;">展开输出方式 ( expanded ) <br></span></strong></span></p><br><div class="cnblogs_code"><br><pre><span style="font-size: 18px;">sass <span style="color: #ff0000;">–watch test.scss:test.css <span style="color: #00ff00;">–style expanded</span></span></span></pre><br></div><br><p><span style="font-size: 16px;"><strong>css</strong></span></p><br><p><span style="font-size: 16px;"><strong><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017160825810-2078847312.png" alt=""></strong></span></p><br><p><span style="font-size: 18px; color: #ff0000;"><strong>(编译结果css文件与第一种基本相同，只不过结束的大括号需要独占一行)</strong></span></p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><hr><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong><span style="line-height: 21.3333px;">紧凑输出方式 compact&nbsp;</span></strong></span></p><br><div class="cnblogs_code"><br><pre><span style="font-size: 18px;">sass <span style="color: #ff0000;">–watch test.scss:test.css <span style="color: #00ff00;">–style compact</span></span></span></pre><br></div><br><p><span style="font-size: 14pt;"><strong><span style="line-height: 21.3333px;">css</span></strong></span></p><br><p><span style="font-size: 14pt;"><strong><span style="line-height: 21.3333px;"><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017162247498-1561167055.png" alt=""></span></strong></span></p><br><p><span style="font-size: 15px;"><strong>艾玛，令强迫症患者不安的单行样式出现了</strong></span></p><br><hr><br><p>&nbsp;<span style="font-size: 14pt;"><strong><span style="line-height: 21.3333px;">　</span></strong></span></p><br><p><span style="font-size: 14pt;"><strong>压缩输出方式 compressed</strong></span></p><br><div class="cnblogs_code"><br><pre><span style="font-size: 18px;">sass <span style="color: #ff0000;">–watch test.scss:test.css <span style="color: #00ff00;">–style compressed</span></span></span></pre><br></div><br><p><span style="font-size: 16px;"><strong>css</strong></span></p><br><p><span style="font-size: 16px;"><strong><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161017162739623-1272827551.png" alt=""></strong></span></p><br><p><span style="font-size: 14pt;">输的的css 代码被压缩为单行写法，随着我们以后工作中大量使用Sass直接写样式，css代码输出一般为单行压缩式。</span></p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/30/sass/" data-id="cj0wb3uy1001dsof0pocqrz0f" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/30/sass_base/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          SASS基础
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/30/rest/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">前端编码规范 之 REST规范</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/sass_install/">SASS安装</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Javascript 之 函数 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JS中的函数也是一种对象
+函数的返回值是return来决定的，没有则返回undefined
+　1、函数声明法　　function add(a, b) {    a = a + a;    b = b + b;}　　　　　　2、函数表达式法var add = function (a , b){ ……};(function(){……}());return function (){……}var add">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 之 函数">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/js_7_function1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JS中的函数也是一种对象
+函数的返回值是return来决定的，没有则返回undefined
+　1、函数声明法　　function add(a, b) {    a = a + a;    b = b + b;}　　　　　　2、函数表达式法var add = function (a , b){ ……};(function(){……}());return function (){……}var add">
+<meta property="og:updated_time" content="2017-02-22T23:55:56.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript 之 函数">
+<meta name="twitter:description" content="JS中的函数也是一种对象
+函数的返回值是return来决定的，没有则返回undefined
+　1、函数声明法　　function add(a, b) {    a = a + a;    b = b + b;}　　　　　　2、函数表达式法var add = function (a , b){ ……};(function(){……}());return function (){……}var add">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js_7_function1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/30/js_7_function1/" class="article-date">
+  <time datetime="2017-03-30T11:17:47.719Z" itemprop="datePublished">2017-03-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript 之 函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><blockquote>JS中的函数也是一种对象</blockquote></p>
+<p><blockquote>函数的返回值是return来决定的，没有则返回undefined</blockquote></p>
+<p><span style="font-size: 14pt;"><strong>　1、函数声明法　　</strong></span></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> add(a, b) {<br>    a </span>= a +<span style="color: #000000;"> a;<br>    b </span>= b +<span style="color: #000000;"> b;<br>}　　　　　</span></pre><br></div><br><p><strong><span style="font-size: 14pt;">　2、函数表达式法</span></strong></p><br><ul><br><li><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> add = function (a , b){ ……};</pre><br></div><br></li><br><li><br><div class="cnblogs_code"><br><pre>(function(){……}());</pre><br></div><br></li><br><li><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">return</span> function (){……}</pre><br></div><br></li><br><li><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> add =function foo(a,b){……}; <span style="color: #008000;">//</span><span style="color: #008000;">命名式函数表达式，存在兼容问题，并不常用</span></pre><br></div><br></li><br></ul><br><ul><br><li style="list-style-type: none;"><br><ul><br><li><span style="font-size: 18px;">为什么函数声明的前面可以提前调用该函数？</span><br><ul><br><li>因为函数声明在加载时是被预先处理的，而函数表达式中，只有函数里声明的变量会被预先处理。</li><br><li><br><div class="cnblogs_code"><br><pre>add(<span style="color: #800080;">5</span>,<span style="color: #800080;">4</span><span style="color: #000000;">);<br></span><span style="color: #0000ff;">var</span> add =function foo(a,b){alert(a+b)};</pre><br></div><br></li><br><li>而函数表达式本身并不会。所以，在函数表达式前调用该函数则会报错。</li><br></ul><br></li><br></ul><br></li><br></ul><br><p><strong><span style="font-size: 14pt;">3、Function 构造器</span></strong></p><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> func = <span style="color: #0000ff;">new</span> Function(‘a’,’b’,’console.log(a+b);’<span style="color: #000000;">)<br>func(</span>4,5);</pre><br></div><br><p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>4、箭头函数</strong></span></p><br><ul><br><li><span style="font-size: 14pt;">在ES 6 标准下新增加了一种函数：箭头函数</span></li><br><li><span style="font-size: 14pt;"><span style="font-size: 14pt;"><span style="font-size: 14pt;">例如：</span></span></span><br><div class="cnblogs_code"><br><pre>x =&gt; x<em><span style="color: #000000;">x<br></span><span style="color: #008000;">//</span><span style="color: #008000;">等价于</span><br><span style="color: #0000ff;">function</span><span style="color: #000000;"> (x){<br>    </span><span style="color: #0000ff;">return</span> x</em><span style="color: #000000;">x;<br>  }</span></pre><br></div><br></li><br><li>箭头相当于省略了”function”、”{}”、”return”关键字样</li><br><li>在以下特殊情况需要有特殊的变化<br><ul><br><li>参数不是一个的情况<br><div class="cnblogs_code"><br><pre>(x,y)=&gt; x + y ; <span style="color: #008000;">//</span><span style="color: #008000;">两个参数</span><br><span style="color: #000000;"><br>()</span>=&gt; 500;       <span style="color: #008000;">//</span><span style="color: #008000;">无参数</span><br><br><span style="color: #008000;">//</span><span style="color: #008000;">可变参数的情况</span><br>(x,y, …rest) =&gt;<span style="color: #000000;"> {<br>    </span><span style="color: #0000ff;">return</span> x+<span style="color: #000000;">y;<br>  }</span></pre><br></div><br></li><br></ul><br></li><br></ul><br><ul><br><li style="list-style-type: none;"><br><ul><br><li>返回的内容是对象的情况<br><div class="cnblogs_code"><br><pre>x =&gt; { foo : x}     <span style="color: #008000;">//</span><span style="color: #008000;">错误写法</span><br><span style="color: #000000;"><br>x </span>=&gt; ({foo : x })   <span style="color: #008000;">//</span><span style="color: #008000;">正确写法</span></pre><br></div><br></li><br></ul><br></li><br></ul><br><ul><br><li><span style="font-size: 15px;"><span style="font-size: 15px;">箭头函数完全修复了 this 关键字的指向问题，在箭头函数中，this总是指向词法作用域，也就是外层调用者</span></span><br><div class="cnblogs_code"><br><pre><span style="color: #0000ff;">var</span> obj_arrow =<span style="color: #000000;"> {<br>  birth:</span>1990<span style="color: #000000;">,<br>  getAge:</span><span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br>    </span><span style="color: #0000ff;">var</span> b = <span style="color: #0000ff;">this</span><span style="color: #000000;">.birth;<br>    </span><span style="color: #0000ff;">var</span> fn = ()=&gt;<span style="color: #0000ff;">new</span> Date().getFullYear()-<span style="color: #0000ff;">this</span><span style="color: #000000;">.birth;<br>    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> fn();<br>  }<br>}<br><br>console.log(obj_arrow.getAge());  </span><span style="color: #008000;">//</span><span style="color: #008000;">26 这里的this 直接指向obj</span></pre><br></div><br><p>&nbsp;</p><br></li><br><li><strong>箭头函数使用 <span style="color: #ff0000;">apply</span> 与 <span style="color: #ff0000;">call</span> 时候，因为其内部的 <span style="color: #ff0000;">this</span> 以固定指向此法作用域，则 <span style="color: #ff0000;">call</span> 与<span style="color: #ff0000;"> apply</span> 传入的第一个参数被忽略　　　　</strong></li><br></ul><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><pre>　</pre><br><p>&nbsp;</p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/30/js_7_function1/" data-id="cj0wb3uws000nsof0y0y5x01i" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/30/js_8_oop/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Javascript 之 面向对象编程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/30/js_7_function/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Javascript 之 函数参数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/sass_install/">SASS安装</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

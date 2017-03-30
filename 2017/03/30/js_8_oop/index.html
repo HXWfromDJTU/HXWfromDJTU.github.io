@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Javascript 之 面向对象编程 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;nbsp;面对对象编程（OOP）OOP定义　　面对对象程序设计（Object-oriented programming ，OOP），是一种程序设计范型，同时也是一种程序开发的方法。对象指的是类的实例。他将对象作为程序作用的基本单元，将程序和数据封装其中，以提高程序的复用性。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　—维基百科OOP特点（相信大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 之 面向对象编程">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/js_8_oop/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&amp;nbsp;面对对象编程（OOP）OOP定义　　面对对象程序设计（Object-oriented programming ，OOP），是一种程序设计范型，同时也是一种程序开发的方法。对象指的是类的实例。他将对象作为程序作用的基本单元，将程序和数据封装其中，以提高程序的复用性。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　—维基百科OOP特点（相信大">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019104359263-1973515579.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019104646482-1460434618.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019110153029-2063470187.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019165133592-1308231152.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019170032388-1513806563.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019140801795-1576067828.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019143659935-1927762078.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019143314342-109895536.png">
+<meta property="og:updated_time" content="2017-02-22T23:56:01.082Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript 之 面向对象编程">
+<meta name="twitter:description" content="&amp;nbsp;面对对象编程（OOP）OOP定义　　面对对象程序设计（Object-oriented programming ，OOP），是一种程序设计范型，同时也是一种程序开发的方法。对象指的是类的实例。他将对象作为程序作用的基本单元，将程序和数据封装其中，以提高程序的复用性。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　—维基百科OOP特点（相信大">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019104359263-1973515579.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js_8_oop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/30/js_8_oop/" class="article-date">
+  <time datetime="2017-03-30T11:17:47.721Z" itemprop="datePublished">2017-03-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript进阶/">javascript进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript 之 面向对象编程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;</p><br><p><span style="font-size: 14pt;"><strong>面对对象编程（OOP）</strong></span></p><br><ul><br><li><span style="font-size: 16px;"><strong>OOP定义</strong></span></li><br></ul><br><blockquote><br><p><span style="font-size: 18px;"><strong>　　</strong>面对对象程序设计（<span style="color: #ff0000;">O</span>bject-<span style="color: #ff0000;">o</span>riented <span style="color: #ff0000;">p</span>rogramming ，OOP），是一种程序设计范型，同时也是一种程序开发的方法。对象指的是类的实例。他将对象作为程序作用的基本单元，将程序和数据封装其中，以提高程序的复用性。</span></p><br><p><span style="font-size: 18px;">　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　—维基百科</span></p><br></blockquote><br><ul><br><li><span style="font-size: 16px;"><strong>OOP特点（相信大家都已烂熟于心）</strong></span><br><ul><br><li><span style="font-size: 14px;">继承　　</span></li><br><li><span style="font-size: 14px;">封装　　</span></li><br><li><span style="font-size: 14px;">多态　　</span></li><br><li><span style="font-size: 14px;">抽象　<strong>　</strong></span></li><br></ul><br></li><br><li><span style="font-size: 16px;"><strong>对象实例化下的原型链</strong></span><br><br><ul><br><li><span style="font-size: 14px;"><span style="font-size: 14px;">任意声明一个函数foo，其prototype属性是一个object</span></span><br><ul><br><li><strong><span style="font-size: 14pt;"><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019104359263-1973515579.png" alt=""></span></strong></li><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></ul><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></li><br><li>继续测试JavaScript的内置构造器Number()，发现其prototype属性仍是一个object<br><ul><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019104646482-1460434618.png" alt=""></li><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></ul><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></li><br><li>举例说明<br><div class="cnblogs_code"><br><pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> Foo(){<br></span><span style="color: #008080;">2</span>   <span style="color: #0000ff;">this</span>.x = “x”<span style="color: #000000;"> ;<br></span><span style="color: #008080;">3</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">4</span> Foo.prototype.y=”y”<span style="color: #000000;">;<br></span><span style="color: #008080;">5</span> <span style="color: #0000ff;">var</span> foo1 = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Foo();<br></span><span style="color: #008080;">6</span> console.log(foo1.x);   <span style="color: #008000;">//</span><span style="color: #008000;"> x</span><br><span style="color: #008080;">7</span> console.log(foo1.y);   <span style="color: #008000;">//</span><span style="color: #008000;"> y</span></pre><br></div><br><p>首先明确几点：</p><br><ul><br><li>prototype与<strong>proto</strong>不是一回事，prototype是一个<span style="color: #ff0000;">JS对象</span>，而<strong>proto</strong>是一个（几乎）所有对象都有的一个<span style="color: #ff0000;">属性</span>。</li><br><li>prototype是函数对象上预设的<span style="color: #ff0000;">对象属性</span>（因为他是一个object）</li><br><li><strong>proto</strong>是对象上的原型，通常指向其构造器的prototype属性</li><br><li>第2行的 this 在第 5 行使用new关键字创建对象的时候，这个this指向的是一个原型(即<strong>proto</strong>属性)为Fun的prototype的一个空对象，然后通过this.x=”x” 给这个空对象赋予属性。不难看出这里的this就是指向新生成的foo1对象，使用this.x挂载的属性也将直接挂载在foo1对象上。</li><br><li>在使用 new 进行创建对象实例的时候，prototype会被用作 new 出来这些对象的原型</li><br><li>结构表示如图<img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019110153029-2063470187.png" alt="" width="433" height="371"></li><br></ul><br></li><br><li><span style="font-size: 14pt;"><strong>使用new创建对象实例之后，动态修改prototype的影响</strong></span><br><ul><br><li>修改已经存在的prototype上的属性 ，<span style="color: #ff0000;">会直接对已经创建的实例造成影响 &nbsp; &nbsp;</span><strong><span style="color: #ff0000;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019165133592-1308231152.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></strong></li><br><li>直接修改prototype对象本身，<span style="color: #ff0000;">不会对已经创建的实例造成影响</span><br><div class="cnblogs_code"><br><pre>Foo.prototype = {  } ;  <span style="color: #008000;">//<span style="color: #008000;">直接将prototype对象设置为一个空对象，这算是对prototype属性的自身的直接修改</span></span></pre><br></div><br><p><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019170032388-1513806563.png" alt=""></p><br></li><br><li>无论使用上述哪种方法，修改过prototype属性后，再使用new创建的实例，都会受到此次修改的影响</li><br></ul><br>　　　　　　</li><br></ul><br></li><br></ul><br><p><span style="font-size: 14pt;"><strong>OOP实现继承</strong></span></p><br><div class="cnblogs_code"><br><pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> Person(name,age){<br></span><span style="color: #008080;"> 2</span>   <span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> name ;<br></span><span style="color: #008080;"> 3</span>   <span style="color: #0000ff;">this</span>.age =<span style="color: #000000;"> age;<br></span><span style="color: #008080;"> 4</span> <span style="color: #000000;">}<br></span><span style="color: #008080;"> 5</span><br><span style="color: #008080;"> 6</span> Person.prototype.sayHi = <span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br></span><span style="color: #008080;"> 7</span>   console.log(“我的名字是：”+<span style="color: #0000ff;">this</span>.name+”我今年”+<span style="color: #0000ff;">this</span>.age+”岁。”<span style="color: #000000;">);<br></span><span style="color: #008080;"> 8</span> <span style="color: #000000;">}<br></span><span style="color: #008080;"> 9</span> Person.prototype.LEGS_NUM = 2<span style="color: #000000;">;<br></span><span style="color: #008080;">10</span> Person.prototype.ARMS_NUM = 2<span style="color: #000000;"> ;<br></span><span style="color: #008080;">11</span> Person.prototype.walk=<span style="color: #0000ff;">function</span><span style="color: #000000;">(){<br></span><span style="color: #008080;">12</span>   console.log(<span style="color: #0000ff;">this</span>.name + “会走路…..”<span style="color: #000000;">);<br></span><span style="color: #008080;">13</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">14</span> <span style="color: #0000ff;">function</span><span style="color: #000000;"> Student(name,age,className){<br></span><span style="color: #008080;">15</span> Person.call(<span style="color: #0000ff;">this</span><span style="color: #000000;">,name,age);<br></span><span style="color: #008080;">16</span> <span style="color: #0000ff;">this</span>.className =<span style="color: #000000;"> className;<br></span><span style="color: #008080;">17</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">18</span><br><span style="color: #008080;">19</span><br><span style="color: #008080;">20</span> Student.prototype = Object.create(Person.prototype);   <span style="color: #008000;">//</span><span style="color: #008000;">创建一个空对象，并且这个对象的原型指向传入的参数</span><br><span style="color: #008080;">21</span> Student.prototype.constructor = Student;         <span style="color: #008000;">//</span><span style="color: #008000;">手动将刚才创建的对象的construct指向Student，若不修改则指向Person</span><br><span style="color: #008080;">22</span><br><span style="color: #008080;">23</span><br><span style="color: #008080;">24</span> <span style="color: #008000;">//</span><span style="color: #008000;">定义Student类自己的方法sayHi</span><br><span style="color: #008080;">25</span> Student.prototype.sayHi = <span style="color: #0000ff;">function</span><span style="color: #000000;"> (){<br></span><span style="color: #008080;">26</span>     console.log(“我的名字是：”+<span style="color: #0000ff;">this</span>.name+”我是”+<span style="color: #0000ff;">this</span>.className+”班的学生。”<span style="color: #000000;">);<br></span><span style="color: #008080;">27</span> <span style="color: #000000;">}<br></span><span style="color: #008080;">28</span> <span style="color: #008000;">//</span><span style="color: #008000;">定义Student类自己的方法goto_school</span><br><span style="color: #008080;">29</span> Student.prototype.goto_school=<span style="color: #0000ff;">function</span><span style="color: #000000;">(subject){<br></span><span style="color: #008080;">30</span>   console.log(<span style="color: #0000ff;">this</span>.name + “每天要去上”+subject+”课”<span style="color: #000000;">);<br></span><span style="color: #008080;">31</span> <span style="color: #000000;">}<br></span><br></pre><br></div><br><p>&nbsp;</p><br><div class="cnblogs_code"><br><pre> <span style="color: #008000;">//</span><span style="color: #008000;">测试</span><br><span style="color: #0000ff;">var</span> Jay = <span style="color: #0000ff;">new</span> Student(“Jay”,37,”三年二班”<span style="color: #000000;">);<br> Jay.sayHi();                    </span><span style="color: #008000;">//</span><span style="color: #008000;">我的名字是：Jay我今年37岁。</span><br> console.log(Jay.LEGS_NUM);            <span style="color: #008000;">//</span><span style="color: #008000;">2</span><br> Jay.walk();                    <span style="color: #008000;">//</span><span style="color: #008000;">Jay会走路…..</span><br> Jay.goto_school(“数学”);            <span style="color: #008000;">//</span><span style="color: #008000;">Jay每天要去上数学课</span></pre><br></div><br><p>&nbsp;</p><br><p>&nbsp;</p><br><ul><br><li><span style="color: #000000;">&nbsp;(25行)sayHi方法绑定在Student的prototype上，每当Student实例访问sayHi方法时候，先会在对象本身上找有没有这个方法，发现没有。然后在Student中找到了，则不会继续原型链向上查找，与Java中覆盖父类方法类似</span></li><br><li>在函数对象内使用this参数接收的变量，使用new实例化的时候，会作为新创建的对象的直接属性。例如例子中的，name、age、className属性。</li><br><li>（20行）实现继承的时候，必须把父类(Person)和子类(Student)的prototype指向的对象分开来，因为子类在添加自己的属性和方法的时候就不会影响到父类的一些属性和方法。</li><br><li><strong>例子中原型链继承结构如下</strong><br><ul><br><li><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019140801795-1576067828.png" alt="" width="704" height="394"></li><br><li>从结构图中不难发现，Student.prototype是使用Object.create()方法创建的(20行)，所以他的原型(<strong>proto</strong>属性)指向的是Person.prototype。</li><br><li>对象的prototype的<strong>proto</strong>属性一般都指向原型链顶端的Object.prototype。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 　　　　&nbsp;&nbsp;&nbsp; <img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019143659935-1927762078.png" alt=""><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 　　</strong></li><br></ul><br></li><br></ul><br><p><span style="font-size: 14pt;"><strong>特别注意</strong></span></p><br><blockquote><br><p><strong>上述例子中的<strong>proto</strong>属性在chrome浏览器中测试有效，在其他环境中，请使用Object提供的方法<span style="font-size: 14pt; color: #ff0000;"><strong>Object.getPrototypeOf(目标对象)</strong></span></strong><span style="font-size: 14pt; color: #ff0000;"><span style="color: #000000;"><span style="font-size: 15px;">的方法获取对象的原型<span style="color: #ff0000;"><span style="color: #000000;">。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</span></span></span><span style="font-size: 14pt; color: #ff0000;"><span style="color: #000000;"><strong><span style="color: #000000;"><img src="http://images2015.cnblogs.com/blog/832084/201610/832084-20161019143314342-109895536.png" alt=""></span></strong></span></span></span></span></p><br></blockquote><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p><span style="font-size: 14pt; color: #ff0000;"><span style="color: #000000;"><span style="font-size: 15px;">（本文归纳自慕课网大BOSN的课程<a class="linkification-ext" title="Linkification: http://www.imooc.com/video/7054，加入了些许个人理解，若侵权私信告知）" href="http://www.imooc.com/video/7054，加入了些许个人理解，若侵权私信告知）" target="_blank" rel="external">http://www.imooc.com/video/7054，加入了些许个人理解，若侵权私信告知）</a></span><br></span></span></p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p>&nbsp;</p><br><p><span style="color: #000000;">&nbsp;</span></p><br><p>&nbsp;</p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/30/js_8_oop/" data-id="cj0wb3uwn000jsof0wzfd8umb" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/30/js_9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Javascript 之 变量提升
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/30/js_7_function1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Javascript 之 函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS样式/">CSS样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css样式/">css样式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript进阶/">javascript进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端规范/">前端规范</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端进阶/">前端进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/30/前端加密/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptVarKind/">Typescript 之 TS变量类型？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptInit/">Typescript 之 TS入门</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/typescriptFirst/">Typescript 之 什么是TypeScript？</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/sass_install/">SASS安装</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
