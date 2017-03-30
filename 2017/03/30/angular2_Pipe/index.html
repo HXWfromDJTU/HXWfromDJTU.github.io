@@ -4,12 +4,16 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>ewq | Hexo</title>
+    <title>angular 2 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="John Doe">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="#Angular2 Pipe（管道）
+##使用方法
+
+在angular1的版本中有“过滤器-filter”的概念，在angular2的版本中换成了pipe（管道），写法也比较简单，功能和filter一样，都是在页面上对参数进行状态转换 
+Angular2中管道的作用：在模板中对输入数据进行变换，并输">
     
     
     
@@ -65,7 +69,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/30/angular2_Pipe/" title="ewq" itemprop="url">ewq</a>
+      <a href="/2017/03/30/angular2_Pipe/" title="angular 2" itemprop="url">angular 2</a>
   </h1>
   <p class="article-author">By
     
@@ -73,7 +77,7 @@
     </p>
   <p class="article-time">
     <time datetime="2017-03-30T11:46:51.999Z" itemprop="datePublished">2017-03-30</time>
-    Updated:<time datetime="2017-03-30T11:56:18.578Z" itemprop="dateModified">2017-03-30</time>
+    Updated:<time datetime="2017-03-30T12:09:15.425Z" itemprop="dateModified">2017-03-30</time>
     
   </p>
 </header>
@@ -82,25 +86,83 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义管道的使用"><span class="toc-number">1.</span> <span class="toc-text">自定义管道的使用</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can <code>find the</code> answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<p>#Angular2 Pipe（管道）</p>
+		<p>#Angular2 Pipe（管道）</p>
 <p>##使用方法</p>
 <ul>
 <li>在angular1的版本中有“过滤器-filter”的概念，在angular2的版本中换成了pipe（管道），写法也比较简单，功能和filter一样，都是在页面上对参数进行状态转换 </li>
 <li>Angular2中管道的作用：在模板中对输入数据进行变换，并输出变换后的结果。 </li>
-<li>在模板中，使用<code>|</code>符号来调用一个管道操作，使用<code>:</code>来向管道传入参数。<code>\{\{ data | &lt;pipename&gt;:&lt;arg1&gt;:&lt;arg2&gt; \}\}</code><br>##管道的类型</li>
+<li>在模板中，使用<code>|</code>符号来调用一个管道操作，使用<code>:</code>来向管道传入参数。<code>{ { data | &lt;pipename&gt;:&lt;arg1&gt;:&lt;arg2&gt; } }</code><br>##管道的类型</li>
+<li>主要存在两种类型的管道，<code>pure pipe(无状态管道)</code>和<code>impure pipe(有状态管道)</code></li>
+<li>我们将<code>pure</code>标志赋值为false，可以声明管道为impure类型。我们将<code>pure</code>标志赋值为<code>false</code>，可以声明管道为<code>impure</code>类型。<pre><code>@Pipe({<br>name: ‘flyingHeroes’,<br>pure: false<br>})</code></pre></li>
+<li>无状态管道，当输入没有变化时，Angular2框架不会重新计算管道的输出。</li>
+<li>有状态管道，Angular2框架在每个变化检查周期都执行 管道的transform()方法。<br>  使用管道，实现一个倒数计时器  <pre><code>  @pipe({
+      name:"countdown",
+      pure : false
+  })
+  class EzCountdown{
+      transform(input){
+      this.initOnce(input);
+      return this.counter;
+  }
+  initOnce(input){
+      if(this.initialized) return;
+      this.initialized = true;
+      var self =this;
+      self.counter = input;
+      self.timer = setInterval(_ => {
+          self.counter--;
+          if(self.counter===0) 
+              clearInterval(self.timer);
+      },1000);
+      }
+  }</code></pre></li>
+<li>管道的有状态与无状态的区别，关键在于是否需要<code>Angular2</code>框架在输入不变的 情况下依然持续地进行变化检测，而不在于我们通常所指的计算的幂等性 - <font color="red"><b>即同样的输入 总是产生同样的输出</b></font>。</li>
+<li>angular2的管道还可以分为：①已有内建管道 ②自定义管道</li>
+<li>一个计算累加值的管道，在传统的概念中，应当被视为有状态的，因为它对于同样的输 入，会累加之前记录的总和，因此会产生不同的输出。但是，在<code>Angular2</code>中，它依然被视为无 状态的，<font color="red"><b>因为，它的一次输入不会产生多次输出</b></font>。<br>##内建管道</li>
+<li>Angular2提供了很多内建的管道函数，例如：<code>DatePipe</code>、<code>UpperCasePipe</code>、<code>LowerCasePipe</code>、<code>CurrencyPipe</code>、<code>PercentPipe</code>等。</li>
+<li>管道函数可以接收任意数量的参数</li>
+<li>在管道名称的后面添加冒号（:）和参数值，例如<code>currency:&#39;EUR&#39;</code>。如果是多个参数，参数值之间也用冒号隔开，例如<code>slice:1:5</code>。</li>
+<li>例如:<code>April, 15, 1988</code>显示成<code>04/15/88</code>：<br><code>&lt;p&gt;The hero&#39;s birthday is { { birthday | date:&quot;MM/dd/yy&quot; } } &lt;/p&gt;</code>，<br>这里的<code>date</code>为内建管道<code>DatePipe</code>的名字，<code>&quot;MM/dd/yy&quot;</code>为传入的参数</li>
 </ul>
+<p>##自定义管道</p>
+<ul>
+<li><code>pipe</code>是一个类，使用<code>@Pipe</code>装饰器提供元数据。</li>
+<li><code>@Pipe</code>装饰器接收的对象有name属性，它的值就是我们在模板表达式中使用的管道的名称</li>
+<li><code>pipe</code>类实现<code>PipeTransform</code>接口的<code>transform</code>方法。该方法接收一个输入值和一个可选的参数数组，返回转换后的值。</li>
+<li><pre><code>//app/exponential-strength.pipe.ts
+import {Pipe, PipeTransform} from 'angular2/core';
+@Pipe({name: 'exponentialStrength'})
+export class ExponentialStrengthPipe implements PipeTransform {
+transform(value:number, [exponent]) : number {
+  var exp = parseFloat(exponent);
+  return Math.pow(value, isNaN(exp) ? 1 : exp);
+}
+}
+</code></pre>
+
+</li>
+</ul>
+<h4 id="自定义管道的使用"><a href="#自定义管道的使用" class="headerlink" title="自定义管道的使用"></a>自定义管道的使用</h4><p>使用方式跟内建管道一样。但是我们要在组件的<code>@Component</code>的<code>pipes</code>数组中列出我们的自定义管道。</p>
+<pre><code>@Component({
+  selector: 'power-booster',
+  template: `
+    Power Booster
+    Super power boost: { {2 | exponentialStrength: 10} }
+    `
+  ,
+  <font color="red" size="4">pipes: [ExponentialStrengthPipe]</font>
+})
+export class PowerBooster { }
+</code></pre>
+
+<p>##管道链</p>
+<ul>
+<li><code>&lt;p&gt;The chained hero&#39;s birthday is { { ( birthday | date:&#39;fullDate&#39; ) | uppercase} }&lt;/p&gt;</code>当管道需要参数的时候，注意使用括号使得顺序看得更清楚。</li>
+</ul>
+<p>自定义管道的其他实践，请参考<a href="http://www.w2bc.com/article/112862" target="_blank" rel="external">Angular2_Pipe</a>。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -110,7 +172,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2017/03/30/angular2_Pipe/" data-title="ewq | Hexo" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2017/03/30/angular2_Pipe/" data-title="angular 2 | Hexo" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -136,7 +198,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义管道的使用"><span class="toc-number">1.</span> <span class="toc-text">自定义管道的使用</span></a></li></ol>
   </div>
 
 <div id="asidepart">
