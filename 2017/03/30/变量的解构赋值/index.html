@@ -4,13 +4,16 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Typescript 之 TS变量类型？ | Hexo</title>
+    <title>Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="John Doe">
     
-    <meta name="description" content="REST相关概念
-REST ：REST ( REpresentational State Transfer ) “表现层状态转化”。 定义了REST的规范，主要说明了在web项目中，所有的东西都是资源，肯定都能使用URL来访问到。RESTful：满足上述REST规范，所编出来的应用程序，都可以被称之">
+    <meta name="description" content="解构赋值##数组的解构赋值
+
+ES 6 中支持的数组解构赋值 var [a,b,c] = [4,5,6];、let [foo,[xxx,yyy]]=[45,[12,46]];,只需要等号两边的模式相同，变量就会被赋予对应的值。
+若是解构不成功，变量的值就等于undefined。
+不完全解构的情况，也">
     
     
     
@@ -66,15 +69,15 @@ REST ：REST ( REpresentational State Transfer ) “表现层状态转化”。 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/30/typescriptVarKind/" title="Typescript 之 TS变量类型？" itemprop="url">Typescript 之 TS变量类型？</a>
+      <a href="/2017/03/30/变量的解构赋值/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="John Doe">John Doe</a>
     </p>
   <p class="article-time">
-    <time datetime="2017-03-30T11:17:47.746Z" itemprop="datePublished">2017-03-30</time>
-    Updated:<time datetime="2017-02-22T23:59:19.004Z" itemprop="dateModified">2017-02-23</time>
+    <time datetime="2017-03-30T12:10:15.528Z" itemprop="datePublished">2017-03-30</time>
+    Updated:<time datetime="2017-03-18T06:24:47.422Z" itemprop="dateModified">2017-03-18</time>
     
   </p>
 </header>
@@ -83,30 +86,78 @@ REST ：REST ( REpresentational State Transfer ) “表现层状态转化”。 
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#解构赋值"><span class="toc-number">1.</span> <span class="toc-text">解构赋值</span></a></li></ol>
 		</div>
 		
-		<p></p><p><strong><span style="font-size: 14pt;">REST相关概念</span></strong></p><p></p>
-<ul><br><li><span style="font-size: 16px;">REST ：</span><br><ul><br><li><span style="font-size: 16px;">REST ( REpresentational State Transfer ) “表现层状态转化”。</span></li><br><li><span style="font-size: 16px;"> 定义了REST的规范，主要说明了在web项目中，所有的东西都是资源，肯定都能使用URL来访问到。</span></li><br></ul><br></li><br><li><span style="font-size: 16px;">RESTful：满足上述REST规范，所编出来的应用程序，都可以被称之为RESTful，是这一类程序的总称。</span></li><br><li><span style="font-size: 16px;">restlet 与 resteasy：是由实际的web服务器厂商生产出来的RESTful程序，又称之为RESTful web框架，实际就是一个servlet，通过在web.xml中配置url匹配，达到拦截url的效果。</span></li><br></ul><br><p><span style="font-size: 14pt;"><strong>REST作用</strong></span></p><br><ul><br><li><span style="font-size: 16px;">对url进行规范。使url简洁。</span></li><br><li>对http方法，进行规范。（官方声明，没什么卵用）<br><ul><br><li>GET&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 获取资源</li><br><li>POST　　　&nbsp; 提交资源</li><br><li>PUT 　　　　更新资源</li><br><li>DELETE　　&nbsp;&nbsp; 删除资源</li><br></ul><br></li><br><li>对请求结果返回类型进行规范。（json格式的支持）</li><br></ul>  
+		<h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><p>##数组的解构赋值</p>
+<ul>
+<li>ES 6 中支持的数组解构赋值 <code>var [a,b,c] = [4,5,6];</code>、<code>let [foo,[xxx,yyy]]=[45,[12,46]];</code>,只需要等号两边的模式相同，变量就会被赋予对应的值。</li>
+<li>若是解构不成功，变量的值就等于<code>undefined</code>。</li>
+<li>不完全解构的情况，也可以进行赋值<code>let [x,y] = [1,2,6];</code> 或者 <code>let [x,y,z] = [4,[4,9,3],8,9];</code>。</li>
+<li>若等号的右边，不是可遍历的结构，使用解构赋值时候将会发生报错。</li>
+<li>只要某种数据具有<code>Iterator接口</code>都可以以数组的形式进行解构赋值。例如<code>let [x,y,z] = new Set ([4,5,6]);</code>，以及ES 6 中的<code>generator</code>函数，也可以作为解构表达式的赋值内容。</li>
+</ul>
+<p>##解构赋值中的默认值</p>
+<ul>
+<li><code>let [foo = true,ofo = false ,mobike = &quot;fake&quot;] = [456,undefined,null];</code>只有当一个数组成员被赋予的值全等于<code>undefined</code>，默认值才会生效。(注：这里的null并不全等于undefined,所以mobike的值为null)。</li>
+<li>解构赋值中的默认值赋值表达式，只有在“有必要(即所赋值为undefined)”的时候才会执行。例如<code>let [foo = fun()] = [&quot;Crazy-Web-2&quot;];</code>这里的fun()方法将不被触发。</li>
+<li>使用默认值时，所赋值的内容，必须是已被声明的变量 例如<code>let [x=y,y=1]=[];</code>，给x赋默认值的时候，仍未被声明。</li>
+</ul>
+<p>##对象的解构赋值</p>
+<ul>
+<li>变量名称的次序不要求与赋值名称的次序相同，只要键名相对应即可。</li>
+<li>对于<code>var {foo: baz } = { foo:&quot;aaa&quot;,bar :&quot;bbb&quot;};</code>,被赋值的是变量<code>baz</code>而不是键名<code>foo</code></li>
+<li>使用let关键字进行对象解构赋值的时候，同样需要注意不能重复声明。</li>
+<li>和数组的类似，对象的解构赋值，也可以进行复杂的嵌套结构</li>
+<li>若解构失败，变量的值被赋予<code>undefined</code></li>
+<li>若使用解构的方式，将一个已经声明的某个变量赋值，例如:<code>({x} = { x : x:1});</code>，需要十分注意，要使用圆括号括起来。</li>
+<li>可以利用已知的JS内置对象的键名，去获取JS内置对象的方法，例如<code>let { log, sin, cos } = Math;</code>，能够，直接使用<code>log()</code>、<code>sin()</code>、<code>cos()</code>即可。</li>
+</ul>
+<p>##字符串的解构赋值</p>
+<ul>
+<li>字符串一般可以当做一个类似数组一样的对象，可将数组中的元素内容按序赋值。</li>
+<li>也可以将字符串对象的属性用于赋值，例如，类数组对象都有一个<code>length</code>属性，字符串对象也不列外。</li>
+</ul>
+<p>##其他基本对象的解构赋值</p>
+<p>####结构的规则一般是，若等号右边不是数组或者JS对象，就将其转化为对象，然后将其当做一个完整的对象，进行对象属性的对照，再进行结构赋值。</p>
+<ul>
+<li>Number对象、Boolean对象都会解构成一般的对象，拥有对象的基本属性。</li>
+<li>undefined和null都无法转换为JS对象，所以对他们进行结构赋值的时候，都会报错。</li>
+</ul>
+<p>##函数参数的解构赋值</p>
+<ul>
+<li>函数调用进行传参的时候，也是一个解构赋值的过程</li>
+<li>在给解构赋值设定默认值的时候，要与函数设定默认值的情况区分开来：<br>例如<pre><code>function move({x = 0, y = 0} = {}) {<br>return [x, y];<br>}<br></code></pre><br><br>与<pre><code>function move({x, y} = { x: 0, y: 0 }) {<br>return [x, y];<br>}<br></code></pre><br><br>区别就是在于，调用时传入的值为<code>undefined</code>时，解构默认值会被触发，而函数参数默认值不会。</li>
+</ul>
+<p>##使用解构赋值的注意点</p>
+<ul>
+<li>在声明语句中，不能够使用圆括号</li>
+<li>函数设定参数的时候，也不能够使用圆括号</li>
+<li>赋值语句中，不能将整个模式，或嵌套模式中的一层，放在圆括号之中。<pre><code>// 报错<br>({ p: a }) = { p: 42 };<br>([a]) = [5];<br>[({ p: a }), { x: c }] = [{}, {}];<br></code></pre><br></li>
+</ul>
+<p>##解构赋值的用途</p>
+<ul>
+<li>不借助中间值，实现两个变量值互换。<pre><code>let x = 1;<br>let y = 2;<br>[x, y] = [y, x];<br></code></pre></li>
+<li>从函数中返回多个值，可以使用返回数组/对象的形式，例如<code>return [1, 2, 3];</code>或<code>return {
+  foo: 1,
+  bar: 2
+};</code>，return得到的函数值，可以直接赋值给解构相类似的对象。</li>
+<li>使用JS对象传参的时候，可以实现变量无序传参。<code>function f({x, y, z}) { ... };
+f({z: 3, y: 2, x: 1});</code></li>
+<li>JSON数据实现“键名”快速提取，因为JSON对象和JS对象的结构完全一致，可以使用键名直接提取，不需要像以前一样进行循环操作。</li>
+<li>可以实现模拟函数参数值<pre><code>let x = 1;<br>jQuery.ajax = function (url, {<br>async = true,<br>beforeSend = function () {},<br>cache = true,<br>complete = function () {},<br>crossDomain = false,<br>global = true,<br>// … more config<br>}) {<br>// … do stuff<br>};<br></code></pre></li>
+<li>遍历Map结构(有待补充)</li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/其他/">其他</a>
-  </div>
-
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Typescript/">Typescript</a>
-</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2017/03/30/typescriptVarKind/" data-title="Typescript 之 TS变量类型？ | Hexo" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2017/03/30/变量的解构赋值/" data-title="Hexo" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -115,19 +166,11 @@ REST ：REST ( REpresentational State Transfer ) “表现层状态转化”。 
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/30/前端加密/" title="Typescript 之 TS变量类型？">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  Typescript 之 TS变量类型？</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/30/typescriptInit/"  title="Typescript 之 TS入门">
+<a href="/2017/03/30/let和const指令/"  title="">
  <strong>NEXT:</strong><br/> 
- <span>Typescript 之 TS入门
+ <span>(no title)
 </span>
 </a>
 </div>
@@ -140,7 +183,7 @@ REST ：REST ( REpresentational State Transfer ) “表现层状态转化”。 
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#解构赋值"><span class="toc-number">1.</span> <span class="toc-text">解构赋值</span></a></li></ol>
   </div>
 
 <div id="asidepart">
