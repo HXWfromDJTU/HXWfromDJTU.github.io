@@ -9,11 +9,10 @@
     
     <meta name="author" content="John Doe">
     
-    <meta name="description" content="#Angular2 Pipe（管道）
-##使用方法
+    <meta name="description" content="#Angular2 Pipe（管道）&amp;lt;code&amp;gt;{ {&amp;lt;/code&amp;gt; data | &amp;lt;pipename&amp;gt;:&amp;lt;arg1&amp;gt;:&amp;lt;arg2&amp;gt; } }
+##管道的类型
 
-在angular1的版本中有“过滤器-filter”的概念，在angular2的版本中换成了pipe（管道），写法也比较简单，功能和filter一样，都是在页面上对参数进行状态转换 
-Angular2中管道的作用：在模板中对输入数据进行变换，并输">
+主要存在两种类型的管道，pure pipe(无状态管道)和impure pipe">
     
     
     
@@ -77,7 +76,7 @@ Angular2中管道的作用：在模板中对输入数据进行变换，并输">
     </p>
   <p class="article-time">
     <time datetime="2017-03-30T11:46:51.999Z" itemprop="datePublished">2017-03-30</time>
-    Updated:<time datetime="2017-03-30T12:09:15.425Z" itemprop="dateModified">2017-03-30</time>
+    Updated:<time datetime="2017-03-30T12:19:38.984Z" itemprop="dateModified">2017-03-30</time>
     
   </p>
 </header>
@@ -89,12 +88,9 @@ Angular2中管道的作用：在模板中对输入数据进行变换，并输">
 		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义管道的使用"><span class="toc-number">1.</span> <span class="toc-text">自定义管道的使用</span></a></li></ol>
 		</div>
 		
-		<p>#Angular2 Pipe（管道）</p>
-<p>##使用方法</p>
+		<p>#Angular2 Pipe（管道）<br><code>&lt;code&gt;{ {&lt;/code&gt; data | &lt;pipename&gt;:&lt;arg1&gt;:&lt;arg2&gt; } }</code></p>
+<p>##管道的类型</p>
 <ul>
-<li>在angular1的版本中有“过滤器-filter”的概念，在angular2的版本中换成了pipe（管道），写法也比较简单，功能和filter一样，都是在页面上对参数进行状态转换 </li>
-<li>Angular2中管道的作用：在模板中对输入数据进行变换，并输出变换后的结果。 </li>
-<li>在模板中，使用<code>|</code>符号来调用一个管道操作，使用<code>:</code>来向管道传入参数。<code>{ { data | &lt;pipename&gt;:&lt;arg1&gt;:&lt;arg2&gt; } }</code><br>##管道的类型</li>
 <li>主要存在两种类型的管道，<code>pure pipe(无状态管道)</code>和<code>impure pipe(有状态管道)</code></li>
 <li>我们将<code>pure</code>标志赋值为false，可以声明管道为impure类型。我们将<code>pure</code>标志赋值为<code>false</code>，可以声明管道为<code>impure</code>类型。<pre><code>@Pipe({<br>name: ‘flyingHeroes’,<br>pure: false<br>})</code></pre></li>
 <li>无状态管道，当输入没有变化时，Angular2框架不会重新计算管道的输出。</li>
@@ -220,6 +216,8 @@ export class PowerBooster { }
 		
 			<li><a href="/categories/CSS样式/" title="CSS样式">CSS样式<sup>3</sup></a></li>
 		
+			<li><a href="/categories/ES6/" title="ES6">ES6<sup>2</sup></a></li>
+		
 			<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
 		
 			<li><a href="/categories/Typescript/" title="Typescript">Typescript<sup>3</sup></a></li>
@@ -243,7 +241,7 @@ export class PowerBooster { }
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/其他/" title="其他">其他<sup>24</sup></a></li>
+			<li><a href="/tags/其他/" title="其他">其他<sup>26</sup></a></li>
 		
 		</ul>
 </div>

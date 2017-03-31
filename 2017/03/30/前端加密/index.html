@@ -9,12 +9,10 @@
     
     <meta name="author" content="John Doe">
     
-    <meta name="description" content="什么是前端加密
-　　前端加密就是在客户端对用户要提交的内容进行加密，从而降低服务器端的压力。
-为什么要进行前端加密
-　  进行前端加密值后，要对密码进行破译和破解，则需要在客户端方面消耗更多的资源，延长了破解时间，从而获得了更高的安全性。
+    <meta name="description" content="什么是前端加密　　前端加密就是在客户端对用户要提交的内容进行加密，从而降低服务器端的压力。
+为什么要进行前端加密　  进行前端加密值后，要对密码进行破译和破解，则需要在客户端方面消耗更多的资源，延长了破解时间，从而获得了更高的安全性。
 前端加密方式：
-https，安全性高。证书认证，一种是来自于">
+https，安全性高。证书认证，一种是来自于证书">
     
     
     
@@ -78,7 +76,7 @@ https，安全性高。证书认证，一种是来自于">
     </p>
   <p class="article-time">
     <time datetime="2017-03-30T11:17:47.751Z" itemprop="datePublished">2017-03-30</time>
-    Updated:<time datetime="2017-02-22T23:59:51.388Z" itemprop="dateModified">2017-02-23</time>
+    Updated:<time datetime="2017-03-31T05:57:48.008Z" itemprop="dateModified">2017-03-31</time>
     
   </p>
 </header>
@@ -87,40 +85,38 @@ https，安全性高。证书认证，一种是来自于">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是前端加密"><span class="toc-number">1.</span> <span class="toc-text">什么是前端加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要进行前端加密"><span class="toc-number">2.</span> <span class="toc-text">为什么要进行前端加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端加密方式："><span class="toc-number">3.</span> <span class="toc-text">前端加密方式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在固定字符串上截取随机长度和打乱顺序的字符串"><span class="toc-number">4.</span> <span class="toc-text">在固定字符串上截取随机长度和打乱顺序的字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA加密"><span class="toc-number">5.</span> <span class="toc-text">RSA加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MD5实现的前端加密"><span class="toc-number">6.</span> <span class="toc-text">MD5实现的前端加密</span></a></li></ol>
 		</div>
 		
-		<p><strong>什么是前端加密</strong></p>
-<p>　　前端加密就是在客户端对用户要提交的内容进行加密，从而降低服务器端的压力。</p>
-<p><strong>为什么要进行前端加密</strong></p>
-<p>　  进行前端加密值后，要对密码进行破译和破解，则需要在客户端方面消耗更多的资源，延长了破解时间，从而获得了更高的安全性。</p>
-<p><strong>前端加密方式</strong>：</p>
-<pre><code>https，安全性高。证书认证，一种是来自于证书颁发机构；一种是自己生成证书，但需要浏览器添加信任；成本高。
-post之前，通过js对密码进行加密。前端js：md5+salt(随机数),后台服务器php : 截取salt后的数与数据库的密码进行比较；生成密码:md5()
-用RSA进行加密传输
-使用密码空间，进行加密传输
-有服务端颁发并验证一个带有时间戳的可信token
-</code></pre><p><strong>在固定字符串上截取随机长度和打乱顺序的字符串</strong></p>
-<pre><code>function randomString(length) {
-  var chars = 
-&apos;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&apos;.split(&apos;&apos;);  
-if (! length) {
-    length = Math.floor(Math.random() * chars.length);
-}  
-var str = &apos;&apos;;
-for (var i = 0; i &lt; length; i++) {
-    str += chars[Math.floor(Math.random() * chars.length)];
-}
-    return str;
-}
-</code></pre><p><strong>RSA加密</strong></p>
-<pre><code>后端先给前端发放一个公钥（public-key）
-前端使用公钥对密码（password）等敏感字段进行加密
-前端使用post方式将使用公钥加密后的密码发送到后端
-后端使用私钥（private-key）进行解密，获得原密码
-</code></pre><p><strong>MD5实现的前端加密</strong></p>
-<pre><code>　　MD5 is a secure hash algorithm. It takes a string as input, and produces a 128-bit number, the hash. The same string always produces the same hash, but given a hash, it is not generally possible to determine the original string. Secure hash algorithms are useful for protecting passwords and ensuring data integrity.
-</code></pre>  
+		<h2 id="什么是前端加密"><a href="#什么是前端加密" class="headerlink" title="什么是前端加密"></a>什么是前端加密</h2><p>　　前端加密就是在客户端对用户要提交的内容进行加密，从而降低服务器端的压力。</p>
+<h2 id="为什么要进行前端加密"><a href="#为什么要进行前端加密" class="headerlink" title="为什么要进行前端加密"></a>为什么要进行前端加密</h2><p>　  进行前端加密值后，要对密码进行破译和破解，则需要在客户端方面消耗更多的资源，延长了破解时间，从而获得了更高的安全性。</p>
+<h2 id="前端加密方式："><a href="#前端加密方式：" class="headerlink" title="前端加密方式："></a>前端加密方式：</h2><blockquote>
+<p>https，安全性高。证书认证，一种是来自于证书颁发机构；一种是自己生成证书，但需要浏览器添加信任；成本高。<br>post之前，通过js对密码进行加密。前端js：md5+salt(随机数),后台服务器php : 截取salt后的数与数据库的密码进行比较；生成密码:md5()<br>用RSA进行加密传输<br>使用密码空间，进行加密传输<br>有服务端颁发并验证一个带有时间戳的可信token</p>
+</blockquote>
+<h2 id="在固定字符串上截取随机长度和打乱顺序的字符串"><a href="#在固定字符串上截取随机长度和打乱顺序的字符串" class="headerlink" title="在固定字符串上截取随机长度和打乱顺序的字符串"></a>在固定字符串上截取随机长度和打乱顺序的字符串</h2><pre><code>function randomString(length) {
+      var chars = 
+    '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');  
+    if (! length) {
+        length = Math.floor(Math.random() * chars.length);
+    }  
+    var str = '';
+    for (var i = 0; i < length; i++) {
+        str += chars[Math.floor(Math.random() * chars.length)];
+    }
+        return str;
+    }
+</code></pre>
+
+<h2 id="RSA加密"><a href="#RSA加密" class="headerlink" title="RSA加密"></a>RSA加密</h2><ul>
+<li>后端先给前端发放一个公钥（public-key）</li>
+<li>前端使用公钥对密码（password）等敏感字段进行加密</li>
+<li>前端使用post方式将使用公钥加密后的密码发送到后端</li>
+<li>后端使用私钥（private-key）进行解密，获得原密码</li>
+</ul>
+<h2 id="MD5实现的前端加密"><a href="#MD5实现的前端加密" class="headerlink" title="MD5实现的前端加密"></a>MD5实现的前端加密</h2><blockquote>
+<p> MD5 is a secure hash algorithm. It takes a string as input, and produces a 128-bit number, the hash. The same string always produces the same hash, but given a hash, it is not generally possible to determine the original string. Secure hash algorithms are useful for protecting passwords and ensuring data integrity.</p>
+</blockquote>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -173,7 +169,7 @@ for (var i = 0; i &lt; length; i++) {
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是前端加密"><span class="toc-number">1.</span> <span class="toc-text">什么是前端加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要进行前端加密"><span class="toc-number">2.</span> <span class="toc-text">为什么要进行前端加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端加密方式："><span class="toc-number">3.</span> <span class="toc-text">前端加密方式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在固定字符串上截取随机长度和打乱顺序的字符串"><span class="toc-number">4.</span> <span class="toc-text">在固定字符串上截取随机长度和打乱顺序的字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA加密"><span class="toc-number">5.</span> <span class="toc-text">RSA加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MD5实现的前端加密"><span class="toc-number">6.</span> <span class="toc-text">MD5实现的前端加密</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -186,6 +182,8 @@ for (var i = 0; i &lt; length; i++) {
 		<ul>
 		
 			<li><a href="/categories/CSS样式/" title="CSS样式">CSS样式<sup>3</sup></a></li>
+		
+			<li><a href="/categories/ES6/" title="ES6">ES6<sup>2</sup></a></li>
 		
 			<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
 		
@@ -210,7 +208,7 @@ for (var i = 0; i &lt; length; i++) {
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/其他/" title="其他">其他<sup>24</sup></a></li>
+			<li><a href="/tags/其他/" title="其他">其他<sup>26</sup></a></li>
 		
 		</ul>
 </div>

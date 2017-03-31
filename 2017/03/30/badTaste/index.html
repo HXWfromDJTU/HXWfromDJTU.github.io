@@ -73,7 +73,7 @@
     </p>
   <p class="article-time">
     <time datetime="2017-03-30T11:17:47.662Z" itemprop="datePublished">2017-03-30</time>
-    Updated:<time datetime="2017-02-22T23:55:06.188Z" itemprop="dateModified">2017-02-23</time>
+    Updated:<time datetime="2017-03-31T06:42:57.063Z" itemprop="dateModified">2017-03-31</time>
     
   </p>
 </header>
@@ -82,42 +82,26 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Typescript："><span class="toc-number">1.</span> <span class="toc-text">安装Typescript：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Visual-Studio-Code：http-www-cnblogs-com-sunjie9606-p-5945540-html"><span class="toc-number">1.1.</span> <span class="toc-text">Visual Studio Code：http://www.cnblogs.com/sunjie9606/p/5945540.html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Webstorm-http-blog-chinaunix-net-uid-30198739-id-5739410-html"><span class="toc-number">1.2.</span> <span class="toc-text">Webstorm:http://blog.chinaunix.net/uid-30198739-id-5739410.html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#官网在线Compiler：http-www-typescriptlang-org-play-index-html"><span class="toc-number">1.3.</span> <span class="toc-text">官网在线Compiler：http://www.typescriptlang.org/play/index.html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript编译配置-tsconfig-json"><span class="toc-number">1.4.</span> <span class="toc-text">Typescript编译配置-tsconfig.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript-“HelloWorld”"><span class="toc-number">1.5.</span> <span class="toc-text">Typescript “HelloWorld”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#greeter-ts"><span class="toc-number">1.6.</span> <span class="toc-text">greeter.ts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#greeter-js"><span class="toc-number">1.7.</span> <span class="toc-text">greeter.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#running-result"><span class="toc-number">1.8.</span> <span class="toc-text">running result:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tsconfig中target不同的属性值的效果"><span class="toc-number">1.9.</span> <span class="toc-text"> tsconfig中target不同的属性值的效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Before-Compilation-TS"><span class="toc-number">1.10.</span> <span class="toc-text">Before Compilation(TS):</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#After-Compilation-JS"><span class="toc-number">1.11.</span> <span class="toc-text">After Compilation(JS):</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES3"><span class="toc-number">1.12.</span> <span class="toc-text"> ES3:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">1.13.</span> <span class="toc-text">　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES5"><span class="toc-number">1.14.</span> <span class="toc-text">ES5:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6"><span class="toc-number">1.15.</span> <span class="toc-text">ES6:</span></a></li></ol></li></ol>
 		</div>
 		
 		<p>Everyone has a bad taste in coding~find yourself plesae</p>
 <a id="more"></a>
-<p><strong><span style="font-size: 14pt;">安装Typescript：</span></strong></p>
-<p><strong><span style="font-size: 14pt;"><span style="font-size: 14px;">使用npm安装:</span><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170123114200191-358499383.png" alt=""></span></strong></p>
+<h2 id="安装Typescript："><a href="#安装Typescript：" class="headerlink" title="安装Typescript："></a><span style="font-size: 14pt;">安装Typescript：</span></h2><p><strong><span style="font-size: 14pt;"><span style="font-size: 14px;">使用npm安装:</span><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170123114200191-358499383.png" alt=""></span></strong></p>
 <p><strong>查看版本：<img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170123114319316-616443984.png" alt=""><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170123114337816-790096110.png" alt=""></strong></p>
 <p><strong><span style="font-size: 14pt;">选择可手的IDE</span>：</strong></p>
 <p>Typescript的编写，在<strong>Visual Studio</strong>和<strong>Webstrorm</strong>上都能得到较好的代码支持,这里推荐两篇博文，让大家可以方便地进行配置：</p>
-<p><strong>Visual Studio Code</strong>：<a href="http://www.cnblogs.com/sunjie9606/p/5945540.html" title="Linkification: http://www.cnblogs.com/sunjie9606/p/5945540.html" target="_blank" rel="external">http://www.cnblogs.com/sunjie9606/p/5945540.html</a></p>
-<p><strong>Webstorm</strong>:<a href="http://blog.chinaunix.net/uid-30198739-id-5739410.html" title="Linkification: http://blog.chinaunix.net/uid-30198739-id-5739410.html" target="_blank" rel="external">http://blog.chinaunix.net/uid-30198739-id-5739410.html</a></p>
-<p><strong>官网在线Compiler</strong>：<a href="http://www.typescriptlang.org/play/index.html" title="Linkification: http://www.typescriptlang.org/play/index.html" target="_blank" rel="external">http://www.typescriptlang.org/play/index.html</a><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170123110705472-1518626046.png" alt=""></p>
-<p><strong><span style="font-size: 14pt;">Typescript编译配置-tsconfig.json</span></strong></p>
-<div class="cnblogs_code"><br><br><pre> <span style="color: #008080;">1</span> <span style="color: #000000;"> {<br></span> <span style="color: #008080;">2</span>      “compilerOptions”<span style="color: #000000;">: {<br></span> <span style="color: #008080;">3</span>        “module”: “commonjs”<span style="color: #000000;">,<br></span> <span style="color: #008080;">4</span>         “target”: “es5”,  <span style="color: #008000;">//</span><span style="color: #008000;">编译之后生成的JavaScript文件需要遵循的标准。有三个候选项：es3、es5、es2015。</span><br> <span style="color: #008080;">5</span>      “noImplicitAny”: <span style="color: #0000ff;">false</span>, <span style="color: #008000;">//</span><span style="color: #008000;">为false时，如果编译器无法根据变量的使用来判断类型时，将用any类型代替。为true时，将进行强类型检查，无法推断类型时，提示错误。</span><br> <span style="color: #008080;">6</span>         “sourceMap”: <span style="color: #0000ff;">true</span>, <span style="color: #008000;">//</span><span style="color: #008000;">编译时是否生成对应的source map文件。这个文件主要用于前端调试。当前端js文件被压缩引用后，出错时可借助同名的source map文件查找源文件中错误位置。</span><br> <span style="color: #008080;">7</span>          “allowJs”: <span style="color: #0000ff;">true</span><br> <span style="color: #008080;">8</span> <span style="color: #000000;">   }<br></span> <span style="color: #008080;">9</span> <span style="color: #000000;">,</span> <span style="color: #008080;">10</span>      “exclude”<span style="color: #000000;">: [</span> <span style="color: #008080;">11</span>          “node_modules”<br><span style="color: #008080;">12</span> <span style="color: #000000;">]</span> <span style="color: #008080;">13</span>  }</pre><br><br></div>
+<h3 id="Visual-Studio-Code：http-www-cnblogs-com-sunjie9606-p-5945540-html"><a href="#Visual-Studio-Code：http-www-cnblogs-com-sunjie9606-p-5945540-html" class="headerlink" title="Visual Studio Code：http://www.cnblogs.com/sunjie9606/p/5945540.html"></a>Visual Studio Code：<a href="http://www.cnblogs.com/sunjie9606/p/5945540.html" title="Linkification: http://www.cnblogs.com/sunjie9606/p/5945540.html" target="_blank" rel="external">http://www.cnblogs.com/sunjie9606/p/5945540.html</a></h3><h3 id="Webstorm-http-blog-chinaunix-net-uid-30198739-id-5739410-html"><a href="#Webstorm-http-blog-chinaunix-net-uid-30198739-id-5739410-html" class="headerlink" title="Webstorm:http://blog.chinaunix.net/uid-30198739-id-5739410.html"></a>Webstorm:<a href="http://blog.chinaunix.net/uid-30198739-id-5739410.html" title="Linkification: http://blog.chinaunix.net/uid-30198739-id-5739410.html" target="_blank" rel="external">http://blog.chinaunix.net/uid-30198739-id-5739410.html</a></h3><h3 id="官网在线Compiler：http-www-typescriptlang-org-play-index-html"><a href="#官网在线Compiler：http-www-typescriptlang-org-play-index-html" class="headerlink" title="官网在线Compiler：http://www.typescriptlang.org/play/index.html"></a>官网在线Compiler：<a href="http://www.typescriptlang.org/play/index.html" title="Linkification: http://www.typescriptlang.org/play/index.html" target="_blank" rel="external">http://www.typescriptlang.org/play/index.html</a><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170123110705472-1518626046.png" alt=""></h3><h3 id="Typescript编译配置-tsconfig-json"><a href="#Typescript编译配置-tsconfig-json" class="headerlink" title="Typescript编译配置-tsconfig.json"></a><span style="font-size: 14pt;">Typescript编译配置-tsconfig.json</span></h3><div class="cnblogs_code"><br><br><pre> <span style="color: #008080;">1</span> <span style="color: #000000;"> {<br></span> <span style="color: #008080;">2</span>      “compilerOptions”<span style="color: #000000;">: {<br></span> <span style="color: #008080;">3</span>        “module”: “commonjs”<span style="color: #000000;">,<br></span> <span style="color: #008080;">4</span>         “target”: “es5”,  <span style="color: #008000;">//</span><span style="color: #008000;">编译之后生成的JavaScript文件需要遵循的标准。有三个候选项：es3、es5、es2015。</span><br> <span style="color: #008080;">5</span>      “noImplicitAny”: <span style="color: #0000ff;">false</span>, <span style="color: #008000;">//</span><span style="color: #008000;">为false时，如果编译器无法根据变量的使用来判断类型时，将用any类型代替。为true时，将进行强类型检查，无法推断类型时，提示错误。</span><br> <span style="color: #008080;">6</span>         “sourceMap”: <span style="color: #0000ff;">true</span>, <span style="color: #008000;">//</span><span style="color: #008000;">编译时是否生成对应的source map文件。这个文件主要用于前端调试。当前端js文件被压缩引用后，出错时可借助同名的source map文件查找源文件中错误位置。</span><br> <span style="color: #008080;">7</span>          “allowJs”: <span style="color: #0000ff;">true</span><br> <span style="color: #008080;">8</span> <span style="color: #000000;">   }<br></span> <span style="color: #008080;">9</span> <span style="color: #000000;">,</span> <span style="color: #008080;">10</span>      “exclude”<span style="color: #000000;">: [</span> <span style="color: #008080;">11</span>          “node_modules”<br><span style="color: #008080;">12</span> <span style="color: #000000;">]</span> <span style="color: #008080;">13</span>  }</pre><br><br></div>
 
 <ul>
 <li>Typescript的编译是按照这些设定的规则去将“.ts”文件转化成符合要求的“.js”文件</li>
 </ul>
-<p><span style="font-size: 14pt;"><strong>Typescript “HelloWorld”</strong></span></p>
-<p><span style="font-size: 14px;">greeter.ts</span></p>
-<p><span style="font-size: 14px;"><strong><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122112938754-827049025.png" alt=""></strong></span></p>
-<p>greeter.js</p>
-<p><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122112945707-1472523689.png" alt=""></p>
-<p>running result:</p>
-<p><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122113040473-937130975.png" alt=""></p>
-<p><strong><span style="font-size: 14pt;"> tsconfig中target不同的属性值的效果</span></strong></p>
-<p><span style="font-size: 14px;">Before Compilation(TS):</span></p>
-<p><span style="font-size: 14px;"><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122115659754-1821793477.png" alt=""></span></p>
-<p>After <span style="font-size: 14px;">Compilation(JS):</span></p>
-<p><span style="font-size: 14px;"> ES3:</span></p>
-<p><span style="font-size: 14px;">　　<img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122115738426-993013723.png" alt=""></span></p>
-<p><span style="font-size: 14px;">ES5:</span></p>
-<p><span style="font-size: 14px;">　　<img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122115754066-104057137.png" alt=""></span></p>
-<p><span style="font-size: 14px;">ES6:</span></p>
-<p><span style="font-size: 14px;">　　<img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122115812816-122918347.png" alt=""></span></p>
+<h3 id="Typescript-“HelloWorld”"><a href="#Typescript-“HelloWorld”" class="headerlink" title="Typescript “HelloWorld”"></a><span style="font-size: 14pt;"><strong>Typescript “HelloWorld”</strong></span></h3><h3 id="greeter-ts"><a href="#greeter-ts" class="headerlink" title="greeter.ts"></a><span style="font-size: 14px;">greeter.ts</span></h3><p><span style="font-size: 14px;"><strong><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122112938754-827049025.png" alt=""></strong></span></p>
+<h3 id="greeter-js"><a href="#greeter-js" class="headerlink" title="greeter.js"></a>greeter.js</h3><p><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122112945707-1472523689.png" alt=""></p>
+<h3 id="running-result"><a href="#running-result" class="headerlink" title="running result:"></a>running result:</h3><p><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122113040473-937130975.png" alt=""></p>
+<h3 id="tsconfig中target不同的属性值的效果"><a href="#tsconfig中target不同的属性值的效果" class="headerlink" title=" tsconfig中target不同的属性值的效果"></a><span style="font-size: 14pt;"> tsconfig中target不同的属性值的效果</span></h3><h3 id="Before-Compilation-TS"><a href="#Before-Compilation-TS" class="headerlink" title="Before Compilation(TS):"></a><span style="font-size: 14px;">Before Compilation(TS):</span></h3><p><span style="font-size: 14px;"><img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122115659754-1821793477.png" alt=""></span></p>
+<h3 id="After-Compilation-JS"><a href="#After-Compilation-JS" class="headerlink" title="After Compilation(JS):"></a>After <span style="font-size: 14px;">Compilation(JS):</span></h3><h3 id="ES3"><a href="#ES3" class="headerlink" title=" ES3:"></a><span style="font-size: 14px;"> ES3:</span></h3><h3 id=""><a href="#" class="headerlink" title="　　"></a><span style="font-size: 14px;">　　<img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122115738426-993013723.png" alt=""></span></h3><h3 id="ES5"><a href="#ES5" class="headerlink" title="ES5:"></a><span style="font-size: 14px;">ES5:</span></h3><p><span style="font-size: 14px;">　　<img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122115754066-104057137.png" alt=""></span></p>
+<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6:"></a><span style="font-size: 14px;">ES6:</span></h3><p><span style="font-size: 14px;">　　<img src="http://images2015.cnblogs.com/blog/832084/201701/832084-20170122115812816-122918347.png" alt=""></span></p>
 <ul>
 <li>使得你不需要再去担心浏览器对你的JS代码的兼容，浏览器需要哪一个Version的Javascript那么我们就即刻编译提供</li>
 <li>不用再去纠结prototype和_proto相关的原型链问题</li>
@@ -159,14 +143,6 @@
 </div>
 
 
-<div class="next">
-<a href="/2017/03/30/hello-world/"  title="Hello World">
- <strong>NEXT:</strong><br/> 
- <span>Hello World
-</span>
-</a>
-</div>
-
 </nav>
 
 	
@@ -175,7 +151,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Typescript："><span class="toc-number">1.</span> <span class="toc-text">安装Typescript：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Visual-Studio-Code：http-www-cnblogs-com-sunjie9606-p-5945540-html"><span class="toc-number">1.1.</span> <span class="toc-text">Visual Studio Code：http://www.cnblogs.com/sunjie9606/p/5945540.html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Webstorm-http-blog-chinaunix-net-uid-30198739-id-5739410-html"><span class="toc-number">1.2.</span> <span class="toc-text">Webstorm:http://blog.chinaunix.net/uid-30198739-id-5739410.html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#官网在线Compiler：http-www-typescriptlang-org-play-index-html"><span class="toc-number">1.3.</span> <span class="toc-text">官网在线Compiler：http://www.typescriptlang.org/play/index.html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript编译配置-tsconfig-json"><span class="toc-number">1.4.</span> <span class="toc-text">Typescript编译配置-tsconfig.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript-“HelloWorld”"><span class="toc-number">1.5.</span> <span class="toc-text">Typescript “HelloWorld”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#greeter-ts"><span class="toc-number">1.6.</span> <span class="toc-text">greeter.ts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#greeter-js"><span class="toc-number">1.7.</span> <span class="toc-text">greeter.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#running-result"><span class="toc-number">1.8.</span> <span class="toc-text">running result:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tsconfig中target不同的属性值的效果"><span class="toc-number">1.9.</span> <span class="toc-text"> tsconfig中target不同的属性值的效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Before-Compilation-TS"><span class="toc-number">1.10.</span> <span class="toc-text">Before Compilation(TS):</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#After-Compilation-JS"><span class="toc-number">1.11.</span> <span class="toc-text">After Compilation(JS):</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES3"><span class="toc-number">1.12.</span> <span class="toc-text"> ES3:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">1.13.</span> <span class="toc-text">　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES5"><span class="toc-number">1.14.</span> <span class="toc-text">ES5:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6"><span class="toc-number">1.15.</span> <span class="toc-text">ES6:</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
@@ -188,6 +164,8 @@
 		<ul>
 		
 			<li><a href="/categories/CSS样式/" title="CSS样式">CSS样式<sup>3</sup></a></li>
+		
+			<li><a href="/categories/ES6/" title="ES6">ES6<sup>2</sup></a></li>
 		
 			<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
 		
@@ -212,7 +190,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/其他/" title="其他">其他<sup>24</sup></a></li>
+			<li><a href="/tags/其他/" title="其他">其他<sup>26</sup></a></li>
 		
 		</ul>
 </div>
